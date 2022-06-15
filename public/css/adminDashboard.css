@@ -1,0 +1,114 @@
+body{
+    direction: rtl;
+}
+
+.light{
+    color: #707070;
+}
+.main-color{
+    background-color: #726198;
+}
+a{
+    text-decoration: none;
+    /* color: white; */
+}
+/* Start Category Page */
+
+.categories .card-header{
+    font-weight: bold;
+    color: #959595;
+}
+.categories .card-header .fa-edit{
+    position: relative;
+    top: 1px;
+}
+.categories .cat{
+    position: relative;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.categories .option a{
+    color: #888;
+    text-decoration: none;
+}
+
+.categories .option span{
+    color: #888;
+    cursor: pointer;
+}
+
+.categories .option .active{
+    color: #0d6efd;
+}
+
+.categories .cat:hover{
+    background-color: #CCC;
+}
+
+.categories .cat:hover .hidden-button{
+    left: 10px;
+}
+
+.categories .cat .hidden-button{
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    position: absolute;
+    top: 10px;
+    left: -125px;
+}
+
+.categories .cat .hidden-button a{
+    margin-right: 5px;
+    padding: 0px;
+}
+.categories .cat h3{
+    margin: 0;
+    cursor: pointer;
+    color: #6A6A6A;
+    font-weight: bold;
+}
+
+.categories .cat .full-view p{
+    margin: 10px 0;
+    color: #707070;
+}
+
+
+
+.categories .cat:last-of-type ~ hr{
+    display: none;
+}
+
+.categories .cat .visibility,
+.categories .cat .commenting,
+.categories .cat .advertises{
+    color: #FFF;
+    padding: 4px 6px;
+    margin-right: 6px;
+    border-radius: 6px;
+}
+
+.categories .cat .visibility{
+    background-color: #d35400;
+}
+
+.categories .cat .commenting{
+    background-color: #2c3e50;
+}
+
+.categories .cat .advertises{
+    background-color: #c0392b;
+}
+
+.categories .add-category{
+    margin-top: 10px;
+}
+
+.categories .child-delete{
+    display: none;
+    color: #F00;
+}
+
+/* End Category Page */
