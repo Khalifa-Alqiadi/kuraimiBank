@@ -11,8 +11,9 @@ class LocaleController extends Controller
     protected $locale;
     //
     public function switch($locale){
-        $this->previousLocale = \request()->create(url()->previous());
+        $this->previousRequest = \request()->create(url()->previous());
         $this->locale = $locale;
+        $segment = $this->previousRequest->segments();
         if(array_key_exists($this->locale, config('locales.languages'))){
             $segment[0] = $this->locale;
             $newRoute = $this->translateRouteSegments($segment);

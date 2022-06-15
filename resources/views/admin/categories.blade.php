@@ -1,81 +1,40 @@
-@extends('admin.layout.home')
+@extends('admin.layout.app')
 @section('content')
-<h1 class="text-center">ادارة التصنيفات</h1>
-            <div class="container categories">
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fa fa-edit"></i> ادارة التصنيفات
-                        <div class="option pull-right">
-                            <i class="fa fa-sort"></i> ترتيب: [  
-                            <a class="" href="?sort=ASC"> تصاعدي</a> | 
-                            <a class="" href="?sort=DESC">تنازلي</a> ]
-                            <i class="fa fa-eye"></i> عرض: [
-                            <span class="active" data-view="full">كامل</span> | 
-                            <span data-view="classic">كلاسيك</span> ]
+<x-table>
+    <x-slot name="titleName">
+            {{__('categories.titleCategory')}}
+    </x-slot>  
+    <x-slot name="tableThead">
+        <tr>
+            <th>{{__('categories.Name')}}</th>
+            <th>{{__('categories.Parent')}}</th>
+            <th>{{__('categories.Status')}}</th>
+            <th>{{__('categories.Actions')}}</th>
+          </tr>
+    </x-slot>  
+    <x-slot name="tableTbody">
+        
+            @foreach ($categories as $category)
+            <tr>
+                <td>{{$category->name}}</td>
+                @if ($category->parent_category == 0)
+                    <td>{{__('categories.Main_Parent')}}</td>
+                @else
+                    <td>{{__('categories.Main_Parent')}}</td>
+                @endif
+                <td><span class="badge bg-label-primary me-1">Active</span></td>
+                <td>
+                    <div class="dropdown">
+                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-2"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-2"></i> Delete</a>
                         </div>
                     </div>
-                    
-                    <div class="card-body">
-                                <div class="cat">
-                                    <div class="hidden-button">
-                                        <a href=" " class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> تعديل</a>
-                                        <a href="" class="confirm btn btn-xs btn-danger"><i class="fa fa-close"></i> حذف</a>
-                                    </div>
-                                    <h3>خدمات الافراد</h3>
-                                    <div class='full-view'>
-                                        
-                                            <h5 class="light mt-2 me-2 fs-6">التصنيفات الفرعية</h5>
-                                            <ul class='list-unstyled child-cats'>
-                                                    <li class='child-link'>
-                                                        <a href='' class="text-primary">الحسابات البنكية</a>
-                                                        <a href='' class='confirm child-delete'> حذف</a>
-                                                    </li>
-                                                
-                                            </ul>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="cat">
-                                    <div class="hidden-button">
-                                        <a href=" " class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> تعديل</a>
-                                        <a href="" class="confirm btn btn-xs btn-danger"><i class="fa fa-close"></i> حذف</a>
-                                    </div>
-                                    <h3>خدمات الافراد</h3>
-                                    <div class='full-view'>
-                                        
-                                            <h5 class="light mt-2 me-2 fs-6">التصنيفات الفرعية</h5>
-                                            <ul class='list-unstyled child-cats'>
-                                                    <li class='child-link'>
-                                                        <a href='' class="text-primary">الحسابات البنكية</a>
-                                                        <a href='' class='confirm child-delete'> حذف</a>
-                                                    </li>
-                                                
-                                            </ul>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="cat">
-                                    <div class="hidden-button">
-                                        <a href=" " class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> تعديل</a>
-                                        <a href="" class="confirm btn btn-xs btn-danger"><i class="fa fa-close"></i> حذف</a>
-                                    </div>
-                                    <h3>خدمات الافراد</h3>
-                                    <div class='full-view'>
-                                        
-                                            <h5 class="light mt-2 me-2 fs-6">التصنيفات الفرعية</h5>
-                                            <ul class='list-unstyled child-cats'>
-                                                    <li class='child-link'>
-                                                        <a href='' class="text-primary">الحسابات البنكية</a>
-                                                        <a href='' class='confirm child-delete'> حذف</a>
-                                                    </li>
-                                                
-                                            </ul>
-                                    </div>
-                                </div>
-                                <hr>
-                    </div>
-                </div>
-                <a class="add-category btn btn-primary" href=""><i class="fa fa-plus"></i> Add New</a>
-            </div>
-
+                </td>
+            </tr>
+            @endforeach
+    </x-slot>  
+</x-table>
+  
 @endsection

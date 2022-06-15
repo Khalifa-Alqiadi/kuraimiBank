@@ -25,7 +25,7 @@ Route::get('/homeAdmin', [CategoriesAdminController::class, 'homeAdmin'])->name(
 Route::get('/editUser/{id}', [CategoriesAdminController::class, 'editUser'])->name('editUser');
 Route::get('/usersAdminManage', [UsersAdminController::class, 'ShowUsersAdmin'])->name('usersAdminManage');
 Route::get('change-language/{locale}', [LocaleController::class, 'switch'])->name('change-language');
-Route::middleware(['localized'])->prefix(app()->getLocale())->group(function(){
+Route::middleware(['web'])->group(function(){
     Route::get('/frontIndex', [HomeController::class, 'frontIndex'])->name('frontIndex');
 });
 

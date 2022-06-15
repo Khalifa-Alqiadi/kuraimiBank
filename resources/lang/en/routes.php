@@ -1,5 +1,5 @@
 <?php
 return [
-    'categories'    => 'Categories',
+    'name'    => 'name',
 ]
 ?>
