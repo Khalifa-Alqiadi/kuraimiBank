@@ -50,6 +50,9 @@
     <link rel="stylesheet" href="{{ URL::asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css')}}" />
     <link rel="stylesheet" href="{{ URL::asset('assets/vendor/libs/typeahead-js/typeahead.css')}}" />
     <link rel="stylesheet" href="{{ URL::asset('assets/vendor/libs/apex-charts/apex-charts.css')}}" />
+    <link rel="stylesheet" href="{{ URL::asset('assets/vendor/libs/flatpickr/flatpickr.css')}}" />
+    <link rel="stylesheet" href="{{ URL::asset('assets/vendor/libs/select2/select2.css')}}" />
+    <link rel="stylesheet" href="{{ URL::asset('css/main.css')}}" />
 
     <!-- Page CSS -->
     
@@ -195,6 +198,40 @@
         <i class="menu-icon tf-icons bx bx-map-alt"></i>
         <div data-i18n="Leaflet Maps"></div>
       </a>
+    </li>
+    <!-- Charts & Maps -->
+    <li class="menu-header small text-uppercase">
+      <span class="menu-header-text">Users</span>
+    </li>
+    <li class="menu-item">
+      <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon tf-icons bx bx-chart"></i>
+        <div data-i18n="{{__('users.Users')}}">{{__('users.Users')}}</div>
+      </a>
+      <ul class="menu-sub">
+        <li class="menu-item">
+          <a href="{{route('usersAdminManage')}}" class="menu-link">
+            <div data-i18n="{{__('users.User_Title')}}">{{__('users.User_Title')}}</div>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <!-- Charts & Maps -->
+    <li class="menu-header small text-uppercase">
+      <span class="menu-header-text">{{__('country.Countries')}}</span>
+    </li>
+    <li class="menu-item">
+      <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon tf-icons bx bx-chart"></i>
+        <div data-i18n="{{__('country.Countries')}}">{{__('country.Countries')}}</div>
+      </a>
+      <ul class="menu-sub">
+        <li class="menu-item">
+          <a href="{{route('countriesAdmin')}}" class="menu-link">
+            <div data-i18n="{{__('country.titleCountry')}}">{{__('country.titleCountry')}}</div>
+          </a>
+        </li>
+      </ul>
     </li>
   </ul>
   
@@ -433,6 +470,11 @@
     <script src="{{ URL::asset('assets/vendor/libs/hammer/hammer.js')}}"></script>
     <script src="{{ URL::asset('assets/vendor/libs/i18n/i18n.js')}}"></script>
     <script src="{{ URL::asset('assets/vendor/libs/typeahead-js/typeahead.js')}}"></script>
+    <script src="{{ URL::asset('assets/vendor/libs/cleavejs/cleave.js')}}"></script>
+    <script src="{{ URL::asset('assets/vendor/libs/cleavejs/cleave-phone.js')}}"></script>
+    <script src="{{ URL::asset('assets/vendor/libs/moment/moment.js')}}"></script>
+    <script src="{{ URL::asset('assets/vendor/libs/flatpickr/flatpickr.js')}}"></script>
+    <script src="{{URL::asset('assets/vendor/libs/select2/select2.js')}}"></script>
     
     <script src="{{ URL::asset('assets/vendor/js/menu.js')}}"></script>
     <!-- endbuild -->
@@ -445,7 +487,90 @@
   
     <!-- Page JS -->
     <script src="{{ URL::asset('assets/js/dashboards-crm.js')}}"></script>
-    
+    <script src="{{ URL::asset('js/jquery-3.5.1.min.js')}}"></script>
+    <script src="{{ URL::asset('js/ajax.js')}}"></script>
+<script>
+  function fetchCategory() {
+        $.ajax({
+            type: 'GET',
+            url: 'showCategory',
+            dataType: 'json',
+            success: function (response) {
+                // alert(JSON.parse(response))
+                var Main_Parent;
+                var is_active;
+                $('tbody.categories-list').html("");
+                $.each(response.categories, function (key, item) {
+                    if (item.parent_category == 0) {
+                        Main_Parent = `{{__('categories.Main_Parent')}}`;
+                    } else {
+                        Main_Parent = `{{__('categories.Sub_Parent')}}`
+                    }
+                    if (item.is_active == 0) {
+                        is_active = `<button type="button" value="` + item.id + `" class="badge Category-active border-0 bg-label-primary me-1" data-bs-toggle="modal" data-bs-target="#CategoryActive">{{__('main.No_Active')}}</button>`
+                    } else {
+                        is_active = `<button type="button" value="` + item.id + `" class="badge Category-active border-0 bg-primary me-1" data-bs-toggle="modal" data-bs-target="#CategoryActive">{{__('main.Active')}}</button>`
+                    }
+                    $('tbody.categories-list').append(
+                        `<tr>
+                      <td>` + item.name + `</td>
+                      <td>` + Main_Parent + `</td>
+            <td>` + is_active + `</td>
+            <td>
+                <div class="dropdown">
+                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
+                    <div class="dropdown-menu">
+                        <button type="button" value="` + item.id + `" class="btn edit_category" data-bs-toggle="modal" data-bs-target="#CategoryEdite"> {{__('main.Edit')}} </button>
+                        
+                        <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#CategoryDelete">  <i class="bx bx-trash me-2"></i> {{__('main.Delete')}}</button>
+                    </div>
+                </div>
+            </td>
+        </tr>`
+                    );
+                });
+            }
+        })
+    }
+
+    function fetchCountries() {
+        $.ajax({
+            type: 'GET',
+            url: 'showCountries',
+            dataType: 'json',
+            success: function (response) {
+                // alert(JSON.parse(response))
+                var Main_Parent;
+                var is_active;
+                $('tbody.countries-list').html("");
+                $.each(response.countries, function (key, item) {
+                    
+                    if (item.is_active == 0) {
+                        is_active = `<button type="button" value="` + item.id + `" class="badge Category-active border-0 bg-label-primary me-1" data-bs-toggle="modal" data-bs-target="#CategoryActive">{{__('main.No_Active')}}</button>`
+                    } else {
+                        is_active = `<button type="button" value="` + item.id + `" class="badge Category-active border-0 bg-primary me-1" data-bs-toggle="modal" data-bs-target="#CategoryActive">{{__('main.Active')}}</button>`
+                    }
+                    $('tbody.countries-list').append(
+                        `<tr>
+                      <td>` + item.name + `</td>
+            <td>` + is_active + `</td>
+            <td>
+                <div class="dropdown">
+                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
+                    <div class="dropdown-menu">
+                        <button type="button" value="` + item.id + `" class="btn edit_country" data-bs-toggle="modal" data-bs-target="#CountryEdite"> {{__('main.Edit')}} </button>
+                        
+                        <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#CategoryDelete">  <i class="bx bx-trash me-2"></i> {{__('main.Delete')}}</button>
+                    </div>
+                </div>
+            </td>
+        </tr>`
+                    );
+                });
+            }
+        })
+    }
+</script>
   </body>
   
   

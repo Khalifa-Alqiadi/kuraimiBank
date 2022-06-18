@@ -17,15 +17,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/categories_admin', [CategoriesAdminController::class, 'ShowCategoryAdmin'])->name('categories_admin');
-Route::get('/homeAdmin', [CategoriesAdminController::class, 'homeAdmin'])->name('homeAdmin');
-Route::get('/editUser/{id}', [CategoriesAdminController::class, 'editUser'])->name('editUser');
-Route::get('/usersAdminManage', [UsersAdminController::class, 'ShowUsersAdmin'])->name('usersAdminManage');
-Route::get('change-language/{locale}', [LocaleController::class, 'switch'])->name('change-language');
+
 Route::middleware(['web'])->group(function(){
     Route::get('/frontIndex', [HomeController::class, 'frontIndex'])->name('frontIndex');
+    Route::get('/', function () {
+        return view('welcome');
+    });
+    Route::get('/categories_admin', [CategoriesAdminController::class, 'ShowCategoryAdmin'])->name('categories_admin');
+    Route::get('/homeAdmin', [CategoriesAdminController::class, 'homeAdmin'])->name('homeAdmin');
+    
+    // Route::post('add_category', [CategoriesAdminController::class, 'store'])->name('add_category');
+    Route::get('/usersAdminManage', [UsersAdminController::class, 'ShowUsersAdmin'])->name('usersAdminManage');
+    Route::get('change-language/{locale}', [LocaleController::class, 'switch'])->name('change-language');
+    
 });
 

@@ -1,0 +1,12 @@
+.errors-validation{
+    top: 10%;
+    left: 10%;
+    z-index: 100;
+    
+}
+.errors-validation .errors-list{
+    /* opacity: .5; */
+    background-color: #985151b5;
+    list-style: none;
+    border-radius: 10px;
+}

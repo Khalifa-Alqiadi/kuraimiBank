@@ -5,27 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
-use Cviebrock\EloquentSluggable\Sluggable;
 
-
-class Category extends Model
+class Country extends Model
 {
-    use HasFactory, HasTranslations, Sluggable;
+    use HasFactory, HasTranslations;
 
     protected $guarded = [];
-    protected $table = 'categories';
+    protected $table = 'countries';
     public $translatable = ['name'];
 
-    public function sluggable(): array {
-        return [
-            'slug->ar' => [
-                'source'    => 'name->ar',
-            ],
-            'slug->en' => [
-                'source'    => 'name->en',
-            ]
-        ];
-    }
     public function asJson($value){
         return json_encode($value, JSON_UNESCAPED_UNICODE);
     }
@@ -39,5 +27,4 @@ class Category extends Model
     public function getTitleenAttribute(){
         return $this->getTranslation('name', 'en');
     }
-    
 }

@@ -2,12 +2,12 @@
 return [
     'titleCategory'     => 'كل التصنيفات',
     'Categories'        => ' التصنيفات',
-    'Name'              => ' الاسم',
     'Parent'            => 'نوع التصنيف',
-    'Status'            => 'الحالة',
-    'Actions'           => 'التحكم',
     'Main_Parent'       => 'رئيسية ',
     'Sub_Parent'        => 'فرعية ',
+    'Add_Category'      => 'اضافة تصنيف',
+    'Category_name'     => 'اسم التصنيف',
+    'Category_Delete'   => 'حذف التصنيف',
 ];
 
 ?>

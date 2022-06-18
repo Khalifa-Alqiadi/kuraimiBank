@@ -1,128 +1,113 @@
-@extends('admin.layout.home')
+@extends('admin.layout.app')
 @section('content')
-<h1 class="text-center light">ادارة المستخدمين</h1>
-<div class="container">
-    <a href="" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Add New</a>
-    <div class="table-responsive ">
-        <table class="main-table shadow manage-members text-center table table-bordered">
-            <tr class="main-color text-white">
-                <td>#ID</td>
-                <td>اسم المستخدم</td>
-                <td>البريد الالكتروني</td>
-                <td>الاسم الكامل</td>
-                <td>تاريخ التسجيل</td>
-                <td>التحكم</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>خليفة </td>
-                <td>khalifa@gmail.com</td>
-                <td>خليفة القياضي</td>
-                <td>2022\5\3</td>
-                <td>
-                <a href='' 
-                    class='btn btn-success'>
-                    <i class='fa fa-edit'></i> تعديل</a>
-                <a href='' 
-                    class='btn btn-danger confirm'>
-                    <i class='fa fa-close'></i> حذف</a> 
-                    <a href='' 
-                        class='btn btn-info activate'>
-                        <i class='fa fa-check'></i> الحالة</a> 
-                </td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>خليفة </td>
-                <td>khalifa@gmail.com</td>
-                <td>خليفة القياضي</td>
-                <td>2022\5\3</td>
-                <td>
-                <a href='' 
-                    class='btn btn-success'>
-                    <i class='fa fa-edit'></i> تعديل</a>
-                <a href='' 
-                    class='btn btn-danger confirm'>
-                    <i class='fa fa-close'></i> حذف</a> 
-                    <a href='' 
-                        class='btn btn-info activate'>
-                        <i class='fa fa-check'></i> الحالة</a> 
-                </td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>خليفة </td>
-                <td>khalifa@gmail.com</td>
-                <td>خليفة القياضي</td>
-                <td>2022\5\3</td>
-                <td>
-                <a href='' 
-                    class='btn btn-success'>
-                    <i class='fa fa-edit'></i> تعديل</a>
-                <a href='' 
-                    class='btn btn-danger confirm'>
-                    <i class='fa fa-close'></i> حذف</a> 
-                    <a href='' 
-                        class='btn btn-info activate'>
-                        <i class='fa fa-check'></i> الحالة</a> 
-                </td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>خليفة </td>
-                <td>khalifa@gmail.com</td>
-                <td>خليفة القياضي</td>
-                <td>2022\5\3</td>
-                <td>
-                <a href='' 
-                    class='btn btn-success'>
-                    <i class='fa fa-edit'></i> تعديل</a>
-                <a href='' 
-                    class='btn btn-danger confirm'>
-                    <i class='fa fa-close'></i> حذف</a> 
-                    <a href='' 
-                        class='btn btn-info activate'>
-                        <i class='fa fa-check'></i> الحالة</a> 
-                </td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>خليفة </td>
-                <td>khalifa@gmail.com</td>
-                <td>خليفة القياضي</td>
-                <td>2022\5\3</td>
-                <td>
-                <a href='' 
-                    class='btn btn-success'>
-                    <i class='fa fa-edit'></i> تعديل</a>
-                <a href='' 
-                    class='btn btn-danger confirm'>
-                    <i class='fa fa-close'></i> حذف</a> 
-                    <a href='' 
-                        class='btn btn-info activate'>
-                        <i class='fa fa-check'></i> الحالة</a> 
-                </td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>خليفة </td>
-                <td>khalifa@gmail.com</td>
-                <td>خليفة القياضي</td>
-                <td>2022\5\3</td>
-                <td>
-                <a href='' 
-                    class='btn btn-success'>
-                    <i class='fa fa-edit'></i> تعديل</a>
-                <a href='' 
-                    class='btn btn-danger confirm'>
-                    <i class='fa fa-close'></i> حذف</a> 
-                    <a href='' 
-                        class='btn btn-info activate'>
-                        <i class='fa fa-check'></i> الحالة</a> 
-                </td>
-            </tr>
-            
-        </table>
-    </div>
+    <x-table>
+      <x-slot name="titleName">
+              {{__('users.User_Title')}}
+      </x-slot>  
+      <x-slot name="tableThead">
+          <tr>
+            <td>{{__('main.Image')}}</td>
+            <th>{{__('users.First_Name')}}</th>
+            <th>{{__('users.Last_Name')}}</th>
+            <th>{{__('users.Email')}}</th>
+            <th>{{__('users.Phone')}}</th>
+            <td>{{__('users.Gender')}}</td>
+            <td>{{__('users.Address')}}</td>
+          </tr>
+      </x-slot>  
+      <x-slot name="tableTbody">
+          <tr>
+            <td>
+              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Lilian Fuller">
+                <img src="../../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle">
+              </li>
+            </td>
+              <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Angular Project</strong></td>
+              <td>Albert Cook</td>
+              <td>Albert Cook</td>
+              <td>Albert Cook</td>
+              <td>Albert Cook</td>
+              
+              <td><span class="badge btn bg-label-primary me-1" data-bs-toggle="modal" data-bs-target="#userStatus">Active</span></td>
+              
+          </tr>
+          <tr>
+            <td>
+              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Lilian Fuller">
+                <img src="../../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle">
+              </li>
+            </td>
+              <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Angular Project</strong></td>
+              <td>Albert Cook</td>
+              <td>Albert Cook</td>
+              <td>Albert Cook</td>
+              <td>Albert Cook</td>
+              
+              <td><span class="badge btn bg-label-primary me-1" data-bs-toggle="modal" data-bs-target="#userStatus">Active</span></td>
+              
+          </tr>
+          <tr>
+            <td>
+              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Lilian Fuller">
+                <img src="../../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle">
+              </li>
+            </td>
+              <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Angular Project</strong></td>
+              <td>Albert Cook</td>
+              <td>Albert Cook</td>
+              <td>Albert Cook</td>
+              <td>Albert Cook</td>
+              
+              <td><span class="badge btn bg-label-primary me-1" data-bs-toggle="modal" data-bs-target="#userStatus">Active</span></td>
+              
+          </tr>
+          <tr>
+            <td>
+              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Lilian Fuller">
+                <img src="../../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle">
+              </li>
+            </td>
+              <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Angular Project</strong></td>
+              <td>Albert Cook</td>
+              <td>Albert Cook</td>
+              <td>Albert Cook</td>
+              <td>Albert Cook</td>
+              
+              <td><span class="badge btn bg-label-primary me-1" data-bs-toggle="modal" data-bs-target="#userStatus">Active</span></td>
+              
+          </tr>
+          <tr>
+            <td>
+              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="Lilian Fuller">
+                <img src="../../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle">
+              </li>
+            </td>
+              <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Angular Project</strong></td>
+              <td>Albert Cook</td>
+              <td>Albert Cook</td>
+              <td>Albert Cook</td>
+              <td>Albert Cook</td>
+              
+              <td><span class="badge btn bg-label-primary me-1" data-bs-toggle="modal" data-bs-target="#userStatus">Active</span></td>
+              
+          </tr>
+      </x-slot> 
+    </x-table>
+
+<div class="modal fade" id="userStatus" tabindex="-1" aria-hidden="true">
+  <x-model>
+      <x-slot name="titleModel">{{__('main.Status_Edit')}}</x-slot>
+      <x-slot name="model">
+          <form id="addNewCCForm" class="row g-3" onsubmit="return false">
+              <div class="col-12">
+                <h1>{{__('main.Sure_Messagew')}}</h1>
+              </div>
+              <div class="col-12 text-center">
+                <button type="submit" class="btn btn-primary me-sm-3 me-1 mt-3">{{__('main.Submit')}}</button>
+                <button type="reset" class="btn btn-label-secondary btn-reset mt-3" data-bs-dismiss="modal" aria-label="Close">{{__('main.Cancel')}}</button>
+              </div>
+          </form>
+      </x-slot>
+  </x-model>
 </div>
 @endsection

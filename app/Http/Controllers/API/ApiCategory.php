@@ -1,31 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\FormValidation;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Category;
 use App\Http\Resources\Category as CategoryResource;
-class CategoriesAdminController extends Controller
+
+class ApiCategory extends Controller
 {
     //
-
-    public function ShowCategoryAdmin(){
-        $categories = Category::latest()->get();
-        return view('/admin.categories', ['categories' => $categories]);
-    }
-
-    public function homeAdmin(){
-        
-        return view('admin.indexAdmin');
-    }
-
-    public function editUser($id){
-        return view('admin.editUser');
-    }
-
     public function store(Request $request){
         
 
@@ -44,8 +29,7 @@ class CategoriesAdminController extends Controller
         // $category = new Category;
         $data['name'] = $request->name;
         $data['parent_category'] = $request->parent;
-        $category = Category::create($data);
-        // return response()->json(['message' => 'add category success']);
+        $category = new CategoryResource(Category::create($data));
          if($category)
             return response()->json(['status' => 1, 'success'=>'add category success']);
             return back()->with(['error'=>'can not inserted']);
@@ -66,20 +50,32 @@ class CategoriesAdminController extends Controller
         if($category){
             return response()->json([
                 'status'    => 1,
-                'category'     => $category
+                'category'     => $category,
             ]);
         }else{
             return response()->json(['status' => 0, 'error'=> 'Not Found']);
         }
     }
 
-    public function update(Request $request){
+    public function UpdateCategory(Request $request){
         $id = $request->cid;
         $data['name'] = $request->name;
-        $category = Category::where('id', $id)->update($data);
-        // return response()->json(['message' => 'add category success']);
-         if($category)
-            return new CategoryResource($category);
-        
+        $category = new CategoryResource(Category::where('id', $id)->update($data));
+        if($category)
+            return response()->json(['status' => 1, 'success'=>'add category success']);
+            return back()->with(['error'=>'can not inserted']);
+    }
+    public function CategoryActive(Request $request){
+        $category;
+        $id = $request->categoryid;
+        $find = Category::find($id);
+        if($find->is_active == 0){
+            $category = new CategoryResource(Category::where('id', $id)->update(['is_active' => 1]));
+        }else{
+            $category = new CategoryResource(Category::where('id', $id)->update(['is_active' => 0]));
+        }
+        if($category)
+            return response()->json(['status' => 1, 'success'=>'add category success']);
+            return back()->with(['error'=>'can not inserted']);
     }
 }
