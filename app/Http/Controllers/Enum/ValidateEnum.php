@@ -28,6 +28,19 @@ class ValidateEnum extends Controller
         'link'          => 'required',
         'icons'         => 'required',
     ];
+
+    const REQUIRED_SERVICES = [
+        'name_ar'           => 'required',
+        'name_en'           => 'required',
+        'service_info_ar'   => 'required',
+        'service_info_en'   => 'required',
+    ];
+
+    const REQUIRED_WEB_INFO = [
+        'key'               => 'required',
+        'value_ar'          => 'required',
+        'value_en'          => 'required',
+    ];
     
 
     public function required(){

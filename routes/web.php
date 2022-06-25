@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::middleware(['web'])->group(function(){
+// Route::middleware(['web'])->group(function(){
     Route::group(['middleware' => 'auth'], function () {
         Route::group(['middleware' => ['role:admin']], function () {
             Route::get('/frontIndex', [HomeController::class, 'frontIndex'])->name('frontIndex');
@@ -32,13 +32,22 @@ Route::middleware(['web'])->group(function(){
             });
             Route::get('/homeAdmin', [CategoriesAdminController::class, 'homeAdmin'])->name('homeAdmin');
             Route::get('/show-control-info', [ApiWebsiteInfo::class, 'show'])->name('show-control-info');
+            Route::post('/add-websiteInfo', [ApiWebsiteInfo::class, 'store'])->name('add-websiteInfo');
+            Route::post('/Website_Active', [ApiWebsiteInfo::class, 'active'])->name('Website_Active');
+            Route::post('/Website_Delete', [ApiWebsiteInfo::class, 'delete'])->name('Website_Delete');
+            Route::get('/show-info/{id}', [ApiWebsiteInfo::class, 'showInfo']);    
+            Route::post('/update-info', [ApiWebsiteInfo::class, 'update'])->name('update-info');
+
             Route::get('/Show-Services', [ApiServices::class, 'ShowServices'])->name('Show-Services');
             Route::post('/add_service', [ApiServices::class, 'store']);
+            Route::post('/update_service', [ApiServices::class, 'update']);
+            Route::post('/serviceActive', [ApiServices::class, 'active']);
+            Route::post('/serviceDelete', [ApiServices::class, 'delete']);
         });
     });  
 
     
-});
+// });
 
 Route::get('/login', [ApiAuthenticate::class, 'show'])->name('login');
 

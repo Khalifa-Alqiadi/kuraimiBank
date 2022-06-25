@@ -15,7 +15,7 @@
 
 <x-table>
     <x-slot name="titleName">
-            {{__('main.advantages.Manage')}}
+            {{__('main.control')}}
     </x-slot>  
     <x-slot name="button">
         <a href="service-advantage?do=Add&serviceid={{$service_id}}" class="btn btn-primary me-sm-3 me-1 mt-3" > {{__('main.Add')}} </a>

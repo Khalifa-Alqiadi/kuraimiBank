@@ -1,36 +1,6 @@
 <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 <script>
   
-    var addService = document.getElementById('add_service');
-    addService.addEventListener('click', ()=> {
-      
-      CKEDITOR.replace('service_info_ar', {
-            uiColor: '#FFFFFF',
-        });
-        CKEDITOR.replace('service_info_en', {
-            uiColor: '#FFFFFF',
-        });
-      axios.post('add_service', {
-        service_info_ar : document.getElementById('service_info_ar').value,
-        service_info_en : document.getElementById('service_info_en').value,
-      })
-      .then(respond=> {
-        if(respond.data.status == 0){
-          // alert(respond.data.error);
-          // for(key in respond.data.error){
-          //   alert(`'`+key+`'`);
-          //   var error = document.getElementById(`'`+key+`'`)
-          //   error.innerHTML = `<span>jhjklhkjhk</span>` ;
-          // }
-        }else{
-        console.log(respond.data );
-        // fetchModals('#ServicesAdd')
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-        });
-    });
 
     // var service_id = document.getElementById('service_id')
     // service_id.addEventListener('click', ()=>{

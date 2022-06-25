@@ -77,8 +77,8 @@ use Illuminate\Support\Facades\Route;
             
             
             Route::get('/Edit_Service/{id}', [ApiServices::class, 'edit']);
-            Route::post('/update_service', [ApiServices::class, 'update']);
-            Route::post('/serviceActive', [ApiServices::class, 'active']);
+            
+            
 
 
 
@@ -120,8 +120,8 @@ use Illuminate\Support\Facades\Route;
 
             
             
-            Route::post('/add-websiteInfo', [ApiWebsiteInfo::class, 'store'])->name('add-websiteInfo');
-            Route::get('/show-info/{id}', [ApiWebsiteInfo::class, 'showInfo']);    
+            
+            
 
 
 
@@ -166,8 +166,6 @@ Route::post('/News_Active', [ApNewsAdmin::class, 'active'])->name('News_Active')
 Route::post('/News-Delete', [ApNewsAdmin::class, 'delete'])->name('News-Delete');
 
 
-Route::post('/Website_Active', [ApiWebsiteInfo::class, 'active'])->name('Website_Active');
-Route::post('/update-info', [ApiWebsiteInfo::class, 'update'])->name('update-info');
 
 
 Route::post('/mediaActive', [ApiSocialMedia::class, 'active'])->name('mediaActive');

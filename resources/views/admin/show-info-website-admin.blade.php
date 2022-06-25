@@ -8,6 +8,11 @@
     </script>
     {{-- @include('script.services') --}}
 @endpush
+@if(session('success'))
+    <x-alert>
+        <div class="show-success fs-4">{{session('success')}}</div>
+    </x-alert>
+@endif
 <x-row>
     <x-slot name="title">{{__('main.website.Add_Info')}}</x-slot>
     <x-slot name="form">
@@ -41,7 +46,7 @@
                 
             </div>
             
-            <button type="submit" class="btn btn-primary">Send</button>
+            <button type="submit" class="btn menu-theme text-white">Send</button>
         </form>
     </x-slot>
 </x-row>

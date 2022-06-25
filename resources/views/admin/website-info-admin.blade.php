@@ -7,18 +7,24 @@
 @push('scripts_after')
     @include('script.control')
 @endpush
+@if(session('success'))
+    <x-alert>
+        <div class="show-success fs-4">{{session('success')}}</div>
+    </x-alert>
+@endif
 <x-table>
     <x-slot name="titleName">
             {{__('main.website.Manage')}}
  
     </x-slot>  
     <x-slot name="button">
-        <a href="show-control-info?do=Add" class="btn btn-primary me-sm-3 me-1 mt-3" > {{__('main.Add')}} </a>
+        <a href="show-control-info?do=Add" class="btn menu-theme text-white me-sm-3 me-1 mt-3" > {{__('main.Add')}} </a>
     </x-slot>  
     <x-slot name="tableThead">
         <tr>
             <th>{{__('main.website.Key')}}</th>
             <th>{{__('main.Status')}}</th>
+            <th>{{__('main.Delete')}}</th>
         </tr>
     </x-slot>  
     
@@ -29,26 +35,46 @@
                 <tr>
                     <td>{{$info->key}}</td>
                     @if ($info->is_active == 0)
-                        <td><button type="button" onclick="WebsiteActive({{$info->id}})" value="" class="badge -active border-0 bg-label-primary me-1" data-bs-toggle="modal" data-bs-target="#WebsiteActive">{{__('main.No_Active')}}</button></td>
+                        <td><button type="button" onclick="WebsiteActive({{$info->id}})" value="" class="badge -active border-0 bg-label-primary me-1" data-bs-toggle="modal" data-bs-target="#Website_Active">{{__('main.No_Active')}}</button></td>
                     @else
-                        <td><button type="button" onclick="WebsiteActive({{$info->id}})" value="" class="badge -active border-0 bg-label-primary me-1" data-bs-toggle="modal" data-bs-target="#WebsiteActive">{{__('main.Active')}}</button></td>  
+                        <td><button type="button" onclick="WebsiteActive({{$info->id}})" value="" class="badge -active border-0 bg-label-primary me-1" data-bs-toggle="modal" data-bs-target="#Website_Active">{{__('main.Active')}}</button></td>  
                     @endif
+                    <td><button type="button" class="btn" onclick="delete_website({{$info->id}})" data-bs-toggle="modal" data-bs-target="#WebSiteDelete">  <i class="bx bx-trash me-2" ></i> {{__('main.Delete')}}</button></td>
                 </tr>
             @endforeach
         </tbody>
     </x-slot>
 </x-table>
-<div class="modal fade" id="WebsiteActive" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="Website_Active" tabindex="-1" aria-hidden="true">
     <x-model>
         <x-slot name="titleModel">{{__('main.Status_Edit')}}</x-slot>
         <x-slot name="model">
             <form action="{{route('Website_Active')}}" method="post">
+                @csrf
                 <input type="hidden" id="info_active_id" name="info_active_id" value="">
                 <div class="col-12">
                   <h1>{{__('main.Delete_Row')}}</h1>
                 </div>
                 <div class="col-12 text-center">
-                  <button type="submit" class="btn btn-primary me-sm-3 me-1 mt-3">{{__('main.Submit')}}</button>
+                  <button type="submit" class="btn menu-theme text-white me-sm-3 me-1 mt-3">{{__('main.Submit')}}</button>
+                  <button type="reset" class="btn btn-label-secondary btn-reset mt-3" data-bs-dismiss="modal" aria-label="Close">{{__('main.Cancel')}}</button>
+                </div>
+            </form>
+        </x-slot>
+    </x-model>
+</div>
+<div class="modal fade" id="WebSiteDelete" tabindex="-1" aria-hidden="true">
+    <x-model>
+        <x-slot name="titleModel">{{__('main.Delete')}}</x-slot>
+        <x-slot name="model">
+            <form action="{{route('Website_Delete')}}" method="post">
+                @csrf
+                <input type="hidden" id="info_delete_id" name="info_delete_id" value="">
+                <div class="col-12">
+                  <h1>{{__('main.Delete_Row')}}</h1>
+                </div>
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn menu-theme text-white me-sm-3 me-1 mt-3">{{__('main.Submit')}}</button>
                   <button type="reset" class="btn btn-label-secondary btn-reset mt-3" data-bs-dismiss="modal" aria-label="Close">{{__('main.Cancel')}}</button>
                 </div>
             </form>
@@ -96,7 +122,7 @@
                 
             </div>
             
-            <button type="submit" class="btn btn-primary">Send</button>
+            <button type="submit" class="btn menu-theme text-white">Send</button>
         </form>
     </x-slot>
 </x-row>

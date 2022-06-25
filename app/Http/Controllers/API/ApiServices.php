@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\API;
 use App\Models\Service;
 use App\Models\Category;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\Enum\ValidateEnum;
 use App\Http\Resources\Service as ServiceResources;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -24,10 +26,15 @@ class ApiServices extends Controller
     }
 
     public function store(Request $request){
+        $error = new ValidateEnum;
+        $validate = Validator::make($request->all(), ValidateEnum::REQUIRED_SERVICES, $error->required());
+        if($validate->fails()){
+            return redirect()->back()->withErrors($validate)->withInput();
+        }
         $service = Service::create([
             'name'              => [
-                'ar'                => $request->service_name_ar,
-                'en'                => $request->service_name_en
+                'ar'                => $request->name_ar,
+                'en'                => $request->name_en
             ],
             'service_info'      => [
                 'ar'                => $request->service_info_ar,
@@ -36,7 +43,7 @@ class ApiServices extends Controller
             'category_id'       => $request->category_service,
             ]);
             if($service)
-                return redirect('Show-Services')->withSuccess(['Service Inserted Success']);
+                return redirect()->route('Show-Services')->with('success',__('main.Success'));
                 // return response()->json(['status' => 1, 'success'=>'Service Inserted Success']);
             return back()->with(['error'=>'can not inserted']);
     }
@@ -51,23 +58,28 @@ class ApiServices extends Controller
     }
 
     public function update(Request $request){
+        $error = new ValidateEnum;
+        $validate = Validator::make($request->all(), ValidateEnum::REQUIRED_SERVICES, $error->required());
+        if($validate->fails()){
+            return redirect()->back()->withErrors($validate)->withInput();
+        }
         $id = $request->serviceid;
         $find = Service::find($id);
         $find->name = [
-            'ar'        => $request->service_name_edit_ar,
-            'en'        => $request->service_name_edit_en,
+            'ar'        => $request->name_ar,
+            'en'        => $request->name_en,
         ];
         $find->category_id = $request->category_service;
         $find->service_info = [
-            'ar'        => $request->service_info_edit_ar,
-            'en'        => $request->service_info_edit_en
+            'ar'        => $request->service_info_ar,
+            'en'        => $request->service_info_en
         ];
 
         $update = new ServiceResources($find->update());
         if($update)
-                return redirect('Show-Services')->with(['success' => 'Service Updated Success']);
+        return redirect()->route('Show-Services')->with('success',__('main.Success'));
                 // return response()->json(['status' => 1, 'success'=>'Service Inserted Success']);
-            return back()->with(['error'=>'can not inserted']);
+        return back()->with(['error'=>'can not inserted']);
     }
 
     public function active(Request $request){
@@ -80,7 +92,16 @@ class ApiServices extends Controller
             $service = new ServiceResources(Service::where('id', $id)->update(['is_active' => 0]));
         }
         if($service)
-            return redirect('Show-Services')->with(['success' => 'Status Updated Success']);
-            return back()->with(['error'=>'can not inserted']);
+            return redirect()->route('Show-Services')->with('success',__('main.Success'));
+        return back()->with(['error'=>'can not inserted']);
+    }
+
+    public function delete(Request $request){
+        $id = $request->service_delete_id;
+        $find = Service::find($id);
+        $delete = new ServiceResources($find->delete());
+        if($delete)
+            return redirect()->route('Show-Services')->with('success',__('main.Success'));
+        return back()->with(['error'=>'can not inserted']);
     }
 }

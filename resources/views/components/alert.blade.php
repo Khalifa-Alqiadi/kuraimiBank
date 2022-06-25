@@ -1,3 +1,3 @@
-<div class="alert alert-success">
+<div class="success">
     {{ $slot }}
 </div>

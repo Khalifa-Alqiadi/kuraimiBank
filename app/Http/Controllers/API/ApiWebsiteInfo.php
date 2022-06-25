@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\WebsiteInfo;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\Enum\ValidateEnum;
 use Illuminate\Support\Facades\Route;
 use App\Http\Resources\WebsiteInfo as WebsiteInfoResources;
 class ApiWebsiteInfo extends Controller
@@ -22,11 +23,8 @@ class ApiWebsiteInfo extends Controller
     }
 
     public function store(Request $request){
-        $validate = Validator::make($request->all(), [
-            'key'               => 'required|unique:website_infos,key',
-            'value_ar'          => 'required',
-            'value_ar'          => 'required',
-        ]);
+        $error = new ValidateEnum;
+        $validate = Validator::make($request->all(), ValidateEnum::REQUIRED_WEB_INFO, $error->required());
         if($validate->fails()){
             return redirect()->back()->withErrors($validate)->withInput();
         }
@@ -39,7 +37,7 @@ class ApiWebsiteInfo extends Controller
             ]
         ]));
         if($webInfo)
-            return redirect('show-control-info')->with(['success' => 'Information Inserted Success']);
+            return redirect()->route('show-control-info')->with('success',__('main.Success'));
         return back()->with(['error'=>'can not inserted']);
     }
 
@@ -53,7 +51,16 @@ class ApiWebsiteInfo extends Controller
             $active = new WebsiteInfoResources(WebsiteInfo::where('id', $id)->update(['is_active' => 0]));
         }
         if($active)
-            return redirect('show-control-info')->with(['success' => 'Status Updated Success']);
+            return redirect()->route('show-control-info')->with('success',__('main.Success'));
+        return back()->with(['error'=>'can not updated']);
+    }
+
+    public function delete(Request $request){
+        $id = $request->info_delete_id;
+        $find = WebsiteInfo::find($id);
+        $delete = new WebsiteInfoResources($find->delete());
+        if($delete)
+            return redirect()->route('show-control-info')->with('success',__('main.Success'));
         return back()->with(['error'=>'can not updated']);
     }
 
@@ -65,11 +72,8 @@ class ApiWebsiteInfo extends Controller
     }
 
     public function update(Request $request){
-        $validate = Validator::make($request->all(), [
-            'key'               => 'required',
-            'value_ar'          => 'required',
-            'value_ar'          => 'required',
-        ]);
+        $error = new ValidateEnum;
+        $validate = Validator::make($request->all(), ValidateEnum::REQUIRED_WEB_INFO, $error->required());
         if($validate->fails()){
             return redirect()->back()->withErrors($validate)->withInput();
         }
@@ -82,7 +86,8 @@ class ApiWebsiteInfo extends Controller
 
         $update = new WebsiteInfoResources($find->update());
         if($update)
-            return redirect(app()->getLocale().'/show-info/'.$request->id)->with(['success' => 'Information Updated Success']);
+            // return redirect()->route(app()->getLocale().'/show-info/'.$request->id)->with('success',__('main.Success'));
+            return redirect(app()->getLocale().'/show-info/'.$request->id)->with(['success' =>__('main.Success')]);
         return back()->with(['error'=>'can not Updated']);
     }
 }
