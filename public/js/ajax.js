@@ -184,4 +184,31 @@ $(document).ready(function () {
             }
         })
     });
+
+    $(document).on('click', '.Country-active', function (e) {
+        e.preventDefault();
+        var country_id = $(this).val();
+        $('#country_id').val(country_id);
+    });
+
+    $('.CountryActive').on('submit', function (e) {
+        e.preventDefault();
+        $.ajax({
+            url: $(this).attr('action'),
+            method: $(this).attr('method'),
+            processData: false,
+            data: new FormData(this),
+            dataType: 'json',
+            contentType: false,
+            success: function (response) {
+                if (response.status == 0) {
+                    $('.success-text').text(response.error);
+                } else {
+                    // $('.edit_skill_user')[0].reset();
+                    $('.success-text').text(response.success);
+                    fetchCountries();
+                }
+            }
+        })
+    });
 })

@@ -1,39 +1,33 @@
 <?php
 
 namespace App\Http\Controllers\API;
-
+use App\Http\Requests\FormValidation;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Category;
 use App\Http\Resources\Category as CategoryResource;
-
+use App\Http\Controllers\Enum\ValidateEnum;
 class ApiCategory extends Controller
 {
     //
     public function store(Request $request){
-        
-
-        $validation = Validator::make($request->all(),[
-            'name.ar'       => 'required|min:6',
-            'name.en'       => 'required',
-
-        ],[
-            'required' => 'kijfgirgjfriogfr',
-            'min' => 'must be min 6',
-        ]);
-        if(!$validation->passes()){
-            return response()->json(['status' => 0, 'error'=> $validation->errors()->toArray()]);
+        $error = new ValidateEnum;
+        $validate = Validator::make($request->all(), ValidateEnum::REQUIRED, $error->required());
+        if(!$validate->passes()){
+            return response()->json(['status' => 0, 'error'=> $validate->errors()->toArray()]);
         }else{
+        $category = Category::create([
+            'name' => [
+                'ar'    => $request->name_ar,
+                'en'    => $request->name_en
+            ],
+            'parent_category' => $request->parent_category
+        ]);
+         if($category) return response()->json(['status' => 1, 'success'=>__('main.Success')]);
 
-        // $category = new Category;
-        $data['name'] = $request->name;
-        $data['parent_category'] = $request->parent;
-        $category = new CategoryResource(Category::create($data));
-         if($category)
-            return response()->json(['status' => 1, 'success'=>'add category success']);
-            return back()->with(['error'=>'can not inserted']);
-        }
+        return back()->with(['error'=>'can not inserted']);
+    }
     }
 
     public function show(){
@@ -58,16 +52,26 @@ class ApiCategory extends Controller
     }
 
     public function UpdateCategory(Request $request){
-        $id = $request->cid;
-        $data['name'] = $request->name;
-        $category = new CategoryResource(Category::where('id', $id)->update($data));
-        if($category)
-            return response()->json(['status' => 1, 'success'=>'add category success']);
+        $error = new ValidateEnum;
+        $validate = Validator::make($request->all(), ValidateEnum::REQUIRED, $error->required());
+        if(!$validate->passes()){
+            return response()->json(['status' => 0, 'error'=> $validate->errors()->toArray()]);
+        }else{
+            $id = $request->id;
+            $category = Category::find($id);
+            $category->name = [
+                'ar' => $request->name_ar,
+                'en' => $request->name_en,
+            ];
+            $category->parent_category = $request->parent_category;
+            if($category->update())
+                return response()->json(['status' => 1, 'success'=>__('main.Success')]);
             return back()->with(['error'=>'can not inserted']);
+        }
     }
     public function CategoryActive(Request $request){
         $category;
-        $id = $request->categoryid;
+        $id = $request->category_id;
         $find = Category::find($id);
         if($find->is_active == 0){
             $category = new CategoryResource(Category::where('id', $id)->update(['is_active' => 1]));
@@ -75,7 +79,16 @@ class ApiCategory extends Controller
             $category = new CategoryResource(Category::where('id', $id)->update(['is_active' => 0]));
         }
         if($category)
-            return response()->json(['status' => 1, 'success'=>'add category success']);
+            return response()->json(['status' => 1, 'success'=>__('main.Success')]);
             return back()->with(['error'=>'can not inserted']);
+    }
+
+    public function delete(Request $request){
+        $id = $request->category_id;
+        $find = Category::find($id);
+        $delete = new CategoryResource($find->delete());
+        if($delete)
+            return response()->json(['status' => 1, 'success'=>__('main.Success')]);
+        return back()->with(['error'=>'can not inserted']);
     }
 }

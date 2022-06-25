@@ -21,5 +21,9 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call(CategorySeeder::class);
+        $this->call(CountrySeeder::class);
+        $this->call(CitySeeder::class);
+        $this->call(ServicePointSeeder::class);
+        $this->call(RoleSeeder::class);
     }
 }

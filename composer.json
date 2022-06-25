@@ -9,7 +9,6 @@
         "cviebrock/eloquent-sluggable": "^9.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.11",
-        "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
         "nicolaslopezj/searchable": "^1.13",
         "santigarcor/laratrust": "^7.1",

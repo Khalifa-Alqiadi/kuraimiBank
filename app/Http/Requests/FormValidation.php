@@ -24,7 +24,7 @@ class FormValidation extends FormRequest
     public function rules()
     {
         return [
-            'name.ar' => ['required'],
+            'name_ar' => ['required'],
         ];
     }
 

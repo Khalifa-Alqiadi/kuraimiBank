@@ -10,3 +10,45 @@
     list-style: none;
     border-radius: 10px;
 }
+
+@media (min-width: 576px){
+    .editor .modal-dialog {
+        max-width: 50rem;
+        margin: 1.75rem auto;
+    }
+}
+.success{
+    position: relative;
+}
+.show-success{
+    position: fixed;
+    /* top: 20%; */
+    right: 0;
+    background-color: #342a4ad6;
+    color: white;
+    border-right: 15px solid #342a4a;
+    width: 30%;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 10;
+    animation: show-success 10s ease forwards;
+}
+
+@keyframes show-success {
+    0%{
+        right: 0;
+        opacity: 0;
+    }20%{
+        right: 50%;
+        opacity: 1;
+    }40%{
+        right: 50%;
+        opacity: .9;
+    }60%{
+        right: 55%;
+        opacity: .7;
+    }100%{
+        right: 200%;
+        opacity: 0;
+    }
+}

@@ -27,4 +27,8 @@ class Country extends Model
     public function getTitleenAttribute(){
         return $this->getTranslation('name', 'en');
     }
+
+    public function city(){
+        return $this->hasMany(City::class, 'id');
+    }
 }
