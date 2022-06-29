@@ -46,12 +46,12 @@
     }
     
 
-    function DeletePermission(id){
-        var deletePermission = document.getElementById('deletePermission').value;
+    function DeletePermissions(id, pid){
         var delete_userid = document.getElementById('delete_userid');
         var delete_permission = document.getElementById('delete_permission');
         delete_userid.value = id;
-        delete_permission.value = deletePermission;
+        console.log(delete_userid.value)
+        delete_permission.value = pid;
     }
     
     function PermissionActive(id){

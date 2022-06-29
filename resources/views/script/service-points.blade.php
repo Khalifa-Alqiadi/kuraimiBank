@@ -3,15 +3,31 @@
     function fetchServicePoints(){
       axios.get('show_service-points').then(respond => {
       var is_active;
+      var edit;
+      var deleteS;
       document.querySelector('.service-points').innerHTML = '';
       //   console.log(respond.data.cities)
       respond.data.servicePoints.forEach(item => {
-        
-        if (item.is_active == 0) {
-            is_active = `<button type="button" onclick="ServicePointActive(` + item.id + `)" value="" class="badge Category-active border-0 bg-label-primary me-1" data-bs-toggle="modal" data-bs-target="#ServicePointActives">{{__('main.No_Active')}}</button>`
-        } else {
-            is_active = `<button type="button" onclick="ServicePointActive(` + item.id + `)" value="` + item.id + `" class="badge Category-active border-0 bg-primary me-1" data-bs-toggle="modal" data-bs-target="#ServicePointActives">{{__('main.Active')}}</button>`
+        if(`{{Auth::user()->hasPermission('manage_services')}}`){
+          edit = `<button type="submit" onclick="EditServicePoint(`+item.id+`)" value="` + item.id + `" class="btn " data-bs-toggle="modal" data-bs-target="#ServicePointEdit"> {{__('main.Edit')}} </button>`
+          deleteS = `<button type="button" onclick="DeleteServicePoint(`+item.id+`)" class="btn " data-bs-toggle="modal" data-bs-target="#ServicePointDelete">  <i class="bx bx-trash me-2"></i> {{__('main.Delete')}}</button>` 
+        }else{
+          edit = `<button type="submit" class="btn " data-bs-toggle="modal" data-bs-target="#Unvaliable"> {{__('main.Edit')}} </button>`
+          deleteS = `<button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#Unvaliable">  <i class="bx bx-trash me-2"></i> {{__('main.Delete')}}</button>` 
         }
+        if(`{{Auth::user()->hasPermission('manage_services')}}`){
+          if (item.is_active == 0) {
+              is_active = `<button type="button" onclick="ServicePointActive(` + item.id + `)" value="" class="badge Category-active border-0 bg-label-primary me-1" data-bs-toggle="modal" data-bs-target="#ServicePointActives">{{__('main.No_Active')}}</button>`
+          } else {
+              is_active = `<button type="button" onclick="ServicePointActive(` + item.id + `)" value="` + item.id + `" class="badge Category-active border-0 menu-theme text-white me-1" data-bs-toggle="modal" data-bs-target="#ServicePointActives">{{__('main.Active')}}</button>`
+          }
+      }else{
+        if (item.is_active == 0) {
+              is_active = `<button type="button" class="badge Category-active border-0 bg-label-primary text-danger me-1" data-bs-toggle="modal" data-bs-target="#Unvaliable">{{__('main.No_Active')}}</button>`
+          } else {
+              is_active = `<button type="button" class="badge Category-active border-0 text-danger me-1" data-bs-toggle="modal" data-bs-target="#Unvaliable">{{__('main.Active')}}</button>`
+          }
+      }
         document.querySelector('.service-points').insertRow().innerHTML = 
           `<tr>
             <td>` + item.name + `</td>
@@ -25,8 +41,8 @@
                 <div class="dropdown">
                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
                     <div class="dropdown-menu">
-                        <button type="submit" onclick="EditServicePoint(`+item.id+`)" value="` + item.id + `" class="btn " data-bs-toggle="modal" data-bs-target="#ServicePointEdit"> {{__('main.Edit')}} </button>
-                        <button type="button" onclick="DeleteServicePoint(`+item.id+`)" class="btn " data-bs-toggle="modal" data-bs-target="#ServicePointDelete">  <i class="bx bx-trash me-2"></i> {{__('main.Delete')}}</button>
+                      `+edit+`
+                      `+deleteS+`                       
                     </div>
                 </div>
             </td>

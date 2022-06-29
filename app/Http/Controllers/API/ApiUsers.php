@@ -13,7 +13,7 @@ class ApiUsers extends Controller
     //
     public function show()
     {
-        $users = UserResources::collection(User::whereRoleIs('client')->get());
+        $users = UserResources::collection(User::get());
         // $users = ;
         // \Laratrust::hasRole('admin');
         // foreach ($users as $user) {
@@ -49,8 +49,8 @@ class ApiUsers extends Controller
     {
         $id = $request->delete_userid;
         $deletePermi = User::find($id);
-
-        if ($deletePermi->detachPermission($request->delete_permission))
+        $perimission = Permission::find($request->delete_permission);
+        if ($deletePermi->detachPermission($perimission->name))
             return redirect()->route('usersAdminManage')->with('success', __('main.Success'));
     }
 }

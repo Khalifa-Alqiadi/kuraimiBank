@@ -40,41 +40,63 @@ Route::get('/', function () {
 });
 Route::middleware(['web'])->group(function () {
     Route::group(['middleware' => 'auth'], function () {
-        Route::group(['middleware' => ['role:admin|client']], function () {
+        Route::group(['middleware' => ['role:admin|admin_reports|admin_services']], function () {
 
 
-            Route::get('/categories_admin', [CategoriesAdminController::class, 'ShowCategoryAdmin'])->name('categories_admin');
+            // Route::get('/categories_admin', [CategoriesAdminController::class, 'ShowCategoryAdmin'])->name('categories_admin');
+            Route::get('/categories_admin', ['middleware' => ['permission:manage_website'], 'uses' => 'App\Http\Controllers\API\ApiCategory@ShowCategoryAdmin'])->name('categories_admin');
             Route::get('showCategory', [ApiCategory::class, 'show']);
-            Route::get('showCountries', [ApiCountries::class, 'showCantry']);
+            // Route::get('showCountries', [ApiCountries::class, 'showCantry']);
+            Route::get('/showCountries', ['middleware' => ['permission:manage_website'], 'uses' => 'App\Http\Controllers\API\ApiCountries@showCantry'])->name('showCountries');
+            Route::get('/showCities', ['middleware' => ['permission:manage_website'], 'uses' => 'App\Http\Controllers\API\ApiCities@showCities'])->name('showCities');
+            Route::get('/show-permission', ['middleware' => ['permission:manage_website'], 'uses' => 'App\Http\Controllers\API\ApiPermissions@show'])->name('show-permission');
+            // Route::get('/show-permission', [ApiPermissions::class, 'show'])->name('show-permission');
+            Route::post('/permission-active', [ApiPermissions::class, 'active'])->name('permission-active');
+
+
+            Route::get('/show-jobs', ['middleware' => ['permission:manage_website|manage_services'], 'uses' => 'App\Http\Controllers\API\ApiJobsAdmin@showJobs'])->name('show-jobs');
+            Route::get('/service-points', ['middleware' => ['permission:manage_website|manage_services'], 'uses' => 'App\Http\Controllers\API\ApiServicePoints@showServicePoints'])->name('service-points');
+            Route::get('/Show-Services', ['middleware' => ['permission:manage_website|manage_services'], 'uses' => 'App\Http\Controllers\API\ApiServices@ShowServices'])->name('Show-Services');
+            Route::get('/Show-exchange-rate', ['middleware' => ['permission:manage_website|manage_services'], 'uses' => 'App\Http\Controllers\API\ApiExchangeRates@showRate'])->name('Show-exchange-rate');
+            // Route::get('/Show-exchange-rate', [ApiExchangeRates::class, 'showRate']);
+            // Route::get('/Show-Services', [ApiServices::class, 'ShowServices'])->name('Show-Services');
+            // Route::get('/show-jobs', [ApiJobsAdmin::class, 'showJobs'])->name('show-jobs');
             Route::get('/showJobs', [ApiJobsAdmin::class, 'show'])->name('showJobs');
             Route::get('/show_service-points', [ApiServicePoints::class, 'show']);
-
-            Route::get('/showCities', [ApiCities::class, 'showCities'])->name('showCities');
+            // Route::get('/service-points', [ApiServicePoints::class, 'showServicePoints'])->name('service-points');
+            // Route::get('/showCities', [ApiCities::class, 'showCities'])->name('showCities');
             Route::get('/show-social-media', [ApiSocialMedia::class, 'showSocialMedia'])->name('show-social-media');
             Route::get('countriesAdmin', [ApiCountries::class, 'countriesAdmin'])->name('countriesAdmin');
 
             Route::get('/Api-Cities', [ApiCities::class, 'show']);
             Route::get('/showNews', [ApNewsAdmin::class, 'show_news'])->name('showNews');
-            Route::get('/service-points', [ApiServicePoints::class, 'showServicePoints'])->name('service-points');
+
             Route::get('/show-exchange-rate', [ApiExchangeRates::class, 'show']);
 
             Route::get('/Show-exchange-rate', [ApiExchangeRates::class, 'showRate']);
 
-            Route::get('/show-jobs', [ApiJobsAdmin::class, 'showJobs'])->name('show-jobs');
 
-            Route::get('/show-news', [ApNewsAdmin::class, 'show'])->name('show-news');
+            Route::get('/show-news', ['middleware' => ['permission:manage_website|manage_reports'], 'uses' => 'App\Http\Controllers\API\ApNewsAdmin@show'])->name('show-news');
+            Route::get('/show-control-info', ['middleware' => ['permission:manage_website|manage_reports'], 'uses' => 'App\Http\Controllers\API\ApiWebsiteInfo@show'])->name('show-control-info');
+            Route::get('/show-social_media', ['middleware' => ['permission:manage_website|manage_reports'], 'uses' => 'App\Http\Controllers\API\ApiSocialMedia@show'])->name('show-social_media');
+            Route::get('/our_partners', ['middleware' => ['permission:manage_website|manage_reports'], 'uses' => 'App\Http\Controllers\API\ApiOurPartners@ShowPartners'])->name('our_partners');
+            Route::get('/financial-reports', ['middleware' => ['permission:manage_website|manage_reports'], 'uses' => 'App\Http\Controllers\API\ApiFinancialReports@show'])->name('financial-reports');
+            // Route::get('/financial-reports', [ApiFinancialReports::class, 'show'])->name('financial-reports');
+            // Route::get('/our_partners', [ApiOurPartners::class, 'ShowPartners'])->name('our_partners');
+            // Route::get('/show-control-info', [ApiWebsiteInfo::class, 'show'])->name('show-control-info');
+            // Route::get('/show-news', [ApNewsAdmin::class, 'show'])->name('show-news');
 
-            Route::get('/show-social_media', [ApiSocialMedia::class, 'show'])->name('show-social_media');
+            // Route::get('/show-social_media', [ApiSocialMedia::class, 'show'])->name('show-social_media');
 
             Route::get('/homeAdmin', [CategoriesAdminController::class, 'homeAdmin'])->name('homeAdmin');
-            Route::get('/show-control-info', [ApiWebsiteInfo::class, 'show'])->name('show-control-info');
+
             Route::post('/add-websiteInfo', [ApiWebsiteInfo::class, 'store'])->name('add-websiteInfo');
             Route::post('/Website_Active', [ApiWebsiteInfo::class, 'active'])->name('Website_Active');
             Route::post('/Website_Delete', [ApiWebsiteInfo::class, 'delete'])->name('Website_Delete');
             Route::get('/show-info/{id}', [ApiWebsiteInfo::class, 'showInfo']);
             Route::post('/update-info', [ApiWebsiteInfo::class, 'update'])->name('update-info');
 
-            Route::get('/Show-Services', [ApiServices::class, 'ShowServices'])->name('Show-Services');
+
             Route::post('/add_service', [ApiServices::class, 'store']);
             Route::post('/update_service', [ApiServices::class, 'update']);
             Route::post('/serviceActive', [ApiServices::class, 'active']);
@@ -86,7 +108,7 @@ Route::middleware(['web'])->group(function () {
             Route::post('/serviceAdvantageActive', [ApiServiceAdvantages::class, 'active'])->name('serviceAdvantageActive');
             Route::post('/serviceAdvantageDelete', [ApiServiceAdvantages::class, 'delete'])->name('serviceAdvantageDelete');
 
-            Route::get('/our_partners', [ApiOurPartners::class, 'ShowPartners'])->name('our_partners');
+
             Route::post('/add_our_partaner', [ApiOurPartners::class, 'store'])->name('add_our_partaner');
             Route::post('/update_our_partaner', [ApiOurPartners::class, 'update'])->name('add_our_partaner');
             Route::post('/our-partaner-active', [ApiOurPartners::class, 'active'])->name('our-partaner-active');
@@ -95,7 +117,7 @@ Route::middleware(['web'])->group(function () {
 
 
 
-            Route::get('/financial-reports', [ApiFinancialReports::class, 'show'])->name('financial-reports');
+
             Route::post('/add_financial_report', [ApiFinancialReports::class, 'store'])->name('add_financial_report');
             Route::post('/update_our_partaner', [ApiFinancialReports::class, 'update'])->name('update_our_partaner');
             Route::post('/financial-report-active', [ApiFinancialReports::class, 'active'])->name('financial-report-active');
@@ -103,11 +125,6 @@ Route::middleware(['web'])->group(function () {
             Route::get('/usersAdminManage', [ApiUsers::class, 'show'])->name('usersAdminManage');
             Route::post('/edit-permission', [ApiUsers::class, 'updatePermission'])->name('edit-permission');
             Route::post('/delete-permission', [ApiUsers::class, 'delete'])->name('delete-permission');
-
-
-
-            Route::get('/show-permission', [ApiPermissions::class, 'show'])->name('show-permission');
-            Route::post('/permission-active', [ApiPermissions::class, 'active'])->name('permission-active');
         });
     });
 });

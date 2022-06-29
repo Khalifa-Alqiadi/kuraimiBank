@@ -11,7 +11,9 @@
             {{__('main.service_point.manage')}}
         </x-slot>  
         <x-slot name="button">
-            <button type="button" class="btn btn-primary me-sm-3 me-1 mt-3" data-bs-toggle="modal" data-bs-target="#ServicePointAdd"> {{__('main.Add')}} </button>
+            @permission('manage_services')
+            <button type="button" class="btn menu-theme text-white me-sm-3 me-1 mt-3" data-bs-toggle="modal" data-bs-target="#ServicePointAdd"> {{__('main.Add')}} </button>
+            @endpermission
         </x-slot>  
         <x-slot name="tableThead">
             <tr>
@@ -296,5 +298,14 @@
             </x-slot>
         </x-model>
     </div>
-    
+    <div class="modal fade" id="Unvaliable" tabindex="-1" aria-hidden="true">
+        <x-model>
+            <x-slot name="titleModel">{{__('main.Status_Edit')}}</x-slot>
+            <x-slot name="model">
+              <div class="col-12">
+                <h1 class="text-color">{{__('main.Unavailable')}}</h1>
+              </div>
+            </x-slot>
+        </x-model>
+    </div>
 @endsection

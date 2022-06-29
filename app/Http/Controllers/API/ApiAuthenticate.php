@@ -29,7 +29,7 @@ class ApiAuthenticate extends Controller
         Validator::validate($request->all(), ValidateEnum::REQUIRED_LOGIN_ADMIN, $errore->required());
         // dd($request);
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            if (Auth::user()->hasRole('admin')) {
+            if (Auth::user()->hasRole(['admin', 'admin_services', 'admin_reports'])) {
                 return redirect('homeAdmin');
             } else {
                 return redirect('/');

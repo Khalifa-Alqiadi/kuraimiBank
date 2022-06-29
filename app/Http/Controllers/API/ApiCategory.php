@@ -13,6 +13,16 @@ use App\Http\Controllers\Enum\ValidateEnum;
 class ApiCategory extends Controller
 {
     //
+
+    // public function __construct()
+    // {
+    //     $this->middleware(['permission:manage_website']);
+    // }
+    public function ShowCategoryAdmin()
+    {
+        $categories = Category::latest()->get();
+        return view('/admin.categories', ['categories' => $categories]);
+    }
     public function store(Request $request)
     {
         $error = new ValidateEnum;

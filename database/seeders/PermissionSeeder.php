@@ -21,20 +21,24 @@ class PermissionSeeder extends Seeder
             'display_name'  => 'Management All Operation',
         ]);
         Permission::create([
+            'name'          => 'admin_edit_user',
+            'display_name'  => 'Management har Acount',
+        ]);
+        Permission::create([
+            'name'          => 'manage_services',
+            'display_name'  => 'Management services',
+        ]);
+        Permission::create([
+            'name'          => 'manage_reports',
+            'display_name'  => 'Management reports',
+        ]);
+        Permission::create([
             'name'          => 'edit_user',
             'display_name'  => 'Edit User',
         ]);
         Permission::create([
             'name'          => 'delete_user',
             'display_name'  => 'Delete User',
-        ]);
-        Permission::create([
-            'name'          => 'add_skille',
-            'display_name'  => 'Add Skille',
-        ]);
-        Permission::create([
-            'name'          => 'edit_skille',
-            'display_name'  => 'Edit Skille',
         ]);
     }
 }

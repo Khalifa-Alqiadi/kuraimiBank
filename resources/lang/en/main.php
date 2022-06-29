@@ -19,6 +19,7 @@ return [
     'Description'               => 'Description',
     'Exists'                    => 'This Acount Is Nit Exists',
     'Email'                     => 'This Email Not Correct',
+    'Unavailable'                   => 'Unavailable',
     'Errors'                    => [
         'required'                  => 'This is field required',
     ],

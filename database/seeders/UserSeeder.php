@@ -25,7 +25,16 @@ class UserSeeder extends Seeder
             'gender'            => 1,
             'address'           => 'Adel Street',
             'phone'             => '738843852',
-        ])->attachRole('admin')->attachPermission('manage_website');
+        ])->attachRole('admin')->attachPermissions(['manage_website', 'admin_edit_user']);
+        User::create([
+            'first_name'        => 'admin',
+            'Last_name'         => 'services',
+            'email'             => 'admin.services@gmail.com',
+            'password'          => Hash::make('123123123'),
+            'gender'            => 1,
+            'address'           => 'Adel Street',
+            'phone'             => '738843852',
+        ])->attachRole('admin_services')->attachPermissions(['manage_services', 'admin_edit_user']);
         User::create([
             'first_name'        => 'khalifa',
             'Last_name'         => 'alqiadi',
@@ -34,15 +43,15 @@ class UserSeeder extends Seeder
             'gender'            => 1,
             'address'           => 'Adel Street',
             'phone'             => '738843852',
-        ])->attachRole('client')->attachPermissions(['edit_user', 'delete_user', 'add_skille', 'edit_skille']);
+        ])->attachRole('client')->attachPermissions(['edit_user', 'delete_user']);
         User::create([
-            'first_name'        => 'naif',
-            'Last_name'         => 'samer',
-            'email'             => 'naif@gmail.com',
+            'first_name'        => 'admin',
+            'Last_name'         => 'reports',
+            'email'             => 'admin.reports@gmail.com',
             'password'          => Hash::make('123123123'),
             'gender'            => 1,
             'address'           => 'Adel Street',
             'phone'             => '738843852',
-        ])->attachRole('client')->attachPermission('edit_user');
+        ])->attachRole('admin_reports')->attachPermissions(['manage_reports', 'admin_edit_user']);
     }
 }
