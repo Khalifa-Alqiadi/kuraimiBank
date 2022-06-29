@@ -18,7 +18,7 @@ return new class extends Migration
             $table->json('name');
             $table->string('image');
             $table->integer('service_id');
-            $table->boolean('is_active');
+            $table->boolean('is_active')->default(1);
             $table->timestamps();
         });
     }

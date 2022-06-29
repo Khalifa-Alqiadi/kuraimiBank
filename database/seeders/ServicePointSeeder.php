@@ -30,7 +30,9 @@ class ServicePointSeeder extends Seeder
             ],
             'phone'        => '01576943',
             'second_phone' => '01576043',
-            'city_id'      => 1
+            'city_id'      => 1,
+            'lat'          => '45.20788022346191',
+            'lng'          => '45.20788022346191'
         ]);
 
         ServicePoint::create([
@@ -49,7 +51,9 @@ class ServicePointSeeder extends Seeder
             ],
             'phone'        => '01576943',
             'second_phone' => '01579943',
-            'city_id'      => 1
+            'city_id'      => 1,
+            'lat'          => '45.20788022346191',
+            'lng'          => '45.20788022346191'
         ]);
     }
 }

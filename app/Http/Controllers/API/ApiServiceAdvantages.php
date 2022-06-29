@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ServiceAdvantage;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\Enum\ValidateEnum;
 use App\Http\Resources\ServiceAdvantage as ServiceAdvantageResounces;
 class ApiServiceAdvantages extends Controller
 {
@@ -20,6 +21,14 @@ class ApiServiceAdvantages extends Controller
     }
 
     public function store(Request $request){
+        $error = new ValidateEnum;
+        $validate = Validator::make($request->all(), ValidateEnum::REQUIRED_ADVANTAGES, $error->required());
+        // dd($validate); exit;
+        if($validate->fails()){
+            return redirect()->back()->withErrors($validate)->withInput();
+        }
+
+        
         if($request->hasFile('image'))
             $image=$this->uploadFile($request->file('image'));
         $adv = new ServiceAdvantageResounces(ServiceAdvantage::create([
@@ -31,7 +40,7 @@ class ApiServiceAdvantages extends Controller
             'service_id'    => $request->service_id,
         ]));
         if($adv)
-            return redirect(app()->getLocale().'/service-advantage/'.$request->service_id)->with(['success' => 'Srevice Advantage Inserted Success']);
+            return redirect(app()->getLocale().'/service-advantage/'.$request->service_id)->with(['success' => __('main.Success')]);
             return back()->with(['error'=>'can not inserted']);
     }
 
@@ -45,10 +54,11 @@ class ApiServiceAdvantages extends Controller
     }
 
     public function update(Request $request){
-        Validator::make($request->all(), [
-            'name_ar' => 'required',
-        ]);
-        // dd($request);
+        $error = new ValidateEnum;
+        $validate = Validator::make($request->all(), ValidateEnum::REQUIRED_ADVANTAGES, $error->required());
+        if($validate->fails()){
+            return redirect()->back()->withErrors($validate)->withInput();
+        }
         $id = $request->adv_edit_id;
         $find = ServiceAdvantage::find($id);
         if($request->hasFile('image'))
@@ -58,21 +68,22 @@ class ApiServiceAdvantages extends Controller
 
         $update = new ServiceAdvantageResounces($find->update());
         if($update)
-            return redirect(app()->getLocale().'/service-advantage/'.$request->serviceid)->with(['success' => 'Srevice Advantage Updated Success']);
+            return redirect(app()->getLocale().'/service-advantage/'.$request->serviceid)->with(['success' => __('main.Success')]);
         return back()->with(['error'=>'can not inserted']);
     }
 
     public function active(Request $request){
         $advantage;
         $id = $request->adv_active_id;
-        $find = new ServiceAdvantageResounces(ServiceAdvantage::find($id));
+        $find = ServiceAdvantage::find($id);
+        // dd($id); exit;
         if($find->is_active == 0){
             $advantage = new ServiceAdvantageResounces(ServiceAdvantage::where('id', $id)->update(['is_active' => 1]));
         }else{
             $advantage = new ServiceAdvantageResounces(ServiceAdvantage::where('id', $id)->update(['is_active' => 0]));
         }
         if($advantage)
-            return redirect(app()->getLocale().'/service-advantage/'.$request->serviceid)->with(['success' => 'Srevice Advantage Updated Success']);
+            return redirect(app()->getLocale().'/service-advantage/'.$request->serviceid)->with(['success' => __('main.Success')]);
         return back()->with(['error'=>'can not inserted']);
     }
 
@@ -80,7 +91,7 @@ class ApiServiceAdvantages extends Controller
         $id = $request->adv_delete_id;
         $find = new ServiceAdvantageResounces(ServiceAdvantage::find($id));
         if($find->delete())
-            return redirect(app()->getLocale().'/service-advantage/'.$request->serviceid)->with(['success' => 'Srevice Advantage Deleted Success']);
+            return redirect(app()->getLocale().'/service-advantage/'.$request->serviceid)->with(['success' => __('main.Success')]);
         return back()->with(['error'=>'can not inserted']);
     }
 

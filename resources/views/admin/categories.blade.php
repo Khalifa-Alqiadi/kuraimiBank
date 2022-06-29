@@ -3,13 +3,23 @@
 @push('scripts_after')
     @include('script.categories-script')
 @endpush
+
     <div class="success"></div>
     <x-table>
         <x-slot name="titleName">
+            <h1>{{Auth::user()->hasRole('admin')}}</h1>
                 {{__('main.categories.Manage')}}
         </x-slot>  
         <x-slot name="button">
+            @permission('manage_website')
             <button type="button" class="btn menu-theme text-white me-sm-3 me-1 mt-3" data-bs-toggle="modal" data-bs-target="#CategoryAdd"> {{__('main.Add')}} </button>
+            @endpermission
+            @permission('edit_user')
+            <button type="button" class="btn menu-theme text-white me-sm-3 me-1 mt-3" data-bs-toggle="modal" data-bs-target="#CategoryAdd"> {{__('main.Add')}} </button>
+            <button type="button" class="btn menu-theme text-white me-sm-3 me-1 mt-3" data-bs-toggle="modal" data-bs-target="#CategoryAdd"> {{__('main.Add')}} </button>
+            <button type="button" class="btn menu-theme text-white me-sm-3 me-1 mt-3" data-bs-toggle="modal" data-bs-target="#CategoryAdd"> {{__('main.Add')}} </button>
+            @endpermission
+            
         </x-slot>  
         <x-slot name="tableThead">
             <tr>

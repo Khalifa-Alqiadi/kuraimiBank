@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('phone')->default('88888888');
             $table->string('second_phone')->default('88888888');
             $table->json('working_hours');
+            $table->string('lng');
+            $table->string('lat');
             $table->boolean('is_active')->default(1);
             $table->foreignId('city_id');
             $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');

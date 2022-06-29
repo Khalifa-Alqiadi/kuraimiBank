@@ -33,6 +33,8 @@
     {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> --}}
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/img/favicon/favicon.ico" />
+    {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
+    {{-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"> --}}
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -58,7 +60,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/main.css')}}" />
 
     <!-- Page CSS -->
-    
+    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
     <!-- Helpers -->
     <script src="{{ URL::asset('assets/vendor/js/helpers.js')}}"></script>
 
@@ -74,7 +76,7 @@
     @endif
     
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script  src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -118,7 +120,7 @@
 
 
 <!-- Menu -->
-
+  
 <aside id="layout-menu" class="layout-menu menu-vertical menu menu-theme">
 
   
@@ -217,7 +219,7 @@
       </a>
       <ul class="menu-sub">
         <li class="menu-item">
-          <a href="service-points" class="menu-link text-white">
+          <a href="{{route('service-points')}}" class="menu-link text-white">
             <div data-i18n="{{__('main.service_point.name')}}">{{__('main.service_point.name')}}</div>
           </a>
         </li>
@@ -315,6 +317,45 @@
     <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
         <i class="menu-icon tf-icons bx bx-chart"></i>
+        <div data-i18n="{{__('main.partners.Name')}}">{{__('main.partners.Name')}}</div>
+      </a>
+      <ul class="menu-sub">
+        <li class="menu-item">
+          <a href="{{route('our_partners')}}" class="menu-link text-white">
+            <div data-i18n="{{__('main.partners.Name')}}">{{__('main.partners.Name')}}</div>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="menu-item">
+      <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
+        <i class="menu-icon tf-icons bx bx-chart"></i>
+        <div data-i18n="{{__('main.reports.Name')}}">{{__('main.reports.Name')}}</div>
+      </a>
+      <ul class="menu-sub">
+        <li class="menu-item">
+          <a href="{{route('financial-reports')}}" class="menu-link text-white">
+            <div data-i18n="{{__('main.reports.Name')}}">{{__('main.reports.Name')}}</div>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="menu-item">
+      <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
+        <i class="menu-icon tf-icons bx bx-chart"></i>
+        <div data-i18n="{{__('main.permissions.Name')}}">{{__('main.permissions.Name')}}</div>
+      </a>
+      <ul class="menu-sub">
+        <li class="menu-item">
+          <a href="{{route('show-permission')}}" class="menu-link text-white">
+            <div data-i18n="{{__('main.permissions.Name')}}">{{__('main.permissions.Name')}}</div>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="menu-item">
+      <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
+        <i class="menu-icon tf-icons bx bx-chart"></i>
         <div data-i18n="login">login</div>
       </a>
       <ul class="menu-sub">
@@ -347,11 +388,6 @@
 
 
 <nav  class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
-       
-      
-
-      
-      
       <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0   d-xl-none ">
         <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
           <i class="bx bx-menu bx-sm"></i>
@@ -386,34 +422,6 @@
               <span class="badge bg-danger rounded-pill badge-notifications">5</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-end py-0">
-              <li class="dropdown-menu-header border-bottom">
-                <div class="dropdown-header d-flex align-items-center py-3">
-                  <h5 class="text-body mb-0 me-auto">Notification</h5>
-                  <a href="javascript:void(0)" class="dropdown-notifications-all text-body" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark all as read"><i class="bx fs-4 bx-envelope-open"></i></a>
-                </div>
-              </li>
-              <li class="dropdown-notifications-list scrollable-container">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item list-group-item-action dropdown-notifications-item">
-                    <div class="d-flex">
-                      <div class="flex-shrink-0 me-3">
-                        <div class="avatar">
-                          <img src="../../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle">
-                        </div>
-                      </div>
-                      <div class="flex-grow-1">
-                        <h6 class="mb-1">Congratulation Lettie 🎉</h6>
-                        <p class="mb-0">Won the monthly best seller gold badge</p>
-                        <small class="text-muted">1h ago</small>
-                      </div>
-                      <div class="flex-shrink-0 dropdown-notifications-actions">
-                        <a href="javascript:void(0)" class="dropdown-notifications-read"><span class="badge badge-dot"></span></a>
-                        <a href="javascript:void(0)" class="dropdown-notifications-archive"><span class="bx bx-x"></span></a>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
               <li class="dropdown-menu-footer border-top">
                 <a href="javascript:void(0);" class="dropdown-item d-flex justify-content-center p-3">
                   View all notifications
@@ -446,25 +454,7 @@
                 </a>
               </li>
               <li>
-                <div class="dropdown-divider"></div>
-              </li>
-              <li>
-                <a class="dropdown-item" href="pages-faq.html">
-                  <i class="bx bx-help-circle me-2"></i>
-                  <span class="align-middle">FAQ</span>
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="pages-pricing.html">
-                  <i class="bx bx-dollar me-2"></i>
-                  <span class="align-middle">Pricing</span>
-                </a>
-              </li>
-              <li>
-                <div class="dropdown-divider"></div>
-              </li>
-              <li>
-                <a class="dropdown-item" href="auth-login-cover.html" target="_blank">
+                <a class="dropdown-item" href="{{route('logout')}}">
                   <i class="bx bx-power-off me-2"></i>
                   <span class="align-middle">Log Out</span>
                 </a>
@@ -472,23 +462,14 @@
             </ul>
           </li>
           <!--/ User -->
-          
-
         </ul>
       </div>
-
-      
       <!-- Search Small Screens -->
       <div class="navbar-search-wrapper search-input-wrapper  d-none">
         <input type="text" class="form-control search-input container-xxl border-0" placeholder="Search..." aria-label="Search...">
         <i class="bx bx-x bx-sm search-toggler cursor-pointer"></i>
       </div>
-      
-      
   </nav>
-  
-
-  
 <!-- / Navbar -->
 
       
@@ -559,12 +540,15 @@
     <!-- Page JS -->
     <script src="{{ URL::asset('assets/js/dashboards-crm.js')}}"></script>
     {{-- <script src="{{ URL::asset('js/jquery-3.5.1.min.js')}}"></script> --}}
-
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src={{ asset('js/app.js')}}></script>
     <script src="{{asset('js/axios.js')}}"></script>
-    @stack('scripts_after')
+    <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnmKDP1HHCNnioa2SwC6xA1Rwf2GkaC7s&callback=initMap"
+          ></script>
+@stack('scripts_after')
 @yield('script')
-
 </body>
 </html>
   

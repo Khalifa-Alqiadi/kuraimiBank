@@ -1,28 +1,31 @@
-.errors-validation{
+.errors-validation {
     top: 10%;
     left: 10%;
     z-index: 100;
-    
 }
-.errors-validation .errors-list{
+.errors-validation .errors-list {
     /* opacity: .5; */
     background-color: #985151b5;
     list-style: none;
     border-radius: 10px;
 }
 
-@media (min-width: 576px){
+@media (min-width: 576px) {
     .editor .modal-dialog {
         max-width: 50rem;
         margin: 1.75rem auto;
     }
+    .maps .modal-dialog {
+        max-width: 70rem;
+        margin: 1.75rem auto;
+    }
 }
-.success{
+.success {
     position: relative;
 }
-.show-success{
+.show-success {
     position: fixed;
-    /* top: 20%; */
+    top: 80%;
     right: 0;
     background-color: #342a4ad6;
     color: white;
@@ -35,19 +38,23 @@
 }
 
 @keyframes show-success {
-    0%{
+    0% {
         right: 0;
         opacity: 0;
-    }20%{
+    }
+    20% {
         right: 50%;
         opacity: 1;
-    }40%{
+    }
+    40% {
         right: 50%;
-        opacity: .9;
-    }60%{
+        opacity: 0.9;
+    }
+    60% {
         right: 55%;
-        opacity: .7;
-    }100%{
+        opacity: 0.7;
+    }
+    100% {
         right: 200%;
         opacity: 0;
     }

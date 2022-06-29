@@ -9,8 +9,7 @@ return [
     'Address'           => 'العنوان',
     'User_Title'        => 'كل المستخدمين',
     'Users'             => 'المستخدمين',
-    'Add_User'          => 'اضافة مستخدم'
-    
+    'Add_User'          => 'اضافة مستخدم',
+    'Edit_Perimission'  => 'تعديل الصلاحيات',
+    'Permissions'       => 'الصلاحيات',
 ];
-
-?>

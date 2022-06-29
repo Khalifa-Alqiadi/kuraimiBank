@@ -15,6 +15,10 @@ return [
     'Add'                       => 'Add',
     'required'                  => 'This Field Is Required',
     'Success'                   => 'Operation Accomplished Successfully',
+    'Image'                     => 'Images',
+    'Description'               => 'Description',
+    'Exists'                    => 'This Acount Is Nit Exists',
+    'Email'                     => 'This Email Not Correct',
     'Errors'                    => [
         'required'                  => 'This is field required',
     ],
@@ -50,9 +54,9 @@ return [
         'City_name'                 => 'City Name',
         'Name'                      => 'Cities',
         'Manage'                    => 'Management Cities',
-        'Add'                       => 'Add City', 
-        'Delete'                    => 'Delete City', 
-        'Edit'                      => 'Edit City', 
+        'Add'                       => 'Add City',
+        'Delete'                    => 'Delete City',
+        'Edit'                      => 'Edit City',
         'Status_Edit'               => 'Edit Status City',
         'Name_Country'              => 'Name Country',
     ],
@@ -119,7 +123,27 @@ return [
         'Email'                         => 'Email',
         'Password'                      => 'Password',
         'Remember'                      => 'Remember Me',
-    ]
+    ],
+    'partners'                      => [
+        'Title'                         => 'Title',
+        'Description'                   => 'Description',
+        'Manage'                        => 'Management Partners',
+        'Add'                           => ' Add Partner',
+        'Edit'                          => 'Edit Partner Data',
+        'Delete'                        => 'Delete Partner',
+        'Name'                          => 'Partners',
+    ],
+    'reports'                       => [
+        'Title'                         => 'Report Titile',
+        'Manage'                        => 'Management Financial Reports',
+        'Add'                           => 'Add Financial Report',
+        'Edit'                          => 'Edit Report',
+        'PDF'                           => 'PDF File',
+        'Name'                          => 'Financial Reports',
+    ],
+    'permissions'                   => [
+        'Manage'                        => 'Management Permissions',
+        'Name'                          => 'Permissions',
+    ],
 
 ];
-?>

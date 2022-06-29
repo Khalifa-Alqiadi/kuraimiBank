@@ -6,24 +6,29 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
-use Spatie\Translatable\HasTranslations;
 use Laratrust\Traits\LaratrustUserTrait;
 
 class User extends Authenticatable
 {
     use LaratrustUserTrait;
-    use HasFactory, Notifiable, HasTranslations;
+    use HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
-    protected $guarded = [];
-    protected $table = 'users';
-    public $translatable = [];
-    
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'email',
+        'password',
+        'image',
+        'gender',
+        'address',
+        'phone',
+        'is_active',
+    ];
 
     /**
      * The attributes that should be hidden for serialization.

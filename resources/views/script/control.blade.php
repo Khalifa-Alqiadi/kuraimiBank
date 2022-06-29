@@ -28,5 +28,34 @@
         var adv_delete_id = document.getElementById('adv_delete_id');
         adv_delete_id.value = id;
     }
+    function PartanerActive(id){
+        var partaner_active_id = document.getElementById('partaner_active_id');
+        partaner_active_id.value = id;
+    }
+    function deletePartaner(id){
+        var partaner_delete_id = document.getElementById('partaner_delete_id');
+        partaner_delete_id.value = id;
+    }
+    function ReportActive(id){
+        var report_active_id = document.getElementById('report_active_id');
+        report_active_id.value = id;
+    }
+    function deleteReport(id){
+        var report_delete_id = document.getElementById('report_delete_id');
+        report_delete_id.value = id;
+    }
     
+
+    function DeletePermission(id){
+        var deletePermission = document.getElementById('deletePermission').value;
+        var delete_userid = document.getElementById('delete_userid');
+        var delete_permission = document.getElementById('delete_permission');
+        delete_userid.value = id;
+        delete_permission.value = deletePermission;
+    }
+    
+    function PermissionActive(id){
+        var permission_id = document.getElementById('permission_id');
+        permission_id.value = id;
+    }
 </script>

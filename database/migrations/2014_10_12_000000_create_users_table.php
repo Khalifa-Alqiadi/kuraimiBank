@@ -24,6 +24,7 @@ return new class extends Migration
             $table->boolean('gender');
             $table->string('address');
             $table->string('phone');
+            $table->boolean('is_active')->default(1);
             $table->rememberToken();
             $table->timestamps();
         });
