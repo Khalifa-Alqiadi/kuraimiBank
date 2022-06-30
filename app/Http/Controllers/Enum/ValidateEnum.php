@@ -14,6 +14,10 @@ class ValidateEnum extends Controller
         'sale'          => 'required',
         'buy'           => 'required',
     ];
+    const REQUIRED_COUNTRIES = [
+        'name_ar'       => 'required',
+        'name_en'       => 'required',
+    ];
     const REQUIRED_CATEGORIES = [
         'name_ar'       => 'required',
         'name_en'       => 'required',
@@ -82,6 +86,15 @@ class ValidateEnum extends Controller
     const REQUIRED_LOGIN_ADMIN = [
         'email'                 => ['required', 'email', 'exists:users,email'],
         'password'              => 'required',
+    ];
+
+    const REQUIRED_USERS        = [
+        'firstnsme'              => 'required',
+        'lastname'               => 'required',
+        'email'                  => 'required',
+        'phone'                  => 'required',
+        'address'                => 'required',
+        'image'                  => 'required',
     ];
 
     public function required()

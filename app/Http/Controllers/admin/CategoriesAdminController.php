@@ -107,4 +107,9 @@ class CategoriesAdminController extends Controller
         if ($category)
             return new CategoryResource($category);
     }
+
+    public function errors()
+    {
+        return view('admin.errors-admin');
+    }
 }

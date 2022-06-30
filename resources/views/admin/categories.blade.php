@@ -7,7 +7,6 @@
     <div class="success"></div>
     <x-table>
         <x-slot name="titleName">
-            <h1>{{Auth::user()->hasRole('admin')}}</h1>
                 {{__('main.categories.Manage')}}
         </x-slot>  
         <x-slot name="button">
@@ -43,23 +42,23 @@
             <x-slot name="titleModel">{{__('categories.Add_Category')}}</x-slot>
             <x-slot name="model">
                     <div class="col-12">
-                        <label class="form-label w-100" for="name">{{__('categories.Category_name')}} </label>
+                        <label class="form-label w-100" for="name">{{__('main.categories.Category_name')}} </label>
                         <div class="input-group input-group-merge">
                             <input type="text" id="name_ar" name="name_ar" value="" class="form-control credit-card-mask" placeholder="" />
                         </div>
                         <div class="text-danger error-text name_ar"></div>
                     </div>
                     <div class="col-12">
-                        <label class="form-label w-100" for="name">{{__('categories.Category_name')}} </label>
+                        <label class="form-label w-100" for="name">{{__('main.categories.Category_name')}} </label>
                         <div class="input-group input-group-merge">
-                            <input type="text" id="name_en" name="name_en" value="" class="form-control credit-card-mask" placeholder="" />
+                            <input type="text" id="name_en" name="parent_category" value="" class="form-control credit-card-mask" placeholder="" />
                         </div>
                         <div class="text-danger error-text name_en"></div>
                     </div>
                 {{-- @endforeach --}}
                 
                 <div class="col-12 ">
-                    <label class="form-label" for="collapsible-state">State</label>
+                    <label class="form-label" for="collapsible-state">Parent</label>
                     <select name="parent_category" id="parent_category" class="select2 form-select" data-allow-clear="true">
                         <option value="0">Null</option>
                         @foreach ($categories as $category)

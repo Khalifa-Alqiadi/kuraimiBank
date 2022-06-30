@@ -664,18 +664,6 @@
       <div class="drag-target"></div>
       
     </div>
-    <!-- / Layout wrapper -->
-  
-    
-    <div class="buy-now">
-      <a href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/" target="_blank" class="btn btn-danger btn-buy-now">Buy Now</a>
-    </div>
-    
-  
-    
-  
-    <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
     <script src="{{ URL::asset('assets/vendor/libs/jquery/jquery.js')}}"></script>
     <script src="{{ URL::asset('assets/vendor/libs/popper/popper.js')}}"></script>
     <script src="{{ URL::asset('assets/vendor/js/bootstrap.js')}}"></script>

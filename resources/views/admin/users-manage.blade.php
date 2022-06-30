@@ -6,6 +6,11 @@
 @php
     $do = isset($_GET['do']) ? $do = $_GET['do'] : 'Manage';
 @endphp
+@if(session('success'))
+        <x-alert>
+            <div class="show-success fs-4">{{session('success')}}</div>
+        </x-alert>
+@endif
 @if ($do == 'Manage')
     <x-table>
       <x-slot name="titleName">
@@ -35,7 +40,7 @@
         <tbody class="table-border-bottom-0">
           @foreach ($users as $user)
               <tr>
-                <td>
+                <td class="avatar">
                   <img src="{{asset('images/'. $user->image)}}" alt="">
                 </td>
                 <td>{{$user->first_name}}</td>
@@ -99,7 +104,7 @@
                     <x-slot name="model">
                         <form action="edit-permission" method="POST" class="row g-3" >
                           @csrf
-                            <input type="text" name="userid" value="{{$user->id}}">
+                            <input type="hidden" name="userid" value="{{$user->id}}">
                             <input type="hidden" name="name" value="{{$user->first_name}}">
                             <div class="row">
                               
@@ -151,8 +156,8 @@
       <x-slot name="model">
           <form action="delete-permission" method="POST" class="row g-3" >
             @csrf
-              <input type="text" id="delete_userid" name="delete_userid" >
-              <input type="text" id="delete_permission" name="delete_permission">
+              <input type="hidden" id="delete_userid" name="delete_userid" >
+              <input type="hidden" id="delete_permission" name="delete_permission">
               <div class="col-12">
                 <h1>{{__('main.Delete_Row')}}</h1>
               </div>
@@ -185,7 +190,7 @@
                 
                 @foreach ($users as $user)
                     @if ($user->id == $userid)
-                        <form action="update_our_partaner" method="post" enctype="multipart/form-data">
+                        <form action="update_user" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="mb-3 col-md-6">

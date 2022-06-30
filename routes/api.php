@@ -39,90 +39,12 @@ Route::middleware('web')->group(function () {
     // Route::group(['middleware' => ['role:admin']], function () {
 
 
-    Route::post('add_category', [ApiCategory::class, 'store']);
-    Route::get('/edit_category/{id}', [ApiCategory::class, 'editCategory'])->name('edit_category');
-    Route::post('UpdateCategory', [ApiCategory::class, 'UpdateCategory']);
 
-    Route::post('add_country', [ApiCountries::class, 'addCountry']);
-
-    Route::get('/edit_country/{id}', [ApiCountries::class, 'EditCantry']);
-    Route::post('/UpdateCountry', [ApiCountries::class, 'UpdateCountry']);
-    Route::post('/CountryActive', [ApiCountries::class, 'ActiveCountry']);
-    Route::post('/CountryDelete', [ApiCountries::class, 'DeleteCountry']);
-    Route::post('/add_City', [ApiCities::class, 'store']);
-
-
-    Route::get('/Edit_City/{id}', [ApiCities::class, 'edit']);
-    Route::post('/UpdateCity', [ApiCities::class, 'update']);
-    Route::post('/CityActive', [ApiCities::class, 'active']);
-    Route::post('/CityDelete', [ApiCities::class, 'delete']);
-
-
-
-    Route::post('/add_service_point', [ApiServicePoints::class, 'store']);
-    Route::get('/Edit_Service_Point/{id}', [ApiServicePoints::class, 'edit']);
-    Route::post('/UpdateServicePoint', [ApiServicePoints::class, 'update']);
-    Route::post('/ServicePointActive', [ApiServicePoints::class, 'active']);
-    Route::post('/ServicePointDelete', [ApiServicePoints::class, 'delete']);
-
-    Route::get('/Edit_Service/{id}', [ApiServices::class, 'edit']);
-
-
-    Route::post('/add_exchange_rate', [ApiExchangeRates::class, 'store']);
-
-    Route::get('/edit_rate/{id}', [ApiExchangeRates::class, 'edit']);
-    Route::post('/UpdateRate', [ApiExchangeRates::class, 'update']);
-
-    Route::get('/Edit_Service_Adv/{id}', [ApiServiceAdvantages::class, 'edit'])->name('Edit_Service_Adv');
-
-
-    Route::post('/add-Job', [ApiJobsAdmin::class, 'store'])->name('add-Job');
-    Route::get('/Edit_Job/{id}', [ApiJobsAdmin::class, 'edit'])->name('Edit_Job');
-    Route::post('/update-Job', [ApiJobsAdmin::class, 'update'])->name('update-Job');
-
-
-
-    Route::post('/add-news', [ApNewsAdmin::class, 'store'])->name('add-news');
-    Route::post('/update-News', [ApNewsAdmin::class, 'update'])->name('update-News');
-    Route::get('/Edit_News/{id}', [ApNewsAdmin::class, 'edit']);
-
-
-
-
-
-
-
-    Route::get('/showAxios', [ApiCities::class, 'shshowAxiosow']);
-
-    Route::get('/Edit_social_media/{id}', [ApiSocialMedia::class, 'edit'])->name('Edit_social_media');
-    Route::post('/add_social_media', [ApiSocialMedia::class, 'store'])->name('add_social_media');
-    Route::post('/update_social_media', [ApiSocialMedia::class, 'update'])->name('update_social_media');
     // Route::group(['middleware' => ['api']], function () {
     //routes here
 
 
 });
 
-Route::post('CategoryActive', [ApiCategory::class, 'CategoryActive']);
-Route::post('Category_Delete', [ApiCategory::class, 'delete']);
-
-
-Route::post('/RateActive', [ApiExchangeRates::class, 'active']);
-Route::post('/RateDelete', [ApiExchangeRates::class, 'delete']);
-
-Route::post('/Job_Active', [ApiJobsAdmin::class, 'active'])->name('Job_Active');
-Route::post('/Job-Delete', [ApiJobsAdmin::class, 'delete'])->name('Job-Delete');
-
-
-Route::post('/News_Active', [ApNewsAdmin::class, 'active'])->name('News_Active');
-Route::post('/News-Delete', [ApNewsAdmin::class, 'delete'])->name('News-Delete');
-
-
-Route::post('/mediaActive', [ApiSocialMedia::class, 'active'])->name('mediaActive');
-Route::post('/mediaDelete', [ApiSocialMedia::class, 'delete'])->name('mediaDelete');
-
-Route::post('/add_partner', [ApiOurPartners::class, 'store'])->name('add_partner');
-
-Route::get('change-language/{locale}', [LocaleController::class, 'switch'])->name('change-language');
 
 // Route::post('add_category', [CategoriesAdminController::class, 'store'])->name('add_category');
