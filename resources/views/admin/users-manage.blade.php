@@ -16,6 +16,7 @@
       <x-slot name="titleName">
         <div class="success"></div>
               {{__('users.User_Title')}}
+              
       </x-slot> 
       <x-slot name="button">
       </x-slot>  
@@ -68,7 +69,12 @@
                       <div class="dropdown-menu">
                           <ul class="pe-0">
                             @foreach ($user->AllPermissions() as $permisseion)
-                                <li>{{$permisseion->name}}  <button type="button" id="deletePermission" value="{{$permisseion->name}}" onclick="DeletePermissions({{$user->id}}, {{$permisseion->id}})" class="btn ms-3" data-bs-toggle="modal" data-bs-target="#delete_Peimission">{{__('main.Delete')}}</button></li>
+                                <li>{{$permisseion->name}}
+                                  @foreach ($roles as $role)
+                                    @if ($role->name == $user->hasRole($role->name))  
+                                      <button type="button" id="deletePermission" value="{{$permisseion->name}}" onclick="DeletePermissions({{$role->id}}, {{$permisseion->id}})" class="btn ms-3" data-bs-toggle="modal" data-bs-target="#delete_Peimission">{{__('main.Delete')}}</button></li>
+                                    @endif
+                                  @endforeach
                             @endforeach
                           </ul>
                           <button type="button" class="btn dropdown-item" data-bs-toggle="modal" data-bs-target="#editPeimission{{$user->id}}"><i class="bx bx-edit-alt me-2" ></i> {{__('main.Edit')}}</button>
@@ -87,12 +93,7 @@
               <td>{{$user->address}}</td>
               <td>
                 @if (Auth::user()->hasPermission('admin_edit_user') && Auth::id() == $user->id)
-                  {{-- @if (Auth::id() == $user->id) --}}
-                  <a href="usersAdminManage?do=Edit&userid={{$user->id}}" class="btn dropdown-item"><i class="bx bx-edit-alt me-2" ></i> {{__('main.Edit')}}</a>
-                  {{-- @else
-                  <div class="text-danger">{{__('main.Unavailable')}}</div>
-                  @endif --}}
-                
+                  <a href="usersAdminManage?do=Edit&userid={{$user->id}}" class="btn dropdown-item"><i class="bx bx-edit-alt me-2" ></i> {{__('main.Edit')}}</a>            
                 @else
                     <div class="text-danger">{{__('main.Unavailable')}}</div>
                 @endif
@@ -114,7 +115,16 @@
                                     <input type="checkbox" name="permission[]" id="" value="{{$perimi->name}}" {{$user->hasPermission($perimi->name) ? 'checked' : ''}}> {{$perimi->name}}
                                   </label>
                                 </div>
-                              {{-- @endforeach --}}
+                              @endforeach
+                              @foreach ($roles as $role)
+                              @if ($role->name == $user->hasRole($role->name))
+                              <div class="form-group">
+                                <label for="">
+                                  <input type="hidden" name="role_id" value="{{$role->id}}">
+                                </label>
+                              </div>
+                              @endif
+                                
                               @endforeach
                             </div>
                             <div class="col-12 text-center">
@@ -156,8 +166,8 @@
       <x-slot name="model">
           <form action="delete-permission" method="POST" class="row g-3" >
             @csrf
-              <input type="hidden" id="delete_userid" name="delete_userid" >
-              <input type="hidden" id="delete_permission" name="delete_permission">
+              <input type="text" id="delete_userid" name="delete_userid" >
+              <input type="text" id="delete_permission" name="delete_permission">
               <div class="col-12">
                 <h1>{{__('main.Delete_Row')}}</h1>
               </div>

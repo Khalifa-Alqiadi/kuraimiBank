@@ -10,11 +10,20 @@
         } else {
             Main_Parent = `{{__('main.categories.Sub_Parent')}}`
         }
-        if (item.is_active == 0) {
-            is_active = `<button type="button" onclick="categoryActive(` + item.id + `)" value="" class="badge Category-active border-0 bg-label-primary me-1" data-bs-toggle="modal" data-bs-target="#CategoryActive">{{__('main.No_Active')}}</button>`
-        } else {
-            is_active = `<button type="button" onclick="categoryActive(` + item.id + `)" value="` + item.id + `" class="badge Category-active border-0 bg-primary me-1" data-bs-toggle="modal" data-bs-target="#CategoryActive">{{__('main.Active')}}</button>`
+        if(`{{Auth::user()->hasPermission('Status_Category')}}`){
+            if (item.is_active == 0) {
+                is_active = `<button type="button" onclick="categoryActive(` + item.id + `)" value="" class="badge Category-active border-0 bg-label-primary me-1" data-bs-toggle="modal" data-bs-target="#CategoryActive">{{__('main.No_Active')}}</button>`
+            } else {
+                is_active = `<button type="button" onclick="categoryActive(` + item.id + `)" value="` + item.id + `" class="badge Category-active border-0 bg-primary me-1" data-bs-toggle="modal" data-bs-target="#CategoryActive">{{__('main.Active')}}</button>`
+            }
+        }else{
+            if (item.is_active == 0) {
+                is_active = `<button type="button" disabled onclick="categoryActive(` + item.id + `)" value="" class="badge Category-active border-0 bg-label-primary me-1" data-bs-toggle="modal" data-bs-target="#CategoryActive">{{__('main.No_Active')}}</button>`
+            } else {
+                is_active = `<button type="button" disabled onclick="categoryActive(` + item.id + `)" value="` + item.id + `" class="badge Category-active border-0 bg-primary me-1" data-bs-toggle="modal" data-bs-target="#CategoryActive">{{__('main.Active')}}</button>`
+            }
         }
+        
         document.querySelector('.categories-list').insertRow().innerHTML = 
           `<tr>
             <td>` + item.name + `</td>

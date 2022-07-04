@@ -143,4 +143,32 @@ return [
         'Manage'                        => 'إدارة الصلاحيات',
         'Name'                          => 'الصلاحيات',
     ],
+    'operations'                    => [
+        'Add'                           => 'إضافة',
+        'Edit'                          => 'تعديل',
+        'Delete'                        => 'حذف',
+        'Status'                        => 'حالة',
+    ],
+
+    'rolesAdd'                      => [
+        'Category'                      => 'الاصناف',
+        'Country'                       => 'الدول',
+        'City'                          => 'المدن',
+        'Service'                       => 'الخدمات',
+    ],
+    'roles'                         => [
+        'Add_Role'                      => 'إضافة رول',
+        'placeholder'                   => 'اسم الرول',
+    ],
+
+    // Front Pages
+
+    'homePage'                      => [
+        'Name'                          => 'الصفحة الرئيسية',
+        'Jobs'                          => 'الوظائف',
+        'ContactUs'                     => 'تواصل معنا',
+        'ServicesPoint'                 => 'نقاط الخدمة',
+        'Home'                          => 'الرئيسية',
+        'AboutBank'                     => 'عن البنك',
+    ]
 ];

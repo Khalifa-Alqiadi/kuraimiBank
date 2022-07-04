@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Enum\ValidateEnum;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Role;
 use App\Http\Resources\User as UserResources;
 use App\Models\Permission;
 use Illuminate\Support\Facades\Validator;
@@ -15,7 +16,7 @@ class ApiUsers extends Controller
     //
     public function show()
     {
-        $users = UserResources::collection(User::get());
+        // $users = User::get();
         // $users = ;
         // \Laratrust::hasRole('admin');
         // foreach ($users as $user) {
@@ -25,32 +26,33 @@ class ApiUsers extends Controller
         // }
         // $role = User::whereDoesntHaveRole()->get();
         // dd($users);
+        $roles = Role::get();
+        $users = User::get();
+        // dump($users->can('manage_website'));
         $perimission = Permission::get();
-        // dd($perimission->allPermissions());
+        // dump($users->AllPermissions());
         return view('admin.users-manage', [
             'users'         => $users,
-            'perimission'   => $perimission
+            'perimission'   => $perimission,
+            'roles'         => $roles,
         ]);
     }
 
     public function updatePermission(Request $request)
     {
         // dd($request);
-        $id = $request->userid;
-        $user = User::find($id);
-        $user->first_name = $request->name;
-        $user->update();
-        $user->syncPermissions($request->permission);
-        // dd($user);
-        if ($user)
+        $id = $request->role_id;
+        $role = Role::find($id);
+        $role->update();
+        $role->syncPermissions($request->permission);
+        if ($role)
             return redirect()->route('usersAdminManage')->with('success', __('main.Success'));
-        // return back()->with(['error' => 'can not inserted']);
     }
 
     public function delete(Request $request)
     {
         $id = $request->delete_userid;
-        $deletePermi = User::find($id);
+        $deletePermi = Role::find($id);
         $perimission = Permission::find($request->delete_permission);
         if ($deletePermi->detachPermission($perimission->name))
             return redirect()->route('usersAdminManage')->with('success', __('main.Success'));

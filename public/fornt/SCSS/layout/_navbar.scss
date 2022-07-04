@@ -1,0 +1,120 @@
+@mixin position($position, $width, $height) {
+    position: $position;
+    width: $width;
+    height: $height;
+}
+.navbar {
+    z-index: 1;
+    margin-top: 20px;
+    .nav-items {
+        @include position(absolute, 100%, 100vh);
+        left: 100%;
+        background-color: #423064;
+        top: 0;
+        transition: .4s ease left;
+    }
+    .nav-items.active{
+        left: 0;
+    }
+    .row{
+        width: 100%;
+    }
+    .navbar-top{
+        flex-direction: column;
+        .logo{
+            display: none;
+        }
+    }
+    .hamburger{
+        @include position(relative, 60px, 60px);
+        border: 3px solid white;
+        border-radius: 50%;
+        z-index: 100;
+        cursor: pointer;
+        transform: scale(.8);
+        &::after{
+            content: '';
+            @include position(absolute, 100%, 100%);
+            border-radius: 50%;
+            border: 3px solid white;
+            animation: hamburger 1s ease infinite;
+        }
+        .bar{
+            height: 2.7px;
+            width: 30px;
+            position: relative;
+            background-color: white;
+            z-index: -1;
+            &::after, &::before{
+                content: '';
+                @include position(absolute, 100%, 100%);
+                left: 0;
+                background-color: white;
+                transition: .3s ease;
+                transition-property: top bottom;
+            }
+            &::after{
+                top: 8px;
+            }
+            &::before{
+                bottom: 8px;
+            }
+        }
+    }
+    .hamburger.active{
+        .bar::before{
+            bottom: 0;
+        }
+        .bar::after{
+            top: 0;
+        }
+    }
+    // .logo-bank{
+    //     position: absolute;
+    //     top: 0;
+    //     z-index: 1;
+    //     left: 46%;
+    // }
+    li.active::after {
+        content: "";
+        @include position(absolute, 2px, 16px);
+        top: 100%;
+        left: 41%;
+        background-color: #FFF;
+    }
+}
+
+@keyframes hamburger{
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(1.4);
+    }
+}
+
+@media (min-width:992px){
+    .navbar .hamburger{
+        display: none;
+    }
+    .navbar .navbar-top{
+        flex-direction: row;
+    }
+    .navbar .logo-bank{
+        display: none;
+    }
+    .navbar .navbar-top .logo{
+        display: block;
+    }
+    .navbar .nav-items{
+        position: initial;
+        display: block;
+        height: auto;
+        background-color: transparent;
+    }
+    .col-md-12{
+        flex-direction: row;
+    }
+}

@@ -1,0 +1,831 @@
+.navbar {
+  z-index: 1;
+  margin-top: 20px;
+}
+
+.navbar .nav-items {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  left: 100%;
+  background-color: #423064;
+  top: 0;
+  -webkit-transition: .4s ease left;
+  transition: .4s ease left;
+}
+
+.navbar .nav-items.active {
+  left: 0;
+}
+
+.navbar .row {
+  width: 100%;
+}
+
+.navbar .navbar-top {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.navbar .navbar-top .logo {
+  display: none;
+}
+
+.navbar .hamburger {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border: 3px solid white;
+  border-radius: 50%;
+  z-index: 100;
+  cursor: pointer;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.navbar .hamburger::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid white;
+  -webkit-animation: hamburger 1s ease infinite;
+          animation: hamburger 1s ease infinite;
+}
+
+.navbar .hamburger .bar {
+  height: 2.7px;
+  width: 30px;
+  position: relative;
+  background-color: white;
+  z-index: -1;
+}
+
+.navbar .hamburger .bar::after, .navbar .hamburger .bar::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background-color: white;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+  -webkit-transition-property: top bottom;
+  transition-property: top bottom;
+}
+
+.navbar .hamburger .bar::after {
+  top: 8px;
+}
+
+.navbar .hamburger .bar::before {
+  bottom: 8px;
+}
+
+.navbar .hamburger.active .bar::before {
+  bottom: 0;
+}
+
+.navbar .hamburger.active .bar::after {
+  top: 0;
+}
+
+.navbar li.active::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 16px;
+  top: 100%;
+  left: 41%;
+  background-color: #FFF;
+}
+
+@-webkit-keyframes hamburger {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4);
+  }
+}
+
+@keyframes hamburger {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4);
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar .hamburger {
+    display: none;
+  }
+  .navbar .navbar-top {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .navbar .logo-bank {
+    display: none;
+  }
+  .navbar .navbar-top .logo {
+    display: block;
+  }
+  .navbar .nav-items {
+    position: initial;
+    display: block;
+    height: auto;
+    background-color: transparent;
+  }
+  .col-md-12 {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.container {
+  padding-left: 4rem;
+  padding-right: 4rem;
+  position: relative;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex-column-reverse {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+.justfiy-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.justfiy-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.justfiy-around {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.justfiy-evenly {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.justfiy-start {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.justfiy-end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.align-items-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.align-items-start {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.align-items-end {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.flex-nowrap {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.text-white {
+  color: #FFF;
+}
+
+.bg-white {
+  background-color: #FFF;
+}
+
+hr {
+  height: 1px;
+}
+
+.relative {
+  position: relative;
+}
+
+.list-none {
+  list-style: none;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.text-transparent {
+  color: transparent;
+}
+
+.border {
+  border: 1px solid #000;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+.font-family {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.fs-1 {
+  font-size: 6em;
+}
+
+.fs-2 {
+  font-size: 5em;
+}
+
+.fs-3 {
+  font-size: 4em;
+}
+
+.fs-4 {
+  font-size: 3em;
+}
+
+.fs-5 {
+  font-size: 2em;
+}
+
+.fs-6 {
+  font-size: 1em;
+}
+
+.m-0 {
+  margin: 0rem;
+}
+
+.m-1 {
+  margin: 0.5rem;
+}
+
+.m-2 {
+  margin: 1rem;
+}
+
+.m-3 {
+  margin: 1.5rem;
+}
+
+.m-4 {
+  margin: 2rem;
+}
+
+.m-5 {
+  margin: 2.5rem;
+}
+
+.mt-0 {
+  margin-top: 0rem;
+}
+
+.mt-1 {
+  margin-top: 0.5rem;
+}
+
+.mt-2 {
+  margin-top: 1rem;
+}
+
+.mt-3 {
+  margin-top: 1.5rem;
+}
+
+.mt-4 {
+  margin-top: 2rem;
+}
+
+.mt-5 {
+  margin-top: 2.5rem;
+}
+
+.mb-0 {
+  margin-bottom: 0rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
+.mb-3 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 2rem;
+}
+
+.mb-5 {
+  margin-bottom: 2.5rem;
+}
+
+.me-0 {
+  margin-left: 0rem;
+}
+
+.me-1 {
+  margin-left: 0.5rem;
+}
+
+.me-2 {
+  margin-left: 1rem;
+}
+
+.me-3 {
+  margin-left: 1.5rem;
+}
+
+.me-4 {
+  margin-left: 2rem;
+}
+
+.me-5 {
+  margin-left: 2.5rem;
+}
+
+.ms-0 {
+  margin-right: 0rem;
+}
+
+.ms-1 {
+  margin-right: 0.5rem;
+}
+
+.ms-2 {
+  margin-right: 1rem;
+}
+
+.ms-3 {
+  margin-right: 1.5rem;
+}
+
+.ms-4 {
+  margin-right: 2rem;
+}
+
+.ms-5 {
+  margin-right: 2.5rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
+}
+
+.p-2 {
+  padding: 1rem;
+}
+
+.p-3 {
+  padding: 1.5rem;
+}
+
+.p-4 {
+  padding: 2rem;
+}
+
+.p-5 {
+  padding: 2.5rem;
+}
+
+.py-1 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.py-2 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.py-3 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.py-4 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.py-5 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.px-1 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.px-2 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.px-3 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.px-4 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.px-5 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.pt-1 {
+  padding-top: 0.5rem;
+}
+
+.pt-2 {
+  padding-top: 1rem;
+}
+
+.pt-3 {
+  padding-top: 1.5rem;
+}
+
+.pt-4 {
+  padding-top: 2rem;
+}
+
+.pt-5 {
+  padding-top: 2.5rem;
+}
+
+.pb-1 {
+  padding-bottom: 0.5rem;
+}
+
+.pb-2 {
+  padding-bottom: 1rem;
+}
+
+.pb-3 {
+  padding-bottom: 1.5rem;
+}
+
+.pb-4 {
+  padding-bottom: 2rem;
+}
+
+.pb-5 {
+  padding-bottom: 2.5rem;
+}
+
+.pe-1 {
+  padding-left: 0.5rem;
+}
+
+.pe-2 {
+  padding-left: 1rem;
+}
+
+.pe-3 {
+  padding-left: 1.5rem;
+}
+
+.pe-4 {
+  padding-left: 2rem;
+}
+
+.pe-5 {
+  padding-left: 2.5rem;
+}
+
+.ps-1 {
+  padding-right: 0.5rem;
+}
+
+.ps-2 {
+  padding-right: 1rem;
+}
+
+.ps-3 {
+  padding-right: 1.5rem;
+}
+
+.ps-4 {
+  padding-right: 2rem;
+}
+
+.ps-5 {
+  padding-right: 2.5rem;
+}
+
+.col-md-1 {
+  width: 8.33333%;
+}
+
+.col-md-2 {
+  width: 16.66667%;
+}
+
+.col-md-3 {
+  width: 25%;
+}
+
+.col-md-4 {
+  width: 33.33333%;
+}
+
+.col-md-5 {
+  width: 41.66667%;
+}
+
+.col-md-6 {
+  width: 50%;
+}
+
+.col-md-7 {
+  width: 58.33333%;
+}
+
+.col-md-8 {
+  width: 66.66667%;
+}
+
+.col-md-9 {
+  width: 75%;
+}
+
+.col-md-10 {
+  width: 83.33333%;
+}
+
+.col-md-11 {
+  width: 91.66667%;
+}
+
+.col-md-12 {
+  width: 100%;
+}
+
+.wv-10 {
+  width: 10vw;
+}
+
+.wv-20 {
+  width: 20vw;
+}
+
+.wv-30 {
+  width: 30vw;
+}
+
+.wv-40 {
+  width: 40vw;
+}
+
+.wv-50 {
+  width: 50vw;
+}
+
+.wv-60 {
+  width: 60vw;
+}
+
+.wv-70 {
+  width: 70vw;
+}
+
+.wv-80 {
+  width: 80vw;
+}
+
+.wv-90 {
+  width: 90vw;
+}
+
+.wv-100 {
+  width: 100vw;
+}
+
+.w-10 {
+  width: 10%;
+}
+
+.w-20 {
+  width: 20%;
+}
+
+.w-30 {
+  width: 30%;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.w-70 {
+  width: 70%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.hv-10 {
+  min-height: 10vh;
+}
+
+.hv-20 {
+  min-height: 20vh;
+}
+
+.hv-30 {
+  min-height: 30vh;
+}
+
+.hv-40 {
+  min-height: 40vh;
+}
+
+.hv-50 {
+  min-height: 50vh;
+}
+
+.hv-60 {
+  min-height: 60vh;
+}
+
+.hv-70 {
+  min-height: 70vh;
+}
+
+.hv-80 {
+  min-height: 80vh;
+}
+
+.hv-90 {
+  min-height: 90vh;
+}
+
+.hv-100 {
+  min-height: 100vh;
+}
+
+.h-10 {
+  height: 10%;
+}
+
+.h-20 {
+  height: 20%;
+}
+
+.h-30 {
+  height: 30%;
+}
+
+.h-40 {
+  height: 40%;
+}
+
+.h-50 {
+  height: 50%;
+}
+
+.h-60 {
+  height: 60%;
+}
+
+.h-70 {
+  height: 70%;
+}
+
+.h-80 {
+  height: 80%;
+}
+
+.h-90 {
+  height: 90%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.ar {
+  direction: rtl;
+}
+
+.me-2 {
+  margin-right: 1.5rem;
+}
+
+.flex-row-reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.home {
+  position: relative;
+}
+
+.home img {
+  -webkit-transform: rotateY(181deg) scaleY(1) translateY(-64px);
+          transform: rotateY(181deg) scaleY(1) translateY(-64px);
+}
+
+.home .slider {
+  position: absolute;
+}
+
+.home .hero {
+  -webkit-transform: inherit;
+          transform: inherit;
+}
+/*# sourceMappingURL=main.css.map */

@@ -30,7 +30,7 @@ class ApiAuthenticate extends Controller
         // dd($request);
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             if (Auth::user()->hasRole(['admin', 'admin_services', 'admin_reports'])) {
-                return redirect('homeAdmin');
+                return redirect('show-control-info');
             } else {
                 return redirect('/');
             }

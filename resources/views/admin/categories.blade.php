@@ -10,15 +10,11 @@
                 {{__('main.categories.Manage')}}
         </x-slot>  
         <x-slot name="button">
-            @permission('manage_website')
-            <button type="button" class="btn menu-theme text-white me-sm-3 me-1 mt-3" data-bs-toggle="modal" data-bs-target="#CategoryAdd"> {{__('main.Add')}} </button>
-            @endpermission
-            @permission('edit_user')
-            <button type="button" class="btn menu-theme text-white me-sm-3 me-1 mt-3" data-bs-toggle="modal" data-bs-target="#CategoryAdd"> {{__('main.Add')}} </button>
-            <button type="button" class="btn menu-theme text-white me-sm-3 me-1 mt-3" data-bs-toggle="modal" data-bs-target="#CategoryAdd"> {{__('main.Add')}} </button>
-            <button type="button" class="btn menu-theme text-white me-sm-3 me-1 mt-3" data-bs-toggle="modal" data-bs-target="#CategoryAdd"> {{__('main.Add')}} </button>
-            @endpermission
-            
+            @if (Auth::user()->hasPermission('Add_Category'))
+                <button type="button" class="btn menu-theme text-white me-sm-3 me-1 mt-3" data-bs-toggle="modal" data-bs-target="#CategoryAdd"> {{__('main.Add')}} </button>
+            @else
+                <button type="button" disabled class="btn ms-5 menu-theme text-white mt-3" data-bs-toggle="modal" data-bs-target="#CategoryAdd"> {{__('main.Add')}} </button>
+            @endif            
         </x-slot>  
         <x-slot name="tableThead">
             <tr>

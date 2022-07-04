@@ -1,0 +1,284 @@
+// @import ;
+@import "SCSS/layout/navbar";
+$color-white: #FFF;
+
+.container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    position: relative;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-column-reverse {
+    flex-direction: column-reverse;
+}
+
+.justfiy-center {
+    justify-content: center;
+}
+
+.justfiy-between {
+    justify-content: space-between;
+}
+
+.justfiy-around {
+    justify-content: space-around;
+}
+
+.justfiy-evenly {
+    justify-content: space-evenly;
+}
+
+.justfiy-start {
+    justify-content: flex-start;
+}
+
+.justfiy-end {
+    justify-content: flex-end;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.align-items-start {
+    align-items: flex-start;
+}
+
+.align-items-end {
+    align-items: flex-end;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.text-white {
+    color: $color-white;
+}
+
+.bg-white {
+    background-color: $color-white;
+}
+
+hr {
+    height: 1px;
+}
+
+.relative {
+    position: relative;
+}
+
+.list-none{
+    list-style: none;
+}
+
+.bg-transparent{
+    background-color: transparent;
+}
+.text-transparent{
+    color: transparent;
+}
+
+.border{
+    border: 1px solid #000;
+}
+
+.fw-bold{
+    font-weight: bold;
+}
+.font-family{
+    font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+$font-size: 7em;
+
+@for $fs from 1 to 7 {
+    .fs-#{$fs} {
+        font-size: $font-size -$fs;
+    }
+}
+
+$allMargin: ('margin': 'm', 'margin-top':'mt', 'margin-bottom': 'mb', 'margin-left':'me', 'margin-right':'ms');
+$margin: 0.25rem;
+$count : 0;
+
+@each $name,
+$value in $allMargin {
+    @for $m from 0 to 6 {
+        @if $name=='margin' {
+            .#{$value}-#{$m} {
+                margin: $margin *$m +$m *$count;
+                $count: +0.25;
+            }
+
+        }
+
+        @else if $name=='margin-top' {
+            .#{$value}-#{$m} {
+                margin-top: $margin *$m +$m *$count;
+                $count: +0.25;
+            }
+        }
+
+        @else if $name=='margin-bottom' {
+            .#{$value}-#{$m} {
+                margin-bottom: $margin *$m +$m *$count;
+                $count: +0.25;
+            }
+        }
+
+        @else if $name=='margin-left' {
+            .#{$value}-#{$m} {
+                margin-left: $margin *$m +$m *$count;
+                $count: +0.25;
+            }
+        }
+
+        @else if $name=='margin-right' {
+            .#{$value}-#{$m} {
+                margin-right: $margin *$m +$m *$count;
+                $count: +0.25;
+            }
+        }
+    }
+}
+
+$allPadding: ('padding': 'p', 'padding-y':'py', 'padding-x': 'px', 'padding-top':'pt', 'padding-bottom':'pb', 'padding-left':'pe', 'padding-right':'ps');
+$padding: 0.25rem;
+$count : 0;
+
+@each $name,
+$value in $allPadding {
+    @for $p from 1 to 6 {
+        @if $name=='padding' {
+            .#{$value}-#{$p} {
+                padding: $padding *$p +$p *$count;
+                $count: +0.25;
+            }
+
+        }
+
+        @else if $name=='padding-y' {
+            .#{$value}-#{$p} {
+                padding-top: $padding *$p +$p *$count;
+                padding-bottom: $padding *$p +$p *$count;
+                $count: +0.25;
+            }
+        }
+
+        @else if $name=='padding-x' {
+            .#{$value}-#{$p} {
+                padding-left: $padding *$p +$p *$count;
+                padding-right: $padding *$p +$p *$count;
+                $count: +0.25;
+            }
+        }
+
+        @else if $name=='padding-left' {
+            .#{$value}-#{$p} {
+                padding-left: $padding *$p +$p *$count;
+                $count: +0.25;
+            }
+        }
+
+        @else if $name=='padding-right' {
+            .#{$value}-#{$p} {
+                padding-right: $padding *$p +$p *$count;
+                $count: +0.25;
+            }
+        }
+
+        @else if $name=='padding-top' {
+            .#{$value}-#{$p} {
+                padding-top: $padding *$p +$p *$count;
+                $count: +0.25;
+            }
+        }
+
+        @else if $name=='padding-bottom' {
+            .#{$value}-#{$p} {
+                padding-bottom: $padding *$p +$p *$count;
+                $count: +0.25;
+            }
+        }
+    }
+}
+
+$calce: 100% / 12;
+@for $i from 1 through 12 {
+    .col-md-#{$i} {
+        width: $calce * $i;
+    }
+}
+
+@for $i from 1 through 10 {
+    .wv-#{$i*10} {
+        width: $i *10vw;
+    }
+}
+@for $i from 1 through 10 {
+    .w-#{$i*10} {
+        width: $i *10%;
+    }
+}
+
+@for $i from 1 through 10 {
+    .hv-#{$i*10} {
+        min-height: $i *10vh;
+    }
+}
+@for $i from 1 through 10 {
+    .h-#{$i*10} {
+        height: $i *10%;
+    }
+}
+
+@if '.ar' {
+    .ar {
+        direction: rtl;
+    }
+
+    .me-2{
+        margin-right: 1.5rem;
+    }
+
+    .flex-row-reverse {
+        flex-direction: row-reverse;
+    }
+}
+
+.home {
+    position: relative;
+}
+
+.home img {
+    transform: rotateY(181deg) scaleY(1) translateY(-64px);
+}
+
+.home .slider {
+    position: absolute;
+}
+
+.home {
+    .hero{
+        transform: inherit;
+    }
+}

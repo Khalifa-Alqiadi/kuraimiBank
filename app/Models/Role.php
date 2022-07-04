@@ -8,7 +8,8 @@ class Role extends LaratrustRole
 {
     public $guarded = [];
 
-    // public function role_user(){
-    //     return $this->belongsTo(R::class);
+    // public function permission()
+    // {
+    //     return $this->hasMany(Permission::class);
     // }
 }

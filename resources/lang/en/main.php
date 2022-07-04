@@ -147,4 +147,31 @@ return [
         'Name'                          => 'Permissions',
     ],
 
+    'operations'                    => [
+        'Add'                           => 'Add',
+        'Edit'                          => 'Edit',
+        'Delete'                        => 'Delete',
+        'Status'                        => 'Status',
+    ],
+
+    'rolesAdd'                      => [
+        'Category'                      => 'Categories',
+        'Country'                       => 'Countries',
+        'City'                          => 'Cities',
+        'Service'                       => 'Services',
+    ],
+    'roles'                         => [
+        'Add_Role'                      => 'Add Role',
+        'placeholder'                   => 'Name Role',
+    ],
+
+    'homePage'                      => [
+        'Name'                          => 'Home Page',
+        'Jobs'                          => 'Jobs',
+        'ContactUs'                     => 'Contact Us',
+        'ServicesPoint'                 => 'Services Point',
+        'Home'                          => 'Home',
+        'AboutBank'                     => 'About Bank',
+    ]
+
 ];

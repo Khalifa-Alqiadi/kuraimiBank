@@ -40,5 +40,37 @@ class PermissionSeeder extends Seeder
             'name'          => 'delete_user',
             'display_name'  => 'Delete User',
         ]);
+        Permission::create([
+            'name'          => 'Add_Category',
+            'display_name'  => 'Add Category',
+        ]);
+        Permission::create([
+            'name'          => 'Edit_Category',
+            'display_name'  => 'Edit Category',
+        ]);
+        Permission::create([
+            'name'          => 'Delete_Category',
+            'display_name'  => 'Delete Category',
+        ]);
+        Permission::create([
+            'name'          => 'Status_Category',
+            'display_name'  => 'Status Category',
+        ]);
+        Permission::create([
+            'name'          => 'Add_Country',
+            'display_name'  => 'Add Country',
+        ]);
+        Permission::create([
+            'name'          => 'Edit_Country',
+            'display_name'  => 'Edit Country',
+        ]);
+        Permission::create([
+            'name'          => 'Delete_Country',
+            'display_name'  => 'Delete Country',
+        ]);
+        Permission::create([
+            'name'          => 'Status_Country',
+            'display_name'  => 'Status Country',
+        ]);
     }
 }

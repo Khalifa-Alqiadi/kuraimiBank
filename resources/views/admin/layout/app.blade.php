@@ -66,7 +66,8 @@
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers in the <head> section -->
     <!--? Template customizer: To hide customizer set displayCustomizer value false in config.  -->
-    <script src="{{ URL::asset('assets/vendor/js/template-customizer.js')}}"></script>
+    {{-- <script src="{{ URL::asset('assets/vendor/js/template-customizer.js')}}"></script> --}}
+    {{-- @include('script.template-customizer') --}}
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{{ URL::asset('assets/js/config.js')}}"></script>
 
@@ -141,7 +142,7 @@
   
   
   <ul class="menu-inner py-1">
-    @if (Auth::user()->hasPermission('manage_website'))
+    {{-- @if (Auth::user()->hasPermission('manage_website')) --}}
       <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
           <i class="menu-icon tf-icons bx bx-chart"></i>
@@ -367,7 +368,7 @@
           </li>
         </ul>
       </li>
-    @elseif(Auth::user()->hasPermission('manage_services'))
+    {{-- @elseif(Auth::user()->hasPermission('manage_services'))
       <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
           <i class="menu-icon tf-icons bx bx-chart"></i>
@@ -527,7 +528,7 @@
     @else
         <h1></h1>
     @endif
-   
+    --}}
   </ul>
   
   
