@@ -1,15 +1,11 @@
-@mixin position($position, $width, $height) {
-    position: $position;
-    width: $width;
-    height: $height;
-}
+
 .navbar {
     z-index: 1;
     margin-top: 20px;
     .nav-items {
         @include position(absolute, 100%, 100vh);
         left: 100%;
-        background-color: #423064;
+        background-color: $mainColor;
         top: 0;
         transition: .4s ease left;
     }
@@ -75,6 +71,7 @@
     //     z-index: 1;
     //     left: 46%;
     // }
+    
     li.active::after {
         content: "";
         @include position(absolute, 2px, 16px);

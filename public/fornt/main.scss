@@ -1,6 +1,11 @@
 // @import ;
+
+@import "SCSS/helpers/mixin";
+@import "SCSS/variables/colors";
 @import "SCSS/layout/navbar";
-$color-white: #FFF;
+
+
+
 
 .container {
     padding-left: 4rem;
@@ -28,27 +33,27 @@ $color-white: #FFF;
     flex-direction: column-reverse;
 }
 
-.justfiy-center {
+.justify-center {
     justify-content: center;
 }
 
-.justfiy-between {
+.justify-between {
     justify-content: space-between;
 }
 
-.justfiy-around {
+.justify-around {
     justify-content: space-around;
 }
 
-.justfiy-evenly {
+.justify-evenly {
     justify-content: space-evenly;
 }
 
-.justfiy-start {
+.justify-start {
     justify-content: flex-start;
 }
 
-.justfiy-end {
+.justify-end {
     justify-content: flex-end;
 }
 
@@ -69,12 +74,35 @@ $color-white: #FFF;
 }
 
 .text-white {
-    color: $color-white;
+    color: $colorWhite;
 }
 
 .bg-white {
-    background-color: $color-white;
+    background-color: $colorWhite;
 }
+
+.text-second-color{
+    color: $secondColor;
+}
+.text-thred-color{
+    color: $thredColor;
+}
+.text-info{
+    color: $infoColor;
+}
+.bg-second-color{
+    background-color: $secondColor;
+}
+.bg-thred-color{
+    background-color: $thredColor;
+}
+.bg-info{
+    background-color: $infoColor;
+}
+.bg-linear-gradient-main{
+    background-image: linear-gradient(60deg, #423064 0%, $secondColor 100%);
+}
+
 
 hr {
     height: 1px;
@@ -83,8 +111,15 @@ hr {
 .relative {
     position: relative;
 }
+.absolute {
+    position: absolute;
+}
 
 .list-none{
+    list-style: none;
+}
+
+ul {
     list-style: none;
 }
 
@@ -96,7 +131,31 @@ hr {
 }
 
 .border{
-    border: 1px solid #000;
+    border: 1px solid $colorLight;
+}
+.border-second-color{
+    border: 1px solid $secondColor;
+}
+
+.border-0{
+    border: none;
+}
+
+.border-bottom{
+    border-bottom: 3px solid $colorLight;
+}
+
+.box-shadow{
+    box-shadow: 0px 6px 9px 7px $colorLight;
+}
+
+@include buttomStyle(btn-main);
+
+.z-index-1{
+    z-index: 1;
+}
+.z-index-2{
+    z-index: 1;
 }
 
 .fw-bold{
@@ -106,13 +165,44 @@ hr {
     font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.row{
+    display: flex;
+}
 
+$border: ('white': white, 'second': 'secondColor');
+@each $key, $value in $border {
+    @for $i from 0 to 5 {
+        @if $key == 'white' {
+            .border-bottom-#{$key}-#{$i}{
+                border-bottom: #{$i}px solid $value;
+            }
+        } @else if $key == 'second' {
+            .border-bottom-#{$key}-#{$i}{
+                border-bottom: #{$i}px solid $secondColor;
+            }
+        }
+    }
+}
 
 $font-size: 7em;
 
 @for $fs from 1 to 7 {
     .fs-#{$fs} {
         font-size: $font-size -$fs;
+    }
+}
+
+$calce: 100% / 12;
+@for $i from 1 through 12 {
+    .col-md-#{$i} {
+        width: $calce * $i;
+        margin: 0 10px;
+    }
+}
+
+@each $key, $value in $text {
+    .text-#{$key}{
+        text-align: $value;
     }
 }
 
@@ -125,7 +215,7 @@ $value in $allMargin {
     @for $m from 0 to 6 {
         @if $name=='margin' {
             .#{$value}-#{$m} {
-                margin: $margin *$m +$m *$count;
+                margin: $margin *$m +$m *$count !important;
                 $count: +0.25;
             }
 
@@ -133,28 +223,28 @@ $value in $allMargin {
 
         @else if $name=='margin-top' {
             .#{$value}-#{$m} {
-                margin-top: $margin *$m +$m *$count;
+                margin-top: $margin *$m +$m *$count !important;
                 $count: +0.25;
             }
         }
 
         @else if $name=='margin-bottom' {
             .#{$value}-#{$m} {
-                margin-bottom: $margin *$m +$m *$count;
+                margin-bottom: $margin *$m +$m *$count !important;
                 $count: +0.25;
             }
         }
 
         @else if $name=='margin-left' {
             .#{$value}-#{$m} {
-                margin-left: $margin *$m +$m *$count;
+                margin-left: $margin *$m +$m *$count !important;
                 $count: +0.25;
             }
         }
 
         @else if $name=='margin-right' {
             .#{$value}-#{$m} {
-                margin-right: $margin *$m +$m *$count;
+                margin-right: $margin *$m +$m *$count !important;
                 $count: +0.25;
             }
         }
@@ -170,7 +260,7 @@ $value in $allPadding {
     @for $p from 1 to 6 {
         @if $name=='padding' {
             .#{$value}-#{$p} {
-                padding: $padding *$p +$p *$count;
+                padding: $padding *$p +$p *$count !important;
                 $count: +0.25;
             }
 
@@ -178,56 +268,51 @@ $value in $allPadding {
 
         @else if $name=='padding-y' {
             .#{$value}-#{$p} {
-                padding-top: $padding *$p +$p *$count;
-                padding-bottom: $padding *$p +$p *$count;
+                padding-top: $padding *$p +$p *$count !important;
+                padding-bottom: $padding *$p +$p *$count !important;
                 $count: +0.25;
             }
         }
 
         @else if $name=='padding-x' {
             .#{$value}-#{$p} {
-                padding-left: $padding *$p +$p *$count;
-                padding-right: $padding *$p +$p *$count;
+                padding-left: $padding *$p +$p *$count !important;
+                padding-right: $padding *$p +$p *$count !important;
                 $count: +0.25;
             }
         }
 
         @else if $name=='padding-left' {
             .#{$value}-#{$p} {
-                padding-left: $padding *$p +$p *$count;
+                padding-left: $padding *$p +$p *$count !important;
                 $count: +0.25;
             }
         }
 
         @else if $name=='padding-right' {
             .#{$value}-#{$p} {
-                padding-right: $padding *$p +$p *$count;
+                padding-right: $padding *$p +$p *$count !important;
                 $count: +0.25;
             }
         }
 
         @else if $name=='padding-top' {
             .#{$value}-#{$p} {
-                padding-top: $padding *$p +$p *$count;
+                padding-top: $padding *$p +$p *$count !important;
                 $count: +0.25;
             }
         }
 
         @else if $name=='padding-bottom' {
             .#{$value}-#{$p} {
-                padding-bottom: $padding *$p +$p *$count;
+                padding-bottom: $padding *$p +$p *$count !important;
                 $count: +0.25;
             }
         }
     }
 }
 
-$calce: 100% / 12;
-@for $i from 1 through 12 {
-    .col-md-#{$i} {
-        width: $calce * $i;
-    }
-}
+
 
 @for $i from 1 through 10 {
     .wv-#{$i*10} {
@@ -266,19 +351,143 @@ $calce: 100% / 12;
 }
 
 .home {
-    position: relative;
-}
-
-.home img {
-    transform: rotateY(181deg) scaleY(1) translateY(-64px);
-}
-
-.home .slider {
-    position: absolute;
-}
-
-.home {
     .hero{
         transform: inherit;
+        overflow: hidden;
+        .hero-info{
+            opacity: 0;
+            left: 200%;
+            transition: all 3s; 
+        }
+        
+        .hero-info.active{
+            opacity: 1;
+            position: relative;
+            left: 0;
+        }
+    }
+    .bottom{
+        @include position(absolute, 10px, 22px);
+        right: 10%;
+        top: 50%;
+        z-index: 1000;
+        ul li{
+            width: 4px;
+            height: 29px;
+            background-color: white;
+            margin: 6px;
+            position: relative;
+        }
+
+        ul li.active::after{
+            content: "";
+            @include position(absolute, 4px, 16px);
+            top: 0;
+            background-color: $mainColor;
+        }
     }
 }
+
+.rate-list{
+    box-shadow: 0px 4px 6px 5px $colorLight;
+}
+.mySlides {
+    display: none;
+}
+.services{
+    width: 98vw;
+    
+    .images{
+        .images-transform{
+            transform: scaleX(2.5);
+            top: 8%;
+            left: 51%;
+        }
+    }
+    &::after{
+        content: '';
+        @include position(absolute, 100%, 50%);
+        background-color: white;
+        opacity: .9;
+        top: 45%;
+        left: 0;
+    }
+    
+    .images-kuraimi{
+        top: 45%;
+        width: 100%;
+    }
+    @include trendsBotton(63%);
+    
+}
+
+.news{
+    
+    margin-top: 6rem;
+    .text-titlr{
+        margin-bottom: 5rem;
+    }
+    &::before{
+        
+        content: '';
+        @include position(absolute, 100%, 0%);
+        bottom: 0px;
+        border: 581px solid transparent;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        border-bottom-color: #f2f5f5;
+        left: 50%;
+    }
+    .news-info{
+        z-index: 0;
+        top: -100%;
+        transition: all 1s ease-in-out;
+        background-color: #423064d3;
+        &::after{
+            content: '';
+            @include position(absolute, 1px, 10%);
+            background-color: $colorLight;
+            top: 0;
+            left: 50%;
+        }
+    }
+    .content{
+        overflow: hidden;
+        &:hover{
+            .news-info{
+                top: 0;
+                transition: all 1s ease-in-out;
+            }
+        }
+        .news-button button{
+            margin: 5% 29%;
+        }
+    }
+    .card-slider{
+        scroll-behavior: smooth;
+        overflow-x: auto;
+        .card{
+            flex: 0 0 auto;
+            width: 30%;
+            margin-right: 37px;
+            box-shadow: 0px 16px 6px 1px white;;
+        }
+        &::-webkit-scrollbar{
+            display: none;
+        }
+    }
+    @include trendsBotton(45%);
+    
+}
+
+.numbers{
+    background-image: linear-gradient(60deg, #423064f5 0%, #261a3cfd 100%);
+    .number-back{
+        font-size: 35rem;
+        top: -15%;
+        left: 10%;
+        z-index: -1;
+    }
+}
+
+

@@ -1,0 +1,40 @@
+@mixin position($position, $width, $height) {
+    position: $position;
+    width: $width;
+    height: $height;
+}
+
+
+@mixin trendsBotton($trendsTop) {
+    .trends{
+        top: $trendsTop;
+        z-index: 1;
+        .per-btn, .next-btn{
+            &::after{
+                content: "";
+                @include position(absolute, 2%, 48%);
+                border-top: 3px solid $secondColor;
+                border-left: 3px solid $secondColor;
+                top: 20%;
+                cursor: pointer;
+            }
+        }
+        .per-btn::after{
+            left: 5%;
+            transform: rotateZ(-39deg);
+        }
+        .next-btn::after{
+            right: 5%;
+            transform: rotateZ(140deg);
+        }
+    }
+}
+
+@mixin buttomStyle($btnName) {
+    .#{$btnName}{
+        border: 2px solid $secondColor;
+        border-radius: 3px;
+        font-size: 17px;
+        padding: 15px 50px;
+    }
+}

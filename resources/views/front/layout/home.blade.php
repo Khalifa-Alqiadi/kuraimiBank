@@ -23,50 +23,57 @@
         <style>
             .home{
                 transform: rotateY(181deg) scaleY(1);
-                width: 100vw;
+                width: 100%;
                 min-height: 100vh;
                 background-repeat: no-repeat;
                 background-size: 100% 178%;
                 background-image: url({{asset('pic/2.jpg')}});
                 
             }
+            .rate{
+                width:100%;
+                background-repeat: repeat-x;
+                background-image: url({{asset('images/header-bg.png')}});
+            }
         </style>
     </head>
     <body>
-        <div class="navbar fixed w-100">
+        <div class="navbar absolute w-100">
             <div class="container">
-                <div class="modile d-flex justfiy-between w-100">
-                    <div class="hamburger d-flex justfiy-center align-items-center"><div class="bar"></div></div>
+                <div class="modile d-flex justify-between w-100">
+                    <div class="hamburger d-flex justify-center align-items-center"><div class="bar"></div></div>
                     <a href=""><img class="text-white w-100 logo-bank" src="{{asset('images/kuraimi-logo-gray.svg')}}" alt=""></a>
                 </div>
-                <div class="nav-items d-flex justfiy-center align-items-center flex-column">
-                        <div class="navbar-top d-flex align-items-center justfiy-between w-100">
-                            <div class="d-flex">
-                                <p class="text-white me-2"><i class="fa-solid fa-user"></i> {{__('main.homePage.Jobs')}}</p>
-                                <p class="text-white"><i class="fa-solid fa-phone"></i> {{__('main.homePage.ContactUs')}}</p>
-                            </div>
-                            <img class="text-white logo" src="{{asset('images/kuraimi-logo-gray.svg')}}" alt="">
-                            <div class="d-flex">
-                                <p class="text-white me-2"><i class="fa-solid fa-location-dot"></i> {{__('main.homePage.ServicesPoint')}}</p>
-                                <p class="text-white me-2"><i class="fa-solid fa-search"></i></p>
-                                <p class="text-white">
-                                    @foreach (config('locales.languages') as $key => $val)
-                                        @if ($key != app()->getLocale())
-                                            <a href="{{route('change-language', $key)}}" class="dropdown-item text-white">
-                                                @if ($key == 'en')
-                                                    {{'EN'}}
-                                                @else
-                                                    {{'AR'}}
-                                                @endif
-                                            </a>
-                                        @endif
-                                    @endforeach
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-12 d-flex justfiy-between flex-column">
+                <div class="nav-items d-flex justify-center align-items-center flex-column">
+                        <header class="navbar-top ">
+                            <ul class="mt-2 mb-3 d-flex align-items-center justify-between w-100">
+                                <li class="d-flex">
+                                    <p class="text-white me-2"><i class="fa-solid fa-user"></i> {{__('main.homePage.Jobs')}}</p>
+                                    <p class="text-white"><i class="fa-solid fa-phone"></i> {{__('main.homePage.ContactUs')}}</p>
+                                </li>
+                                <li><img class="text-white logo" src="{{asset('images/kuraimi-logo-gray.svg')}}" alt=""></li>
+                                <li class="d-flex">
+                                    <p class="text-white me-2"><i class="fa-solid fa-location-dot"></i> {{__('main.homePage.ServicesPoint')}}</p>
+                                    <p class="text-white me-2"><i class="fa-solid fa-search"></i></p>
+                                    <p class="text-white">
+                                        @foreach (config('locales.languages') as $key => $val)
+                                            @if ($key != app()->getLocale())
+                                                <a href="{{route('change-language', $key)}}" class="dropdown-item text-white">
+                                                    @if ($key == 'en')
+                                                        {{'EN'}}
+                                                    @else
+                                                        {{'AR'}}
+                                                    @endif
+                                                </a>
+                                            @endif
+                                        @endforeach
+                                    </p>
+                                </li>
+                            </ul>
+                        </header>
+                        <nav class="col-md-12 d-flex justify-between flex-column">
                             <hr class="bg-white col-md-12 m-0">
-                            <ul class="d-flex col-md-12 justfiy-between px-2 list-none">
+                            <ul class="d-flex col-md-12 justify-between px-2 list-none">
                                 <li class="text-white active relative">{{__('main.homePage.Home')}}</li>
                                 <li class="text-white">{{__('main.homePage.AboutBank')}}</li>
                                 <li class="text-white">{{__('main.categories.Name')}}</li>
@@ -76,8 +83,9 @@
                                 <li class="text-white">{{__('main.categories.Name')}}</li>
                             </ul>
                             <hr class="bg-white col-md-12 m-0">
-                        </div>
+                        </nav>
                 </div>
+                
             </div>
         </div>
         @yield('content')
