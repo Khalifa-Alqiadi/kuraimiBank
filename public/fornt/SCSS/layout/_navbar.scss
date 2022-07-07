@@ -1,13 +1,22 @@
 
 .navbar {
     z-index: 1;
-    margin-top: 20px;
     .nav-items {
         @include position(absolute, 100%, 100vh);
         left: 100%;
         background-color: $mainColor;
         top: 0;
         transition: .4s ease left;
+        
+    }
+    &::after{
+        content: "";
+        @include position(absolute, 100%, 1%);
+        top: 0;
+        background-color: $secondColor;
+        opacity: .5;
+        box-shadow: 0 20px 125px 100px #73659a;
+        z-index: -1;
     }
     .nav-items.active{
         left: 0;
@@ -64,6 +73,7 @@
         .bar::after{
             top: 0;
         }
+        
     }
     // .logo-bank{
     //     position: absolute;
@@ -75,10 +85,32 @@
     li.active::after {
         content: "";
         @include position(absolute, 2px, 16px);
-        top: 100%;
+        top: 71%;
         left: 41%;
         background-color: #FFF;
     }
+    li .category-parent{
+            @include position(absolute, 100%, 50vh);
+            background-color: $colorWhite;
+            top: 101%;
+            color: black;
+            left: 0;
+            overflow: hidden;
+            display: none;
+            img{
+                @include position(absolute, 100%, 50vh);
+                top: 0;
+                object-fit: cover;
+            }
+    }
+    li:hover .category-parent{
+        display: flex;
+        
+    }
+    
+    // li:hover .category-parent{
+    //     display: block;
+    // }
 }
 
 @keyframes hamburger{

@@ -5,11 +5,14 @@
 @import "SCSS/layout/navbar";
 
 
-
+body{
+    font-family: 'Helvetica Neue LT Pro';
+    font-weight: normal;
+}
 
 .container {
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
     position: relative;
 }
 
@@ -71,6 +74,10 @@
 
 .flex-nowrap {
     flex-wrap: nowrap;
+}
+
+.main-color{
+    color: $mainColor;
 }
 
 .text-white {
@@ -161,8 +168,10 @@ ul {
 .fw-bold{
     font-weight: bold;
 }
+
 .font-family{
-    font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Helvetica Neue LT Pro';
+    font-weight: 900;
 }
 
 .row{
@@ -440,9 +449,10 @@ $value in $allPadding {
     }
     .news-info{
         z-index: 0;
-        top: -100%;
+        // top: -100%;
         transition: all 1s ease-in-out;
         background-color: #423064d3;
+        clip-path: circle(0px at top);
         &::after{
             content: '';
             @include position(absolute, 1px, 10%);
@@ -457,6 +467,7 @@ $value in $allPadding {
             .news-info{
                 top: 0;
                 transition: all 1s ease-in-out;
+                clip-path: circle(1000px at top);
             }
         }
         .news-button button{
@@ -482,11 +493,35 @@ $value in $allPadding {
 
 .numbers{
     background-image: linear-gradient(60deg, #423064f5 0%, #261a3cfd 100%);
-    .number-back{
+    .number h1::before{
         font-size: 35rem;
-        top: -15%;
-        left: 10%;
         z-index: -1;
+        content: attr(data-after);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        letter-spacing: 50px;
+        transition: 0.3s ease letter-spacing;
+    }
+}
+
+.maps{
+    h3{
+        border-left: 4px solid $secondColor;
+    }
+}
+
+.footer{
+    hr{
+
+    }
+    h1{
+        font-size: 15px;
+    }
+    p{
+        font-size: 13px;
+        color: #CCC;
     }
 }
 

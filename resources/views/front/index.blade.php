@@ -6,7 +6,7 @@
 <div class="home relative d-flex justify-end align-items-center">
     <div class="container hero w-100 h-100 d-flex" id="hero-info">
         <div class="hero-info absolute w-100 h-100">
-            <h1 class="text-white fs-3 fw-bold m-0">حساب في كل بيت يمني</h1>
+            <h1 class="text-white fs-3 fw-bold m-0 font-family">حساب في كل بيت يمني</h1>
             <p class="text-white font-family fs-5 m-0" >يسهم في التنمية الاقتصادية والاجتماعية</p>
         </div>
         <div class="hero-info absolute w-100 h-100">
@@ -32,7 +32,7 @@
                         <p class="my-0 py-0">شراء</p>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" >
                     <div class="col-md-6">
                         <p class="fw-bold my-0 py-0">دولار امريكي</p>
                     </div>
@@ -462,9 +462,17 @@
     
     <div class="container d-flex flex-column justify-between">
         <h1 class="fs-4 text-white">نجاحاتنا في أرقام</h1>
-        <div class="row p-3">
+        <div class="row p-3 number">
             <div class="col-md-3 m-2 border-bottom">
-                <h1 class="fs-3 fw-bold text-white m-0">+889</h1>
+                <h1 class="fs-3 fw-bold text-white m-0" data-after="+889">+889</h1>
+                <p class="text-white mb-2 m-0 w-50">
+                      
+                    تمويل عقاري تم تمويله
+                    تمويلا شاملا
+                </p>
+            </div>
+            <div class="col-md-3 m-2 border-bottom" >
+                <h1 class="fs-3 fw-bold text-white m-0" data-after="+1089">+1089</h1>
                 <p class="text-white mb-2 m-0 w-50">
                       
                     تمويل عقاري تم تمويله
@@ -472,7 +480,7 @@
                 </p>
             </div>
             <div class="col-md-3 m-2 border-bottom">
-                <h1 class="fs-3 fw-bold text-white m-0">+889</h1>
+                <h1 class="fs-3 fw-bold text-white m-0" data-after="+889">+889</h1>
                 <p class="text-white mb-2 m-0 w-50">
                       
                     تمويل عقاري تم تمويله
@@ -480,49 +488,7 @@
                 </p>
             </div>
             <div class="col-md-3 m-2 border-bottom">
-                <h1 class="fs-3 fw-bold text-white m-0">+889</h1>
-                <p class="text-white mb-2 m-0 w-50">
-                      
-                    تمويل عقاري تم تمويله
-                    تمويلا شاملا
-                </p>
-            </div>
-            <div class="col-md-3 m-2 border-bottom">
-                <h1 class="fs-3 fw-bold text-white m-0">+889</h1>
-                <p class="text-white mb-2 m-0 w-50">
-                      
-                    تمويل عقاري تم تمويله
-                    تمويلا شاملا
-                </p>
-            </div>
-        </div>
-        <div class="row p-3">
-            <div class="col-md-3 m-2 border-bottom">
-                <h1 class="fs-3 fw-bold text-white m-0">+889</h1>
-                <p class="text-white mb-2 m-0 w-50">
-                      
-                    تمويل عقاري تم تمويله
-                    تمويلا شاملا
-                </p>
-            </div>
-            <div class="col-md-3 m-2 border-bottom">
-                <h1 class="fs-3 fw-bold text-white m-0">+889</h1>
-                <p class="text-white mb-2 m-0 w-50">
-                      
-                    تمويل عقاري تم تمويله
-                    تمويلا شاملا
-                </p>
-            </div>
-            <div class="col-md-3 m-2 border-bottom">
-                <h1 class="fs-3 fw-bold text-white m-0">+889</h1>
-                <p class="text-white mb-2 m-0 w-50">
-                      
-                    تمويل عقاري تم تمويله
-                    تمويلا شاملا
-                </p>
-            </div>
-            <div class="col-md-3 m-2 border-bottom">
-                <h1 class="fs-3 fw-bold text-white m-0">+889</h1>
+                <h1 class="fs-3 fw-bold text-white m-0" data-after="+889">+889</h1>
                 <p class="text-white mb-2 m-0 w-50">
                       
                     تمويل عقاري تم تمويله
@@ -530,7 +496,131 @@
                 </p>
             </div>
         </div>
-        <div class="absolute fw-bold number-back">+889</div>
+        <div class="row p-3">
+            <div class="col-md-3 m-2 border-bottom">
+                <h1 class="fs-3 fw-bold text-white m-0" data-after="+889">+889</h1>
+                <p class="text-white mb-2 m-0 w-50">
+                      
+                    تمويل عقاري تم تمويله
+                    تمويلا شاملا
+                </p>
+            </div>
+            <div class="col-md-3 m-2 border-bottom">
+                <h1 class="fs-3 fw-bold text-white m-0" data-after="+889">+889</h1>
+                <p class="text-white mb-2 m-0 w-50">
+                      
+                    تمويل عقاري تم تمويله
+                    تمويلا شاملا
+                </p>
+            </div>
+            <div class="col-md-3 m-2 border-bottom">
+                <h1 class="fs-3 fw-bold text-white m-0" data-after="+889">+889</h1>
+                <p class="text-white mb-2 m-0 w-50">
+                      
+                    تمويل عقاري تم تمويله
+                    تمويلا شاملا
+                </p>
+            </div>
+            <div class="col-md-3 m-2 border-bottom">
+                <h1 class="fs-3 fw-bold text-white m-0" data-after="+889">+889</h1>
+                <p class="text-white mb-2 m-0 w-50">
+                      
+                    تمويل عقاري تم تمويله
+                    تمويلا شاملا
+                </p>
+            </div>
+        </div>
+        {{-- <div class="absolute fw-bold number-back">+889</div> --}}
     </div>
+</section>
+
+<section class="maps">
+    <div class="container hv-80 d-flex flex-column justify-center">
+        <div class="row">
+            <div class="col-md-5 p-4 d-flex flex-column justify-between">
+                <h1 class="text-second-color mb-5 w-40 text-center">نقاط تواجدنا</h1>
+                <div class="row">
+                    <div class="col-md-3 text-center">
+                        <h3 class="text-second-color">100</h3>
+                        <p class="text-second-color">فرع بنك</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <h3 class="text-second-color">400</h3>
+                        <p class="text-second-color">صراف الي</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <h3 class="text-second-color">100</h3>
+                        <p class="text-second-color">نقطة خدمة</p>
+                    </div>
+                </div>
+                <button class="mt-5 ms-4 w-40 fw-bold mb-5 btn-main bg-transparent text-second-color">أقرب نقطة لك</button>
+            </div>
+            <div class="col-md-6">
+                <img src="{{asset('images/kurimi-5.PNG')}}" alt="" class="w-100">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="footer bg-second-color">
+    <div class="container hv-80 pt-4 d-flex flex-column justify-between align-items-center">
+        <img src="{{asset('images/kuraimi-logo-gray.svg')}}" alt="" >
+        <hr class="w-90 bg-white">
+        <div class="row w-90">
+            <div class="col-md-2">
+                <h1 class="text-white">البنك</h1>
+                <p class="mt-0 mb-0">عن البنك</p>
+                <p class="mt-0 mb-0">الرؤية</p>
+                <p class="mt-0 mb-0">الرسالة</p>
+                <p class="mt-0 mb-0">الأهداف</p>
+                <p class="mt-0 mb-0">القيم والمبادئ</p>
+                <p class="mt-0 mb-0">بيان سياسة</p>
+                <p class="mt-0 mb-0">مكافحة غسل</p>
+                <p class="mt-0 mb-0">شركائنا</p>
+            </div>
+            <div class="col-md-2">
+                <h1 class="text-white">شركائنا</h1>
+                <p class="mt-0 mb-0">موني جرام</p>
+                <p class="mt-0 mb-0">ماستر كارد</p>
+                <p class="mt-0 mb-0">البنوك المراسلة</p>
+                <p class="mt-0 mb-0">منظمة التمويل الدولية</p>
+                <p class="mt-0 mb-0">تيمينوس</p>
+            </div>
+            <div class="col-md-2">
+                <h1 class="text-white">الخدمات</h1>
+                <p class="mt-0 mb-0">خدمات الأفراد</p>
+                <p class="mt-0 mb-0">خدمات الشركات</p>
+                <p class="mt-0 mb-0">كريمي اكسبرس</p>
+                <p class="mt-0 mb-0">ام فلوس</p>
+                <p class="mt-0 mb-0">التمويل</p>
+            </div>
+            <div class="col-md-2">
+                <h1 class="text-white">التقارير</h1>
+                <p class="mt-0 mb-0">التقارير المالية</p>
+                <p class="mt-0 mb-0">القوائم المالية</p>
+            </div>
+            <div class="col-md-2">
+                <h1 class="text-white">نقاط الخدمة</h1>
+                <p class="mt-0 mb-0">الفروع وماكينات الصرافة</p>
+            </div>
+            <div class="col-md-2">
+                <h1 class="text-white">تواصل معنا</h1>
+                <p class="mt-0 mb-0">967 1 503888 : تلفون</p>
+                <p class="mt-0 mb-0">967 1 435400 : فاكس</p>
+                <p class="mt-0 mb-0">967 1 435400 : فاكس</p>
+                <p class="mt-0 mb-0">الرقم المجاني : 8008800</p>
+                <p class="mt-0 mb-0">صندوق بريد : 19357</p>
+            </div>
+        </div>
+        <div class="row w-90 justify-between">
+            <div class="col-md-4">
+                <i class="fas fa-facebook"></i>
+            </div>
+            <div class="col-md-4 d-flex align-items-center justify-center">
+                <img src="{{asset('images/kurimi-buttom.PNG')}}" alt="" class="me-3">
+                <img src="{{asset('images/kurimi-buttom-2.PNG')}}" alt="">
+            </div>
+        </div>
+        </div>
 </section>
 @endsection

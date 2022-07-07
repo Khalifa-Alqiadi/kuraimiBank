@@ -15,6 +15,8 @@ class Category extends Model
     protected $guarded = [];
     protected $table = 'categories';
     public $translatable = ['name'];
-
-    
+    public function services()
+    {
+        return $this->hasMany(Service::class);
+    }
 }

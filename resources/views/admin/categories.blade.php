@@ -10,11 +10,11 @@
                 {{__('main.categories.Manage')}}
         </x-slot>  
         <x-slot name="button">
-            @if (Auth::user()->hasPermission('Add_Category'))
+            {{-- @if (Auth::user()->hasPermission('Add_Category')) --}}
                 <button type="button" class="btn menu-theme text-white me-sm-3 me-1 mt-3" data-bs-toggle="modal" data-bs-target="#CategoryAdd"> {{__('main.Add')}} </button>
-            @else
+            {{-- @else
                 <button type="button" disabled class="btn ms-5 menu-theme text-white mt-3" data-bs-toggle="modal" data-bs-target="#CategoryAdd"> {{__('main.Add')}} </button>
-            @endif            
+            @endif             --}}
         </x-slot>  
         <x-slot name="tableThead">
             <tr>

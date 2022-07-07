@@ -129,11 +129,12 @@
                         {{-- <input type="text" id="service_name_en" name="service_name_en" class="form-select" placeholder="" /> --}}
                         <select name="category_service" id="category_service" class="form-select">
                             @foreach ($categories as $category)
-                                @if ($category->parent ==0)
-                                    <option value="{{$category->id}}">{{$category->name}}</option>
-                                @else
-                                    <option class="me-3" value="{{$category->id}}">-----{{$category->name}}</option>
-                                @endif
+                                <option value="{{$category->id}}">{{$category->name}}</option>
+                                @foreach ($categoriesChild as $child)
+                                    @if ($child->parent_category == $category->id)
+                                        <option value="{{$child->id}}">-----{{$child->name}}</option>
+                                    @endif 
+                                @endforeach
                             @endforeach
                         </select>
                     </div>
