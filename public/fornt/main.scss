@@ -168,7 +168,9 @@ ul {
 .fw-bold{
     font-weight: bold;
 }
-
+.pointer{
+    cursor: pointer;
+}
 .font-family{
     font-family: 'Helvetica Neue LT Pro';
     font-weight: 900;
@@ -403,6 +405,16 @@ $value in $allPadding {
 .mySlides {
     display: none;
 }
+.mySlides.active{
+    animation: myslides 1s ease-in-out;
+}
+@keyframes myslides{
+    0%{
+        opacity: 0;
+    }100%{
+        opacity: 1;
+    }
+}
 .services{
     width: 98vw;
     
@@ -411,6 +423,9 @@ $value in $allPadding {
             transform: scaleX(2.5);
             top: 8%;
             left: 51%;
+        }
+        .img-tow{
+            top: 5%;
         }
     }
     &::after{
@@ -427,7 +442,19 @@ $value in $allPadding {
         width: 100%;
     }
     @include trendsBotton(63%);
-    
+    .dot.active{
+        color: #423064;
+        font-weight: bold;
+        position: relative;
+        animation: myslides 1s ease-in-out;
+        &::after{
+            content: "";
+            @include position(absolute, 2px, 16px);
+            top: 71%;
+            left: 50%;
+            background-color: $secondColor;
+        }
+    }
 }
 
 .news{
@@ -447,6 +474,7 @@ $value in $allPadding {
         border-bottom-color: #f2f5f5;
         left: 50%;
     }
+    
     .news-info{
         z-index: 0;
         // top: -100%;
@@ -488,13 +516,17 @@ $value in $allPadding {
         }
     }
     @include trendsBotton(45%);
-    
+}
+
+.mySlides p{
+    font-size: 20px;
+    margin: -3% 0;
 }
 
 .numbers{
     background-image: linear-gradient(60deg, #423064f5 0%, #261a3cfd 100%);
-    .number h1::before{
-        font-size: 35rem;
+    .number h1 a::before{
+        font-size: 30rem;
         z-index: -1;
         content: attr(data-after);
         position: absolute;
@@ -502,7 +534,15 @@ $value in $allPadding {
         top: 50%;
         transform: translate(-50%, -50%) scale(0);
         letter-spacing: 50px;
-        transition: 0.3s ease letter-spacing;
+        transition: 1s ease letter-spacing;
+        color: black;
+    }
+    .number h1:hover a::before{
+        transform: translate(-50%, -50%) scale(1);
+        letter-spacing: initial;
+    }
+    .number p{
+        font-size: 22px;
     }
 }
 
@@ -513,6 +553,7 @@ $value in $allPadding {
 }
 
 .footer{
+    overflow: hidden;
     hr{
 
     }
@@ -522,6 +563,21 @@ $value in $allPadding {
     p{
         font-size: 13px;
         color: #CCC;
+    }
+    .layout-image{
+        @include position(absolute, 100%, 100%);
+        top: 0;
+        .img-one{
+            @include position(absolute, 100%, 100%);
+            left: -13%;
+            top: -31%;
+            transform: rotateY(188deg);
+        }
+        .img-tow{
+            @include position(absolute, 100%, 100%);
+            right: -13%;
+            top: -31%;
+        }
     }
 }
 

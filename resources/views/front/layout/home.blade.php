@@ -50,7 +50,7 @@
             <div class="container">
                 <div class="modile d-flex justify-between w-100">
                     <div class="hamburger d-flex justify-center align-items-center"><div class="bar"></div></div>
-                    <a href=""><img class="text-white w-100 logo-bank" src="{{asset('images/kuraimi-logo-gray.svg')}}" alt=""></a>
+                    <a href=""><img class="text-white w-100 logo-bank" src="{{asset('images/logok.svg')}}" alt=""></a>
                 </div>
                 <div class="nav-items d-flex justify-center align-items-center flex-column">
                         <header class="navbar-top w-100">
@@ -59,7 +59,7 @@
                                     <p class="text-white me-0"><i class="fa-solid fa-user"></i> {{__('main.homePage.Jobs')}}</p>
                                     <p class="text-white ms-2"><i class="fa-solid fa-phone"></i> {{__('main.homePage.ContactUs')}}</p>
                                 </li>
-                                <li><img class="text-white logo" src="{{asset('images/kuraimi-logo-gray.svg')}}" alt=""></li>
+                                <li><img class="text-white logo" src="{{asset('images/logok.svg')}}" alt=""></li>
                                 <li class="d-flex">
                                     <p class="text-white me-2"><i class="fa-solid fa-location-dot"></i> {{__('main.homePage.ServicesPoint')}}</p>
                                     <p class="text-white me-2"><i class="fa-solid fa-search"></i></p>
@@ -82,16 +82,16 @@
                         <nav class="col-md-12 d-flex justify-between relative flex-column">
                             <hr class="bg-white col-md-12 m-0">
                             <ul class="d-flex list-items col-md-12 justify-between px-2 list-none">
-                                <li class="text-white py-2 active relative">{{__('main.homePage.Home')}}</li>
+                                <li class="text-white py-2 active relative pointer">{{__('main.homePage.Home')}}</li>
                                 @php
                                     $i=0;
                                 @endphp
                                 @foreach ($categories as $category)
-                                    <li class="text-white py-2">
+                                    <li class="text-white py-2 pointer">
                                         {{$category->name}}
                                         <div class="row category-parent p-4">
                                             <img src="{{asset('pic/Al-_Kurimi_3 f4.png')}}" alt="" >
-                                                <div class="col-md-3"><h1 class="font-family main-color fs-4">{{$category->name}}</h1></div>
+                                                <div class="col-md-3"><h1 class="font-family main-color fs-4 pointer">{{$category->name}}</h1></div>
                                                     
                                         @foreach ($categoriesChild as $child)
                                         
@@ -103,7 +103,7 @@
                                                         <p class="text-second-color">{{$child->name}}</p>
                                                         <ul>
                                                             @foreach ($child->services as $services)
-                                                            <li>
+                                                            <li class="pointer">
                                                                 {{$services->name}}
                                                             </li>
                                                             @endforeach

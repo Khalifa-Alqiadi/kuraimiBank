@@ -140,6 +140,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-animation: parent 1s ease-in-out;
+          animation: parent 1s ease-in-out;
 }
 
 @-webkit-keyframes hamburger {
@@ -165,6 +167,24 @@
     opacity: 0;
     -webkit-transform: scale(1.4);
             transform: scale(1.4);
+  }
+}
+
+@-webkit-keyframes parent {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes parent {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -404,6 +424,10 @@ ul {
 
 .fw-bold {
   font-weight: bold;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 .font-family {
@@ -1052,6 +1076,29 @@ ul {
   display: none;
 }
 
+.mySlides.active {
+  -webkit-animation: myslides 1s ease-in-out;
+          animation: myslides 1s ease-in-out;
+}
+
+@-webkit-keyframes myslides {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes myslides {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .services {
   width: 98vw;
 }
@@ -1061,6 +1108,10 @@ ul {
           transform: scaleX(2.5);
   top: 8%;
   left: 51%;
+}
+
+.services .images .img-tow {
+  top: 5%;
 }
 
 .services::after {
@@ -1088,7 +1139,7 @@ ul {
   content: "";
   position: absolute;
   width: 2%;
-  height: 48%;
+  height: 37%;
   border-top: 3px solid #73659A;
   border-left: 3px solid #73659A;
   top: 20%;
@@ -1105,6 +1156,24 @@ ul {
   right: 5%;
   -webkit-transform: rotateZ(140deg);
           transform: rotateZ(140deg);
+}
+
+.services .dot.active {
+  color: #423064;
+  font-weight: bold;
+  position: relative;
+  -webkit-animation: myslides 1s ease-in-out;
+          animation: myslides 1s ease-in-out;
+}
+
+.services .dot.active::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 16px;
+  top: 71%;
+  left: 50%;
+  background-color: #73659A;
 }
 
 .news {
@@ -1191,7 +1260,7 @@ ul {
   content: "";
   position: absolute;
   width: 2%;
-  height: 48%;
+  height: 37%;
   border-top: 3px solid #73659A;
   border-left: 3px solid #73659A;
   top: 20%;
@@ -1210,12 +1279,17 @@ ul {
           transform: rotateZ(140deg);
 }
 
+.mySlides p {
+  font-size: 20px;
+  margin: -3% 0;
+}
+
 .numbers {
   background-image: linear-gradient(60deg, #423064f5 0%, #261a3cfd 100%);
 }
 
-.numbers .number h1::before {
-  font-size: 35rem;
+.numbers .number h1 a::before {
+  font-size: 30rem;
   z-index: -1;
   content: attr(data-after);
   position: absolute;
@@ -1224,12 +1298,27 @@ ul {
   -webkit-transform: translate(-50%, -50%) scale(0);
           transform: translate(-50%, -50%) scale(0);
   letter-spacing: 50px;
-  -webkit-transition: 0.3s ease letter-spacing;
-  transition: 0.3s ease letter-spacing;
+  -webkit-transition: 1s ease letter-spacing;
+  transition: 1s ease letter-spacing;
+  color: black;
+}
+
+.numbers .number h1:hover a::before {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  letter-spacing: initial;
+}
+
+.numbers .number p {
+  font-size: 22px;
 }
 
 .maps h3 {
   border-left: 4px solid #73659A;
+}
+
+.footer {
+  overflow: hidden;
 }
 
 .footer h1 {
@@ -1239,5 +1328,30 @@ ul {
 .footer p {
   font-size: 13px;
   color: #CCC;
+}
+
+.footer .layout-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.footer .layout-image .img-one {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -13%;
+  top: -31%;
+  -webkit-transform: rotateY(188deg);
+          transform: rotateY(188deg);
+}
+
+.footer .layout-image .img-tow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  right: -13%;
+  top: -31%;
 }
 /*# sourceMappingURL=main.css.map */

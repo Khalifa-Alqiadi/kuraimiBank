@@ -10,8 +10,7 @@
             <p class="text-white font-family fs-5 m-0" >يسهم في التنمية الاقتصادية والاجتماعية</p>
         </div>
         <div class="hero-info absolute w-100 h-100">
-            <h1 class="text-white fs-3 fw-bold m-0">حساب في كل بيت lkjqwlekfeqlk</h1>
-            <p class="text-white font-family fs-5 m-0" >يسهم في التنمية الاقتصادية والاجتماعية</p>
+            <h1 class="text-white fs-3 fw-bold m-0">حساب في كل بيت</h1>
             <p class="text-white font-family fs-5 m-0" >يسهم في التنمية الاقتصادية والاجتماعية</p>
         </div>
     </div>
@@ -102,135 +101,165 @@
 </section>
 <section class="services mb-3 relative mt-2 d-flex flex-column align-items-center">
     <h1 class="text-center text-second-color fs-4">خدمات تهتم بك</h1>
-    <div class="w-70">
+    <div class="w-80">
         <ul class="d-flex justify-between w-100">
-            <li class="dot" onclick="currentSlide(1)">البطائق الائتمانية</li>
-            <li class="dot" onclick="currentSlide(2)">البطائق الائتمانية</li>
-            <li class="dot" onclick="currentSlide(3)">البطائق الائتمانية</li>
-            <li class="dot" onclick="currentSlide(4)">البطائق الائتمانية</li>
-            <li class="dot" onclick="currentSlide(5)">البطائق الائتمانية</li>
+            <li class="dot pointer" onclick="currentSlide(1)">البطائق الائتمانية</li>
+            <li class="dot pointer" onclick="currentSlide(2)">تمويل الملكة</li>
+            <li class="dot pointer" onclick="currentSlide(3)">حسابات الافراد</li>
+            <li class="dot pointer" onclick="currentSlide(4)">ماكينات الصراف الآلي</li>
+            <li class="dot pointer" onclick="currentSlide(5)">التمويل</li>
         </ul>
     </div>
-    <div class="w-70 mt-3 border z-index-2 bg-white">
-        <div class="row justify-between  hv-60 ">
+    <div class="w-80 mt-3 border z-index-2 bg-white">
+        <div class="row justify-between  hv-50 ">
             <div class="mySlides d-flex w-100">
-                <div class="ms-0 me-0 col-md-8 p-2 box-shadow d-flex flex-column justify-between">
+                <div class="ms-0 me-0 col-md-8 px-5 box-shadow d-flex flex-column justify-evenly">
                     <h1 class="text-second-color">ماكينات الصراف الآلي</h1>
-                    <p>
+                    <p class="">
                         هذا النص هو مثال لنص يمكن أن يستبدل
-                        في نفس المساحة، لقد تم توليد هذا
-                        النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في
-                        نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
-                        مثال لنص يمكن أن يستبدل
                     </p>
-                    <p>
+                    <p class="">
                         هذا النص هو مثال لنص يمكن أن يستبدل
+                    </p>
+                    <p class="">
                         في نفس المساحة، لقد تم توليد هذا
-                        النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في
                         نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
-                        مثال لنص يمكن أن يستبدل
+                    </p>
+                    <p class="">
+                        في نفس المساحة، لقد تم توليد هذا
+                        نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
+                    </p>
+                    <p class="">
+                        هذا النص هو مثال لنص يمكن أن يستبدل
+                    </p>
+                    <p class="">
+                        هذا النص هو مثال لنص يمكن أن يستبدل
                     </p>
                     <button class="col-md-4  text-second-color border-second-color bg-transparent py-1 px-2 fw-bold">تحويل العملات</button>
                 </div>
                 <div class="col-md-4 ms-0 me-0 images relative bg-linear-gradient-main">
                     <img src="{{asset('pic/Al-_Kurimi_1 f.png')}}" alt="" class="w-60 h-90 images-transform absolute">
-                    <img src="{{asset('pic/Al- kurimi 1 png.png')}}" alt="" class="w-60 h-90 images-transform absolute">
+                    <img src="{{asset('pic/Al- kurimi 1 png.png')}}" alt="" class="w-60 h-90 images-transform img-tow absolute">
                 </div>
             </div>
-            <div class="mySlides">
-                <div class="ms-0 me-0 col-md-8 p-2 box-shadow d-flex flex-column justify-between">
-                    <h1 class="text-second-color">ماكينات ام الآلفلوسي</h1>
-                    <p>
+            <div class="mySlides w-100">
+                <div class="ms-0 me-0 col-md-8 px-5 box-shadow d-flex flex-column justify-evenly">
+                    <h1 class="text-second-color">ماكينات الصراف الآلي</h1>
+                    <p class="">
                         هذا النص هو مثال لنص يمكن أن يستبدل
-                        في نفس المساحة، لقد تم توليد هذا
-                        النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في
-                        نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
-                        مثال لنص يمكن أن يستبدل
                     </p>
-                    <p>
+                    <p class="">
                         هذا النص هو مثال لنص يمكن أن يستبدل
+                    </p>
+                    <p class="">
                         في نفس المساحة، لقد تم توليد هذا
-                        النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في
                         نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
-                        مثال لنص يمكن أن يستبدل
+                    </p>
+                    <p class="">
+                        في نفس المساحة، لقد تم توليد هذا
+                        نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
+                    </p>
+                    <p class="">
+                        هذا النص هو مثال لنص يمكن أن يستبدل
+                    </p>
+                    <p class="">
+                        هذا النص هو مثال لنص يمكن أن يستبدل
                     </p>
                     <button class="col-md-4  text-second-color border-second-color bg-transparent py-1 px-2 fw-bold">تحويل العملات</button>
                 </div>
                 <div class="col-md-4 ms-0 me-0 images relative bg-linear-gradient-main">
                     <img src="{{asset('pic/Al-_Kurimi_1 f.png')}}" alt="" class="w-60 h-90 images-transform absolute">
-                    <img src="{{asset('pic/Al- kurimi 1 png.png')}}" alt="" class="w-60 h-90 images-transform absolute">
+                    <img src="{{asset('pic/Al- kurimi 1 png.png')}}" alt="" class="w-60 h-90 images-transform img-tow absolute">
                 </div>
             </div>
-            <div class="mySlides">
-                <div class="ms-0 me-0 col-md-8 p-2 box-shadow d-flex flex-column justify-between">
-                    <h1 class="text-second-color"> عن البنك</h1>
-                    <p>
+            <div class="mySlides w-100">
+                <div class="ms-0 me-0 col-md-8 px-5 box-shadow d-flex flex-column justify-evenly">
+                    <h1 class="text-second-color">ماكينات الصراف الآلي</h1>
+                    <p class="">
                         هذا النص هو مثال لنص يمكن أن يستبدل
-                        في نفس المساحة، لقد تم توليد هذا
-                        النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في
-                        نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
-                        مثال لنص يمكن أن يستبدل
                     </p>
-                    <p>
+                    <p class="">
                         هذا النص هو مثال لنص يمكن أن يستبدل
+                    </p>
+                    <p class="">
                         في نفس المساحة، لقد تم توليد هذا
-                        النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في
                         نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
-                        مثال لنص يمكن أن يستبدل
+                    </p>
+                    <p class="">
+                        في نفس المساحة، لقد تم توليد هذا
+                        نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
+                    </p>
+                    <p class="">
+                        هذا النص هو مثال لنص يمكن أن يستبدل
+                    </p>
+                    <p class="">
+                        هذا النص هو مثال لنص يمكن أن يستبدل
                     </p>
                     <button class="col-md-4  text-second-color border-second-color bg-transparent py-1 px-2 fw-bold">تحويل العملات</button>
                 </div>
                 <div class="col-md-4 ms-0 me-0 images relative bg-linear-gradient-main">
                     <img src="{{asset('pic/Al-_Kurimi_1 f.png')}}" alt="" class="w-60 h-90 images-transform absolute">
-                    <img src="{{asset('pic/Al- kurimi 1 png.png')}}" alt="" class="w-60 h-90 images-transform absolute">
+                    <img src="{{asset('pic/Al- kurimi 1 png.png')}}" alt="" class="w-60 h-90 images-transform img-tow absolute">
                 </div>
             </div>
-            <div class="mySlides">
-                <div class="ms-0 me-0 col-md-8 p-2 box-shadow d-flex flex-column justify-between">
-                    <h1 class="text-second-color"> ام الآلفلوسي</h1>
-                    <p>
+            <div class="mySlides w-100">
+                <div class="ms-0 me-0 col-md-8 px-5 box-shadow d-flex flex-column justify-evenly">
+                    <h1 class="text-second-color">ماكينات الصراف الآلي</h1>
+                    <p class="">
                         هذا النص هو مثال لنص يمكن أن يستبدل
-                        في نفس المساحة، لقد تم توليد هذا
-                        النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في
-                        نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
-                        مثال لنص يمكن أن يستبدل
                     </p>
-                    <p>
+                    <p class="">
                         هذا النص هو مثال لنص يمكن أن يستبدل
+                    </p>
+                    <p class="">
                         في نفس المساحة، لقد تم توليد هذا
-                        النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في
                         نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
-                        مثال لنص يمكن أن يستبدل
+                    </p>
+                    <p class="">
+                        في نفس المساحة، لقد تم توليد هذا
+                        نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
+                    </p>
+                    <p class="">
+                        هذا النص هو مثال لنص يمكن أن يستبدل
+                    </p>
+                    <p class="">
+                        هذا النص هو مثال لنص يمكن أن يستبدل
                     </p>
                     <button class="col-md-4  text-second-color border-second-color bg-transparent py-1 px-2 fw-bold">تحويل العملات</button>
                 </div>
                 <div class="col-md-4 ms-0 me-0 images relative bg-linear-gradient-main">
                     <img src="{{asset('pic/Al-_Kurimi_1 f.png')}}" alt="" class="w-60 h-90 images-transform absolute">
-                    <img src="{{asset('pic/Al- kurimi 1 png.png')}}" alt="" class="w-60 h-90 images-transform absolute">
+                    <img src="{{asset('pic/Al- kurimi 1 png.png')}}" alt="" class="w-60 h-90 images-transform img-tow absolute">
                 </div>
             </div>
-            <div class="mySlides">
-                <div class="ms-0 me-0 col-md-8 p-2 box-shadow d-flex flex-column justify-between">
-                    <h1 class="text-second-color"> حساب الافراد </h1>
-                    <p>
+            <div class="mySlides w-100">
+                <div class="ms-0 me-0 col-md-8 px-5 box-shadow d-flex flex-column justify-evenly">
+                    <h1 class="text-second-color">ماكينات الصراف الآلي</h1>
+                    <p class="">
                         هذا النص هو مثال لنص يمكن أن يستبدل
-                        في نفس المساحة، لقد تم توليد هذا
-                        النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في
-                        نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
-                        مثال لنص يمكن أن يستبدل
                     </p>
-                    <p>
+                    <p class="">
                         هذا النص هو مثال لنص يمكن أن يستبدل
+                    </p>
+                    <p class="">
                         في نفس المساحة، لقد تم توليد هذا
-                        النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في
                         نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
-                        مثال لنص يمكن أن يستبدل
+                    </p>
+                    <p class="">
+                        في نفس المساحة، لقد تم توليد هذا
+                        نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
+                    </p>
+                    <p class="">
+                        هذا النص هو مثال لنص يمكن أن يستبدل
+                    </p>
+                    <p class="">
+                        هذا النص هو مثال لنص يمكن أن يستبدل
                     </p>
                     <button class="col-md-4  text-second-color border-second-color bg-transparent py-1 px-2 fw-bold">تحويل العملات</button>
                 </div>
                 <div class="col-md-4 ms-0 me-0 images relative bg-linear-gradient-main">
                     <img src="{{asset('pic/Al-_Kurimi_1 f.png')}}" alt="" class="w-60 h-90 images-transform absolute">
-                    <img src="{{asset('pic/Al- kurimi 1 png.png')}}" alt="" class="w-60 h-90 images-transform absolute">
+                    <img src="{{asset('pic/Al- kurimi 1 png.png')}}" alt="" class="w-60 h-90 images-transform img-tow absolute">
                 </div>
             </div>
         </div>
@@ -458,13 +487,13 @@
 </section>
 
 
-<section class="numbers relative">
+<section class="numbers relative hv-80">
     
-    <div class="container d-flex flex-column justify-between">
+    <div class="container d-flex flex-column justify-evenly hv-80">
         <h1 class="fs-4 text-white">نجاحاتنا في أرقام</h1>
         <div class="row p-3 number">
             <div class="col-md-3 m-2 border-bottom">
-                <h1 class="fs-3 fw-bold text-white m-0" data-after="+889">+889</h1>
+                <h1 class="fs-3 fw-bold text-white m-0" > <a href="" data-after="+889">+889</a></h1>
                 <p class="text-white mb-2 m-0 w-50">
                       
                     تمويل عقاري تم تمويله
@@ -472,7 +501,7 @@
                 </p>
             </div>
             <div class="col-md-3 m-2 border-bottom" >
-                <h1 class="fs-3 fw-bold text-white m-0" data-after="+1089">+1089</h1>
+                <h1 class="fs-3 fw-bold text-white m-0"><a href="" data-after="+889">+889</a></h1>
                 <p class="text-white mb-2 m-0 w-50">
                       
                     تمويل عقاري تم تمويله
@@ -480,7 +509,7 @@
                 </p>
             </div>
             <div class="col-md-3 m-2 border-bottom">
-                <h1 class="fs-3 fw-bold text-white m-0" data-after="+889">+889</h1>
+                <h1 class="fs-3 fw-bold text-white m-0" ><a href="" data-after="+889">+889</a></h1>
                 <p class="text-white mb-2 m-0 w-50">
                       
                     تمويل عقاري تم تمويله
@@ -488,7 +517,7 @@
                 </p>
             </div>
             <div class="col-md-3 m-2 border-bottom">
-                <h1 class="fs-3 fw-bold text-white m-0" data-after="+889">+889</h1>
+                <h1 class="fs-3 fw-bold text-white m-0" ><a href="" data-after="+889">+889</a></h1>
                 <p class="text-white mb-2 m-0 w-50">
                       
                     تمويل عقاري تم تمويله
@@ -496,9 +525,9 @@
                 </p>
             </div>
         </div>
-        <div class="row p-3">
+        <div class="row p-3 number">
             <div class="col-md-3 m-2 border-bottom">
-                <h1 class="fs-3 fw-bold text-white m-0" data-after="+889">+889</h1>
+                <h1 class="fs-3 fw-bold text-white m-0"><a href="" data-after="+889">+889</a></h1>
                 <p class="text-white mb-2 m-0 w-50">
                       
                     تمويل عقاري تم تمويله
@@ -506,7 +535,7 @@
                 </p>
             </div>
             <div class="col-md-3 m-2 border-bottom">
-                <h1 class="fs-3 fw-bold text-white m-0" data-after="+889">+889</h1>
+                <h1 class="fs-3 fw-bold text-white m-0"><a href="" data-after="+889">+889</a></h1>
                 <p class="text-white mb-2 m-0 w-50">
                       
                     تمويل عقاري تم تمويله
@@ -514,7 +543,7 @@
                 </p>
             </div>
             <div class="col-md-3 m-2 border-bottom">
-                <h1 class="fs-3 fw-bold text-white m-0" data-after="+889">+889</h1>
+                <h1 class="fs-3 fw-bold text-white m-0"><a href="" data-after="+889">+889</a></h1>
                 <p class="text-white mb-2 m-0 w-50">
                       
                     تمويل عقاري تم تمويله
@@ -522,7 +551,7 @@
                 </p>
             </div>
             <div class="col-md-3 m-2 border-bottom">
-                <h1 class="fs-3 fw-bold text-white m-0" data-after="+889">+889</h1>
+                <h1 class="fs-3 fw-bold text-white m-0"><a href="" data-after="+1000">+1000</a></h1>
                 <p class="text-white mb-2 m-0 w-50">
                       
                     تمويل عقاري تم تمويله
@@ -562,9 +591,9 @@
     </div>
 </section>
 
-<section class="footer bg-second-color">
-    <div class="container hv-80 pt-4 d-flex flex-column justify-between align-items-center">
-        <img src="{{asset('images/kuraimi-logo-gray.svg')}}" alt="" >
+<section class="footer bg-second-color relative">
+    <div class="container hv-80 pt-5 d-flex flex-column justify-between align-items-center">
+        <img src="{{asset('images/logok.svg')}}" alt="" class="mt-5">
         <hr class="w-90 bg-white">
         <div class="row w-90">
             <div class="col-md-2">
@@ -613,14 +642,22 @@
             </div>
         </div>
         <div class="row w-90 justify-between">
-            <div class="col-md-4">
-                <i class="fas fa-facebook"></i>
+            <div class="col-md-2 d-flex justify-between">
+                <i class="fa-brands text-white fs-5 fa-facebook-f"></i>
+                <i class="fa-brands text-white fs-5 fa-twitter"></i>
+                <i class="fa-brands text-white fs-5 fa-instagram"></i>
             </div>
             <div class="col-md-4 d-flex align-items-center justify-center">
                 <img src="{{asset('images/kurimi-buttom.PNG')}}" alt="" class="me-3">
                 <img src="{{asset('images/kurimi-buttom-2.PNG')}}" alt="">
             </div>
         </div>
+        <h1 class="fs-5 text-white text-right">&copy;kurimi 2022</h1>
+        </div>
+        
+        <div class="absolute layout-image d-flex justify-betwen">
+            <img src="{{asset('pic/Layer 116.png')}}" alt="" class="img-one">
+            <img src="{{asset('pic/Layer 116.png')}}" alt="" class="img-tow">
         </div>
 </section>
 @endsection

@@ -12,7 +12,7 @@
         .per-btn, .next-btn{
             &::after{
                 content: "";
-                @include position(absolute, 2%, 48%);
+                @include position(absolute, 2%, 37%);
                 border-top: 3px solid $secondColor;
                 border-left: 3px solid $secondColor;
                 top: 20%;

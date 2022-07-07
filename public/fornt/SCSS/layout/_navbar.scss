@@ -105,6 +105,7 @@
     }
     li:hover .category-parent{
         display: flex;
+        animation: parent 1s ease-in-out;
         
     }
     
@@ -121,6 +122,14 @@
     100%{
         opacity: 0;
         transform: scale(1.4);
+    }
+}
+
+@keyframes parent{
+    0%{
+        opacity: 0;
+    }100%{
+        opacity: 1;
     }
 }
 
