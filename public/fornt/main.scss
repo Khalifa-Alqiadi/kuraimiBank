@@ -581,4 +581,44 @@ $value in $allPadding {
     }
 }
 
+.col {
+    flex: 1 0 0%;
+}
+
+$col_sm: 100%;
+@media (min-width: 576px) {
+    @for $i from 1 to 7 {
+        .row-col-sm-#{$i} > *{
+            flex: 0 0 auto;
+            width: $col_sm / $i;
+        }
+    }
+
+    .row{
+        flex-wrap: wrap;
+    }
+
+}
+@media (min-width: 768px) {
+    @for $i from 1 to 7 {
+        .row-col-md-#{$i} > *{
+            flex: 0 0 auto;
+            width: $col_sm / $i;
+        }
+    }
+}
+
+
+
+
+// @media(max-width:768px){
+//     .row{
+//         flex-wrap: wrap;
+//     }
+//     .row > * {
+//         flex-shrink: 0;
+//         width: 100%;
+//         max-width: 100%;
+//     }
+// }
 

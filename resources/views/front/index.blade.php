@@ -18,9 +18,9 @@
 </div>
 <section id="rate" class="rate">
     <div class="d-flex align-items-center justify-center">
-        <div class="row w-80 bg-white p-3 rate-list">
-            <div class="col-md-3 border p-1">
-                <div class="row">
+        <div class="row row-col-sm-2 row-col-md-4 w-80 bg-white p-3 rate-list">
+            <div class="col border p-1">
+                <div class="d-flex ">
                     <div class="col-md-6">
                         <p class="fw-bold my-0 py-0">دولار امريكي</p>
                     </div>
@@ -31,7 +31,7 @@
                         <p class="my-0 py-0">شراء</p>
                     </div>
                 </div>
-                <div class="row" >
+                <div class="d-flex" >
                     <div class="col-md-6">
                         <p class="fw-bold my-0 py-0">دولار امريكي</p>
                     </div>
@@ -43,7 +43,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 border p-1">
+            <div class="col border p-1">
                 <div class="row">
                     <div class="col-md-6">
                         <p class="fw-bold my-0 py-0">ريال سعودي</p>
@@ -67,7 +67,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 border p-1">
+            <div class="col border p-1">
                 <div class="row">
                     <div class="col-md-6">
                         <p class="fw-bold my-0 py-0">يورو</p>
@@ -91,7 +91,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2 d-flex align-items-center justify-center ">
+            <div class="col w-10 d-flex align-items-center justify-center ">
                 <button class="text-second-color border-second-color bg-transparent py-1 px-2 fw-bold">تحويل العملات</button>
             </div>
         </div>
@@ -281,7 +281,7 @@
             <button class="next-btn"></button>
         </div>
         <h1 class="text-center fs-4 text-titlr text-second-color mt-5">ابق على اطلاع على آخر أخبار البنك</h1>
-        <div class="row mb-5 w-90 card-slider align-items-center justify-start">
+        <div class="d-flex mb-5 w-90 card-slider align-items-center justify-start">
             <div class=" card relative bg-white d-flex flex-column justify-between content">
                 <img src="{{asset('pic/2.jpg')}}" alt="" class="w-100">
                 <div class="absolute news-info h-100 ">
