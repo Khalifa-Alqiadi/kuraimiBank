@@ -16,10 +16,10 @@
         </title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{{asset('fornt/fontawesome/css/all.css')}}">
+        {{-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"> --}}
+        {{-- <link rel="stylesheet" href="{{asset('fornt/fontawesome/css/all.css')}}"> --}}
         <link rel="stylesheet" href="{{asset('fornt/fontawesome/css/fontawesome.css')}}">
-        <link rel="stylesheet" href="{{asset('fornt/fontawesome/css/v4-font-face.css')}}">
+        {{-- <link rel="stylesheet" href="{{asset('fornt/fontawesome/css/v4-font-face.css')}}"> --}}
         <link rel="stylesheet" href="{{asset('font/stylesheet.css')}}">
         <link rel="stylesheet" href="{{asset('fornt/main.css')}}">
 
@@ -29,6 +29,9 @@
         </style>
 
         <style>
+            body{
+                font-family: "GE SS Two" !important;
+            }
             .home{
                 transform: rotateY(181deg) scaleY(1);
                 width: 100%;
@@ -48,9 +51,27 @@
     <body>
         <div class="navbar absolute w-100">
             <div class="container">
-                <div class="modile d-flex justify-between w-100">
+                <div class="modile d-flex justify-between align-items-center w-100">
                     <div class="hamburger d-flex justify-center align-items-center"><div class="bar"></div></div>
-                    <a href=""><img class="text-white w-100 logo-bank" src="{{asset('images/logok.svg')}}" alt=""></a>
+                    <a href="" class="d-flex justify-center align-items-center"><img class="logo-bank" src="{{asset('images/logok.svg')}}" alt=""></a>
+                    <ul class="logo-bank">
+                        <li class="d-flex">
+                            <p class="text-white me-2"><i class="fa-solid fa-search"></i></p>
+                            <p class="text-white">
+                                @foreach (config('locales.languages') as $key => $val)
+                                    @if ($key != app()->getLocale())
+                                        <a href="{{route('change-language', $key)}}" class="dropdown-item text-white">
+                                            @if ($key == 'en')
+                                                {{'EN'}}
+                                            @else
+                                                {{'AR'}}
+                                            @endif
+                                        </a>
+                                    @endif
+                                @endforeach
+                            </p>
+                        </li>
+                    </ul>
                 </div>
                 <div class="nav-items d-flex justify-center align-items-center flex-column">
                         <header class="navbar-top w-100">

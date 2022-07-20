@@ -18,81 +18,92 @@
 </div>
 <section id="rate" class="rate">
     <div class="d-flex align-items-center justify-center">
-        <div class="row row-col-sm-2 row-col-md-4 w-80 bg-white p-3 rate-list">
-            <div class="col border p-1">
-                <div class="d-flex ">
-                    <div class="col-md-6">
-                        <p class="fw-bold my-0 py-0">دولار امريكي</p>
+        <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-lx-4 w-80 bg-white p-2 rate-list justify-between">
+            <div class="col  p-1">
+                <div class="card border w-90">
+                    <div class="d-flex ">
+                        <div class="col-md-6">
+                            <p class="fw-bold my-0 py-0">دولار امريكي</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="my-0 py-0">بيع</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="my-0 py-0">شراء</p>
+                        </div>
                     </div>
-                    <div class="col-md-2">
-                        <p class="my-0 py-0">بيع</p>
+                    <div class="d-flex" >
+                        <div class="col-md-6">
+                            <p class="fw-bold my-0 py-0">دولار امريكي</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="fs-6 my-0 py-0 text-info">600</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="fs-6 my-0 py-0 text-thred-color">550</p>
+                        </div>
                     </div>
-                    <div class="col-md-2">
-                        <p class="my-0 py-0">شراء</p>
-                    </div>
-                </div>
-                <div class="d-flex" >
-                    <div class="col-md-6">
-                        <p class="fw-bold my-0 py-0">دولار امريكي</p>
-                    </div>
-                    <div class="col-md-2">
-                        <p class="fs-6 my-0 py-0 text-info">600</p>
-                    </div>
-                    <div class="col-md-2">
-                        <p class="fs-6 my-0 py-0 text-thred-color">550</p>
-                    </div>
-                </div>
+                </div>  
             </div>
-            <div class="col border p-1">
-                <div class="row">
-                    <div class="col-md-6">
-                        <p class="fw-bold my-0 py-0">ريال سعودي</p>
+            <div class="col p-1">
+                <div class="card border w-90 ">
+                    <div class="d-flex">
+                        <div class="col-md-6">
+                            <p class="fw-bold my-0 py-0">ريال سعودي</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="my-0 py-0">بيع</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="my-0 py-0">شراء</p>
+                        </div>
                     </div>
-                    <div class="col-md-2">
-                        <p class="my-0 py-0">بيع</p>
-                    </div>
-                    <div class="col-md-2">
-                        <p class="my-0 py-0">شراء</p>
+                    <div class="d-flex">
+                        <div class="col-md-6">
+                            <p class="fw-bold my-0 py-0">ريال سعودي</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="fs-6 my-0 py-0 text-info">600</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="fs-6 my-0 py-0 text-thred-color">550</p>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <p class="fw-bold my-0 py-0">ريال سعودي</p>
-                    </div>
-                    <div class="col-md-2">
-                        <p class="fs-6 my-0 py-0 text-info">600</p>
-                    </div>
-                    <div class="col-md-2">
-                        <p class="fs-6 my-0 py-0 text-thred-color">550</p>
-                    </div>
-                </div>
+                
             </div>
-            <div class="col border p-1">
-                <div class="row">
-                    <div class="col-md-6">
-                        <p class="fw-bold my-0 py-0">يورو</p>
+            <div class="col p-1">
+                <div class="card border w-90">
+                    <div class="d-flex">
+                        <div class="col-md-6">
+                            <p class="fw-bold my-0 py-0">يورو</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="my-0 py-0">بيع</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="my-0 py-0">شراء</p>
+                        </div>
                     </div>
-                    <div class="col-md-2">
-                        <p class="my-0 py-0">بيع</p>
-                    </div>
-                    <div class="col-md-2">
-                        <p class="my-0 py-0">شراء</p>
+                    <div class="d-flex">
+                        <div class="col-md-6">
+                            <p class="fw-bold my-0 py-0">يورو</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="fs-6 my-0 py-0 text-info">550</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="fs-6 my-0 py-0 text-thred-color">550</p>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <p class="fw-bold my-0 py-0">يورو</p>
-                    </div>
-                    <div class="col-md-2">
-                        <p class="fs-6 my-0 py-0 text-info">550</p>
-                    </div>
-                    <div class="col-md-2">
-                        <p class="fs-6 my-0 py-0 text-thred-color">550</p>
-                    </div>
-                </div>
+                
             </div>
             <div class="col w-10 d-flex align-items-center justify-center ">
-                <button class="text-second-color border-second-color bg-transparent py-1 px-2 fw-bold">تحويل العملات</button>
+                <div class="card w-50">
+                    <button class="text-second-color border-second-color bg-transparent py-1 px-2 fw-bold">تحويل العملات</button>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -111,29 +122,35 @@
         </ul>
     </div>
     <div class="w-80 mt-3 border z-index-2 bg-white">
-        <div class="row justify-between  hv-50 ">
-            <div class="mySlides d-flex w-100">
-                <div class="ms-0 me-0 col-md-8 px-5 box-shadow d-flex flex-column justify-evenly">
+        <div class="row  justify-between  hv-50 ">
+            <div class="mySlides row row-cols-md-2 row-cols-sm-1 w-100">
+                <div class="ms-0 me-0 mySlides-info px-5 box-shadow d-flex flex-column justify-evenly">
                     <h1 class="text-second-color">ماكينات الصراف الآلي</h1>
-                    <p class="">
-                        هذا النص هو مثال لنص يمكن أن يستبدل
-                    </p>
-                    <p class="">
-                        هذا النص هو مثال لنص يمكن أن يستبدل
-                    </p>
-                    <p class="">
+                    <p class="w-70">
                         في نفس المساحة، لقد تم توليد هذا
                         نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
                     </p>
-                    <p class="">
+                    <p class="w-70">
                         في نفس المساحة، لقد تم توليد هذا
                         نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
                     </p>
-                    <p class="">
-                        هذا النص هو مثال لنص يمكن أن يستبدل
+                    <button class="col-md-4  text-second-color border-second-color bg-transparent py-1 px-2 fw-bold">تحويل العملات</button>
+                </div>
+                <div class="col-md-4 ms-0 me-0 images relative bg-linear-gradient-main">
+                    <img src="{{asset('pic/Al-_Kurimi_1 f.png')}}" alt="" class="w-60 h-90 images-transform absolute">
+                    <img src="{{asset('pic/Al- kurimi 1 png.png')}}" alt="" class="w-60 h-90 images-transform img-tow absolute">
+                </div>
+            </div>
+            <div class="mySlides w-100">
+                <div class="ms-0 me-0 px-5 box-shadow d-flex flex-column justify-evenly">
+                    <h1 class="text-second-color">knhlkjhlk</h1>
+                    <p class="w-70">
+                        في نفس المساحة، لقد تم توليد هذا
+                        نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
                     </p>
-                    <p class="">
-                        هذا النص هو مثال لنص يمكن أن يستبدل
+                    <p class="w-70">
+                        في نفس المساحة، لقد تم توليد هذا
+                        نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
                     </p>
                     <button class="col-md-4  text-second-color border-second-color bg-transparent py-1 px-2 fw-bold">تحويل العملات</button>
                 </div>
@@ -175,55 +192,13 @@
             <div class="mySlides w-100">
                 <div class="ms-0 me-0 col-md-8 px-5 box-shadow d-flex flex-column justify-evenly">
                     <h1 class="text-second-color">ماكينات الصراف الآلي</h1>
-                    <p class="">
-                        هذا النص هو مثال لنص يمكن أن يستبدل
-                    </p>
-                    <p class="">
-                        هذا النص هو مثال لنص يمكن أن يستبدل
-                    </p>
-                    <p class="">
+                    <p class="w-70">
                         في نفس المساحة، لقد تم توليد هذا
                         نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
                     </p>
-                    <p class="">
+                    <p class="w-70">
                         في نفس المساحة، لقد تم توليد هذا
                         نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
-                    </p>
-                    <p class="">
-                        هذا النص هو مثال لنص يمكن أن يستبدل
-                    </p>
-                    <p class="">
-                        هذا النص هو مثال لنص يمكن أن يستبدل
-                    </p>
-                    <button class="col-md-4  text-second-color border-second-color bg-transparent py-1 px-2 fw-bold">تحويل العملات</button>
-                </div>
-                <div class="col-md-4 ms-0 me-0 images relative bg-linear-gradient-main">
-                    <img src="{{asset('pic/Al-_Kurimi_1 f.png')}}" alt="" class="w-60 h-90 images-transform absolute">
-                    <img src="{{asset('pic/Al- kurimi 1 png.png')}}" alt="" class="w-60 h-90 images-transform img-tow absolute">
-                </div>
-            </div>
-            <div class="mySlides w-100">
-                <div class="ms-0 me-0 col-md-8 px-5 box-shadow d-flex flex-column justify-evenly">
-                    <h1 class="text-second-color">ماكينات الصراف الآلي</h1>
-                    <p class="">
-                        هذا النص هو مثال لنص يمكن أن يستبدل
-                    </p>
-                    <p class="">
-                        هذا النص هو مثال لنص يمكن أن يستبدل
-                    </p>
-                    <p class="">
-                        في نفس المساحة، لقد تم توليد هذا
-                        نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
-                    </p>
-                    <p class="">
-                        في نفس المساحة، لقد تم توليد هذا
-                        نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
-                    </p>
-                    <p class="">
-                        هذا النص هو مثال لنص يمكن أن يستبدل
-                    </p>
-                    <p class="">
-                        هذا النص هو مثال لنص يمكن أن يستبدل
                     </p>
                     <button class="col-md-4  text-second-color border-second-color bg-transparent py-1 px-2 fw-bold">تحويل العملات</button>
                 </div>
@@ -272,7 +247,76 @@
     </div>
 </section>
 
-
+<section class="hv-100 app d-flex align-items-center">
+    <div class="row w-100 row-cols-sm-1 row-cols-lx-2">
+        <div class="col">
+            <div class="p-1 d-flex align-items-center">
+                <img src="{{asset('images/app.png')}}" alt="" class="w-100">
+            </div>
+        </div>
+        <div class="col hv-70  relative">
+            <div class="">
+                <h1 class="fs-3 text-second-color mt-0 mb-0 ms-3">
+                    تطبيقات البنك
+                </h1>
+                <p class="w-70 fs-6 mt-0 mb-0 ms-3">
+                    هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من
+                    مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم       
+                </p>
+                <div class="slides-app d-flex relative mt-3 ">
+                    <div class="item-app p-3 bg-white w-80 absolute ms-2">
+                        <h1 class="fs-4 m-1">الكريمي جوال</h1>
+                        <div class="d-flex">
+                            <div class="col-md-4">
+                                <p>التحويل بين الحسابات</p>
+                                <p>الإيداع للحسابات</p>
+                            </div>
+                            <div class="col-md-4">
+                                <p>إدارة حساباتك</p>
+                                <p>تبديل العملات بين حساباتك</p>
+                            </div>
+                            <div class="col-md-4">
+                                <p>ارسال الحوالات</p>
+                                <p>سداد فواتير الخدمات</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center justify-between">
+                            <img src="{{asset('images/kurimi-buttom.PNG')}}" alt="" class="">
+                            <img src="{{asset('images/kurimi-buttom-2.PNG')}}" alt="">
+                        </div>
+                    </div>
+                    <div class="item-app p-3 bg-white w-80 absolute">
+                        <h1 class="fs-4 m-1">الكريمي جوال</h1>
+                        <div class="d-flex">
+                            <div class="col-md-3">
+                                <p>التحويل بين الحسابات</p>
+                                <p>الإيداع للحسابات</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p>إدارة حساباتك</p>
+                                <p>تبديل العملات بين حساباتك</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p>ارسال الحوالات</p>
+                                <p>سداد فواتير الخدمات</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center justify-between">
+                            <img src="{{asset('images/kurimi-buttom.PNG')}}" alt="" class="">
+                            <img src="{{asset('images/kurimi-buttom-2.PNG')}}" alt="">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="cicle d-flex w-100 absolute me-3">
+                <span class="items" onclick="currentSlideApp(1)"></span>
+                <span class="items" onclick="currentSlideApp(2)"></span>
+            </div>
+        </div>
+        
+    </div>
+</section>
 
 <section class="news relative">
     <div class="container mt-5 w-100 d-flex align-items-center justify-center flex-column">
@@ -491,72 +535,89 @@
     
     <div class="container d-flex flex-column justify-evenly hv-80">
         <h1 class="fs-4 text-white">نجاحاتنا في أرقام</h1>
-        <div class="row p-3 number">
-            <div class="col-md-3 m-2 border-bottom">
-                <h1 class="fs-3 fw-bold text-white m-0" > <a href="" data-after="+889">+889</a></h1>
-                <p class="text-white mb-2 m-0 w-50">
-                      
-                    تمويل عقاري تم تمويله
-                    تمويلا شاملا
-                </p>
+        
+        <div class="row row-cols-sm-2 row-cols-lg-4 p-3 number">
+            <div class="col">
+                <div class="card m-2 border-bottom">
+                    <h1 class="fs-3 fw-bold text-white m-0"><a href="" data-after="+889">+889</a></h1>
+                    <p class="text-white mb-2 m-0 w-50">
+                        
+                        تمويل عقاري تم تمويله
+                        تمويلا شاملا
+                    </p>
+                </div>
             </div>
-            <div class="col-md-3 m-2 border-bottom" >
-                <h1 class="fs-3 fw-bold text-white m-0"><a href="" data-after="+889">+889</a></h1>
-                <p class="text-white mb-2 m-0 w-50">
-                      
-                    تمويل عقاري تم تمويله
-                    تمويلا شاملا
-                </p>
+            <div class="col">
+                <div class="card m-2 border-bottom">
+                    <h1 class="fs-3 fw-bold text-white m-0"><a href="" data-after="+889">+889</a></h1>
+                    <p class="text-white mb-2 m-0 w-50">
+                        
+                        تمويل عقاري تم تمويله
+                        تمويلا شاملا
+                    </p>
+                </div>
             </div>
-            <div class="col-md-3 m-2 border-bottom">
-                <h1 class="fs-3 fw-bold text-white m-0" ><a href="" data-after="+889">+889</a></h1>
-                <p class="text-white mb-2 m-0 w-50">
-                      
-                    تمويل عقاري تم تمويله
-                    تمويلا شاملا
-                </p>
+            <div class="col ">
+                <div class="card m-2 border-bottom">
+                    <h1 class="fs-3 fw-bold text-white m-0"><a href="" data-after="+889">+889</a></h1>
+                    <p class="text-white mb-2 m-0 w-50">
+                        
+                        تمويل عقاري تم تمويله
+                        تمويلا شاملا
+                    </p>
+                </div>
             </div>
-            <div class="col-md-3 m-2 border-bottom">
-                <h1 class="fs-3 fw-bold text-white m-0" ><a href="" data-after="+889">+889</a></h1>
-                <p class="text-white mb-2 m-0 w-50">
-                      
-                    تمويل عقاري تم تمويله
-                    تمويلا شاملا
-                </p>
+            <div class="col">
+                <div class="card m-2 border-bottom">
+                    <h1 class="fs-3 fw-bold text-white m-0"><a href="" data-after="+1000">+1000</a></h1>
+                    <p class="text-white mb-2 m-0 w-50">
+                        
+                        تمويل عقاري تم تمويله
+                        تمويلا شاملا
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="row p-3 number">
-            <div class="col-md-3 m-2 border-bottom">
-                <h1 class="fs-3 fw-bold text-white m-0"><a href="" data-after="+889">+889</a></h1>
-                <p class="text-white mb-2 m-0 w-50">
-                      
-                    تمويل عقاري تم تمويله
-                    تمويلا شاملا
-                </p>
+        <div class="row row-cols-sm-2 row-cols-lg-4 p-3 number">
+            <div class="col">
+                <div class="card m-2 border-bottom">
+                    <h1 class="fs-3 fw-bold text-white m-0"><a href="" data-after="+889">+889</a></h1>
+                    <p class="text-white mb-2 m-0 w-50">
+                        
+                        تمويل عقاري تم تمويله
+                        تمويلا شاملا
+                    </p>
+                </div>
             </div>
-            <div class="col-md-3 m-2 border-bottom">
-                <h1 class="fs-3 fw-bold text-white m-0"><a href="" data-after="+889">+889</a></h1>
-                <p class="text-white mb-2 m-0 w-50">
-                      
-                    تمويل عقاري تم تمويله
-                    تمويلا شاملا
-                </p>
+            <div class="col">
+                <div class="card m-2 border-bottom">
+                    <h1 class="fs-3 fw-bold text-white m-0"><a href="" data-after="+889">+889</a></h1>
+                    <p class="text-white mb-2 m-0 w-50">
+                        
+                        تمويل عقاري تم تمويله
+                        تمويلا شاملا
+                    </p>
+                </div>
             </div>
-            <div class="col-md-3 m-2 border-bottom">
-                <h1 class="fs-3 fw-bold text-white m-0"><a href="" data-after="+889">+889</a></h1>
-                <p class="text-white mb-2 m-0 w-50">
-                      
-                    تمويل عقاري تم تمويله
-                    تمويلا شاملا
-                </p>
+            <div class="col ">
+                <div class="card m-2 border-bottom">
+                    <h1 class="fs-3 fw-bold text-white m-0"><a href="" data-after="+889">+889</a></h1>
+                    <p class="text-white mb-2 m-0 w-50">
+                        
+                        تمويل عقاري تم تمويله
+                        تمويلا شاملا
+                    </p>
+                </div>
             </div>
-            <div class="col-md-3 m-2 border-bottom">
-                <h1 class="fs-3 fw-bold text-white m-0"><a href="" data-after="+1000">+1000</a></h1>
-                <p class="text-white mb-2 m-0 w-50">
-                      
-                    تمويل عقاري تم تمويله
-                    تمويلا شاملا
-                </p>
+            <div class="col">
+                <div class="card m-2 border-bottom">
+                    <h1 class="fs-3 fw-bold text-white m-0"><a href="" data-after="+1000">+1000</a></h1>
+                    <p class="text-white mb-2 m-0 w-50">
+                        
+                        تمويل عقاري تم تمويله
+                        تمويلا شاملا
+                    </p>
+                </div>
             </div>
         </div>
         {{-- <div class="absolute fw-bold number-back">+889</div> --}}
@@ -565,10 +626,10 @@
 
 <section class="maps">
     <div class="container hv-80 d-flex flex-column justify-center">
-        <div class="row">
-            <div class="col-md-5 p-4 d-flex flex-column justify-between">
+        <div class="row row-cols-sm-1 row-cols-lg-2">
+            <div class="col p-4 d-flex flex-column justify-between">
                 <h1 class="text-second-color mb-5 w-40 text-center">نقاط تواجدنا</h1>
-                <div class="row">
+                <div class="row ">
                     <div class="col-md-3 text-center">
                         <h3 class="text-second-color">100</h3>
                         <p class="text-second-color">فرع بنك</p>
@@ -582,9 +643,11 @@
                         <p class="text-second-color">نقطة خدمة</p>
                     </div>
                 </div>
-                <button class="mt-5 ms-4 w-40 fw-bold mb-5 btn-main bg-transparent text-second-color">أقرب نقطة لك</button>
+                <div class="w-60">
+                    <button class="mt-5 ms-4 fw-bold mb-5 btn-main bg-transparent text-second-color">أقرب نقطة لك</button>
+                </div>
             </div>
-            <div class="col-md-6">
+            <div class="col">
                 <img src="{{asset('images/kurimi-5.PNG')}}" alt="" class="w-100">
             </div>
         </div>
@@ -595,8 +658,8 @@
     <div class="container hv-80 pt-5 d-flex flex-column justify-between align-items-center">
         <img src="{{asset('images/logok.svg')}}" alt="" class="mt-5">
         <hr class="w-90 bg-white">
-        <div class="row w-90">
-            <div class="col-md-2">
+        <div class="row w-90 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-lx-6">
+            <div class="col">
                 <h1 class="text-white">البنك</h1>
                 <p class="mt-0 mb-0">عن البنك</p>
                 <p class="mt-0 mb-0">الرؤية</p>
@@ -607,7 +670,7 @@
                 <p class="mt-0 mb-0">مكافحة غسل</p>
                 <p class="mt-0 mb-0">شركائنا</p>
             </div>
-            <div class="col-md-2">
+            <div class="col">
                 <h1 class="text-white">شركائنا</h1>
                 <p class="mt-0 mb-0">موني جرام</p>
                 <p class="mt-0 mb-0">ماستر كارد</p>
@@ -615,7 +678,7 @@
                 <p class="mt-0 mb-0">منظمة التمويل الدولية</p>
                 <p class="mt-0 mb-0">تيمينوس</p>
             </div>
-            <div class="col-md-2">
+            <div class="col">
                 <h1 class="text-white">الخدمات</h1>
                 <p class="mt-0 mb-0">خدمات الأفراد</p>
                 <p class="mt-0 mb-0">خدمات الشركات</p>
@@ -623,16 +686,16 @@
                 <p class="mt-0 mb-0">ام فلوس</p>
                 <p class="mt-0 mb-0">التمويل</p>
             </div>
-            <div class="col-md-2">
+            <div class="col">
                 <h1 class="text-white">التقارير</h1>
                 <p class="mt-0 mb-0">التقارير المالية</p>
                 <p class="mt-0 mb-0">القوائم المالية</p>
             </div>
-            <div class="col-md-2">
+            <div class="col">
                 <h1 class="text-white">نقاط الخدمة</h1>
                 <p class="mt-0 mb-0">الفروع وماكينات الصرافة</p>
             </div>
-            <div class="col-md-2">
+            <div class="col">
                 <h1 class="text-white">تواصل معنا</h1>
                 <p class="mt-0 mb-0">967 1 503888 : تلفون</p>
                 <p class="mt-0 mb-0">967 1 435400 : فاكس</p>

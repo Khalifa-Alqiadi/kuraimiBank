@@ -124,3 +124,30 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
     slides[slideIndex - 1].className += " active";
 }
+
+
+let slideApp = 1;
+appSlides(slideApp);
+
+function currentSlideApp(n) {
+    appSlides(slideApp = n);
+}
+
+function appSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("item-app");
+    let dots = document.getElementsByClassName("items");
+    if (n > slides.length) {
+        slideApp = 1
+    }
+    if (n < 1) {
+        slideApp = slides.length
+    }
+
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+        slides[i].className = slides[i].className.replace(" active", "");
+    }
+    dots[slideApp - 1].className += " active";
+    slides[slideApp - 1].className += " active";
+}

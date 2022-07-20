@@ -6,7 +6,7 @@
 
 
 body{
-    font-family: 'Helvetica Neue LT Pro';
+    
     font-weight: normal;
 }
 
@@ -110,6 +110,30 @@ body{
     background-image: linear-gradient(60deg, #423064 0%, $secondColor 100%);
 }
 
+.fs-1 {
+    font-size: calc(1.375rem + 1.5vw) !important;
+  }
+  
+  .fs-2 {
+    font-size: calc(1.325rem + 0.9vw) !important;
+  }
+  
+  .fs-3 {
+    font-size: calc(1.3rem + 0.6vw) !important;
+  }
+  
+  .fs-4 {
+    font-size: calc(1.275rem + 0.3vw) !important;
+  }
+  
+  .fs-5 {
+    font-size: 1.25rem !important;
+  }
+  
+  .fs-6 {
+    font-size: 1rem !important;
+  }
+
 
 hr {
     height: 1px;
@@ -180,6 +204,18 @@ ul {
     display: flex;
 }
 
+.row > *{
+    flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.25rem;
+}
+
 $border: ('white': white, 'second': 'secondColor');
 @each $key, $value in $border {
     @for $i from 0 to 5 {
@@ -192,14 +228,6 @@ $border: ('white': white, 'second': 'secondColor');
                 border-bottom: #{$i}px solid $secondColor;
             }
         }
-    }
-}
-
-$font-size: 7em;
-
-@for $fs from 1 to 7 {
-    .fs-#{$fs} {
-        font-size: $font-size -$fs;
     }
 }
 
@@ -402,9 +430,7 @@ $value in $allPadding {
 .rate-list{
     box-shadow: 0px 4px 6px 5px $colorLight;
 }
-.mySlides {
-    display: none;
-}
+
 .mySlides.active{
     animation: myslides 1s ease-in-out;
 }
@@ -457,6 +483,81 @@ $value in $allPadding {
     }
 }
 
+.app{
+    background-color: #eff1f1;
+    margin-top: 10%;
+    .slides-app{
+        overflow-x: clip;
+        .item-app{
+            animation: appLeft 1.2s ease-in-out forwards;
+            border-radius: 10px;
+        }
+        .item-app.active{
+            animation: appRight 1.2s ease-in-out forwards;
+        }
+    }
+    
+    .cicle{
+        z-index: 10;
+        height: 9px; 
+    }
+    
+}
+
+@keyframes appRight{
+    0%{
+        left: -66%;
+        height: auto;
+    }
+    100%{
+        left: 20%;
+        height: 45vh;
+    }
+}
+@keyframes appLeft{
+    0%{
+        opacity: 1;
+    }50%{
+        opacity: 0;
+    }
+    70%{
+        left: -166%;
+        opacity: .5;
+    }100%{
+        left: -66%;
+        opacity: 1;
+    }
+}
+.items.active{
+    background-color: $secondColor;
+    width: 20%;
+}
+.items{
+    background-color: #9e9d9d;
+    width: 5%;
+    margin-right: 10px;
+    border-radius: 23px;
+    height: 100%;
+}
+
+// .app-list{
+//     width: 100%;
+//     top: 125%;
+//     z-index: 10;
+//     right: 0%;
+//     span{
+//         width: 10%;
+//         background-color: white;
+//         border-radius: 10%;
+//         height: 10px;
+//         border: 1px solid #CCC;
+//     }
+//     span.active{
+//         background-color: $secondColor;
+//         width: 30%;
+//     }
+// }
+
 .news{
     
     margin-top: 6rem;
@@ -507,7 +608,7 @@ $value in $allPadding {
         overflow-x: auto;
         .card{
             flex: 0 0 auto;
-            width: 30%;
+            width: 43%;
             margin-right: 37px;
             box-shadow: 0px 16px 6px 1px white;;
         }
@@ -520,7 +621,7 @@ $value in $allPadding {
 
 .mySlides p{
     font-size: 20px;
-    margin: -3% 0;
+    margin: 0;
 }
 
 .numbers{
@@ -542,7 +643,7 @@ $value in $allPadding {
         letter-spacing: initial;
     }
     .number p{
-        font-size: 22px;
+        font-size: 17px;
     }
 }
 
@@ -588,7 +689,7 @@ $value in $allPadding {
 $col_sm: 100%;
 @media (min-width: 576px) {
     @for $i from 1 to 7 {
-        .row-col-sm-#{$i} > *{
+        .row-cols-sm-#{$i} > *{
             flex: 0 0 auto;
             width: $col_sm / $i;
         }
@@ -598,13 +699,63 @@ $col_sm: 100%;
         flex-wrap: wrap;
     }
 
+    .mySlides .images{
+        display: none;
+    }
+
+    .app .cicle{
+        top: 92%;
+    }
+
 }
 @media (min-width: 768px) {
     @for $i from 1 to 7 {
-        .row-col-md-#{$i} > *{
+        .row-cols-md-#{$i} > *{
             flex: 0 0 auto;
             width: $col_sm / $i;
         }
+    }
+    .mySlides .images{
+        width: 30%;
+        display: block;
+    }
+    .mySlides .mySlides-info{
+        width: 70%;
+    }
+}
+@media (min-width: 992px) {
+    @for $i from 1 to 7 {
+        .row-cols-lg-#{$i} > *{
+            flex: 0 0 auto;
+            width: $col_sm / $i;
+        }
+    }
+    .news .card-slider .card {
+        width: 30%;
+    }
+}
+@media (min-width: 1200px) {
+    @for $i from 1 to 7 {
+        .row-cols-lx-#{$i} > *{
+            flex: 0 0 auto;
+            width: $col_sm / $i;
+        }
+    }
+
+    $font-size: 7em;
+
+    @for $fs from 1 to 7 {
+        .fs-#{$fs} {
+            font-size: $font-size -$fs !important;
+        }
+    }
+
+    .number p{
+        font-size: 20px !important;
+    }
+
+    .app .cicle{
+        top: 105%;
     }
 }
 

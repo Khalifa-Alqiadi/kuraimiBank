@@ -7,7 +7,10 @@
         background-color: $mainColor;
         top: 0;
         transition: .4s ease left;
-        
+        ul{
+            flex-direction: column;
+            align-items: center;
+        }
     }
     &::after{
         content: "";
@@ -92,7 +95,7 @@
     li .category-parent{
             @include position(absolute, 100%, 50vh);
             background-color: $colorWhite;
-            top: 101%;
+            top: 22%;
             color: black;
             left: 0;
             overflow: hidden;
@@ -112,6 +115,16 @@
     // li:hover .category-parent{
     //     display: block;
     // }
+    .logo-bank{
+        position: relative;
+        z-index: 10;
+    }
+    .modile img{
+        width: 70%;
+    }
+    hr{
+        display: none;
+    }
 }
 
 @keyframes hamburger{
@@ -154,5 +167,11 @@
     }
     .col-md-12{
         flex-direction: row;
+    }
+    .navbar hr{
+        display: block;
+    }
+    .navbar li .category-parent{
+        top: 101%;
     }
 }
