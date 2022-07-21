@@ -157,13 +157,16 @@
         display: none;
     }
     .navbar .navbar-top .logo{
-        display: block;
+        display: flex;
     }
     .navbar .nav-items{
         position: initial;
         display: block;
         height: auto;
         background-color: transparent;
+        ul{
+            flex-direction: row;
+        }
     }
     .col-md-12{
         flex-direction: row;

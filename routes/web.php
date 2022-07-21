@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\front\HomeController;
+use App\Http\Controllers\front\ServiceController;
 use App\Http\Controllers\admin\CategoriesAdminController;
 use App\Http\Controllers\admin\UsersAdminController;
 use App\Http\Controllers\LocaleController;
@@ -36,6 +37,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('change-language/{locale}', [LocaleController::class, 'switch'])->name('change-language');
 Route::get('/frontIndex', [HomeController::class, 'frontIndex'])->name('frontIndex');
+Route::get('/service', [ServiceController::class, 'show'])->name('service');
 Route::get('/', function () {
     return view('front.index');
 });

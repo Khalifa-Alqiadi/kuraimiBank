@@ -18,7 +18,7 @@
 </div>
 <section id="rate" class="rate">
     <div class="d-flex align-items-center justify-center">
-        <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-lx-4 w-80 bg-white p-2 rate-list justify-between">
+        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-lx-4 w-80 bg-white p-2 rate-list justify-between">
             <div class="col  p-1">
                 <div class="card border w-90">
                     <div class="d-flex ">
@@ -123,14 +123,14 @@
     </div>
     <div class="w-80 mt-3 border z-index-2 bg-white">
         <div class="row  justify-between  hv-50 ">
-            <div class="mySlides row row-cols-md-2 row-cols-sm-1 w-100">
+            <div class="mySlides row row-cols-1 row-cols-md-2 row-cols-sm-1 w-100">
                 <div class="ms-0 me-0 mySlides-info px-5 box-shadow d-flex flex-column justify-evenly">
                     <h1 class="text-second-color">ماكينات الصراف الآلي</h1>
-                    <p class="w-70">
+                    <p class="w-70 fs-6">
                         في نفس المساحة، لقد تم توليد هذا
                         نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
                     </p>
-                    <p class="w-70">
+                    <p class="w-70 fs-6">
                         في نفس المساحة، لقد تم توليد هذا
                         نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص هو
                     </p>
@@ -248,7 +248,7 @@
 </section>
 
 <section class="hv-100 app d-flex align-items-center">
-    <div class="row w-100 row-cols-sm-1 row-cols-lx-2">
+    <div class="row w-100 row-cols-1 row-cols-sm-1 row-cols-lx-2">
         <div class="col">
             <div class="p-1 d-flex align-items-center">
                 <img src="{{asset('images/app.png')}}" alt="" class="w-100">
@@ -280,9 +280,9 @@
                                 <p>سداد فواتير الخدمات</p>
                             </div>
                         </div>
-                        <div class="col-md-6 d-flex align-items-center justify-between">
-                            <img src="{{asset('images/kurimi-buttom.PNG')}}" alt="" class="">
-                            <img src="{{asset('images/kurimi-buttom-2.PNG')}}" alt="">
+                        <div class="col-md-6 mt-4 d-flex align-items-center justify-between">
+                            <img src="{{asset('images/kurimi-buttom-3.PNG')}}" alt="" class="">
+                            <img src="{{asset('images/kurimi-buttom-4.PNG')}}" alt="">
                         </div>
                     </div>
                     <div class="item-app p-3 bg-white w-80 absolute">
@@ -301,9 +301,9 @@
                                 <p>سداد فواتير الخدمات</p>
                             </div>
                         </div>
-                        <div class="col-md-6 d-flex align-items-center justify-between">
-                            <img src="{{asset('images/kurimi-buttom.PNG')}}" alt="" class="">
-                            <img src="{{asset('images/kurimi-buttom-2.PNG')}}" alt="">
+                        <div class="col-md-6 mt-4 d-flex align-items-center justify-between">
+                            <img src="{{asset('images/kurimi-buttom-3.PNG')}}" alt="" class="">
+                            <img src="{{asset('images/kurimi-buttom-4.PNG')}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -534,9 +534,9 @@
 <section class="numbers relative hv-80">
     
     <div class="container d-flex flex-column justify-evenly hv-80">
-        <h1 class="fs-4 text-white">نجاحاتنا في أرقام</h1>
+        <h1 class="fs-4 text-white mt-5">نجاحاتنا في أرقام</h1>
         
-        <div class="row row-cols-sm-2 row-cols-lg-4 p-3 number">
+        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-4 p-3 number">
             <div class="col">
                 <div class="card m-2 border-bottom">
                     <h1 class="fs-3 fw-bold text-white m-0"><a href="" data-after="+889">+889</a></h1>
@@ -578,7 +578,7 @@
                 </div>
             </div>
         </div>
-        <div class="row row-cols-sm-2 row-cols-lg-4 p-3 number">
+        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-4 p-3 number">
             <div class="col">
                 <div class="card m-2 border-bottom">
                     <h1 class="fs-3 fw-bold text-white m-0"><a href="" data-after="+889">+889</a></h1>
@@ -626,9 +626,9 @@
 
 <section class="maps">
     <div class="container hv-80 d-flex flex-column justify-center">
-        <div class="row row-cols-sm-1 row-cols-lg-2">
+        <div class="row row-cols-1 row-cols-sm-1 row-cols-lg-2">
             <div class="col p-4 d-flex flex-column justify-between">
-                <h1 class="text-second-color mb-5 w-40 text-center">نقاط تواجدنا</h1>
+                <h1 class="text-second-color mb-5 w-50 text-center">نقاط تواجدنا</h1>
                 <div class="row ">
                     <div class="col-md-3 text-center">
                         <h3 class="text-second-color">100</h3>
@@ -643,7 +643,7 @@
                         <p class="text-second-color">نقطة خدمة</p>
                     </div>
                 </div>
-                <div class="w-60">
+                <div class="w-70">
                     <button class="mt-5 ms-4 fw-bold mb-5 btn-main bg-transparent text-second-color">أقرب نقطة لك</button>
                 </div>
             </div>
@@ -658,7 +658,7 @@
     <div class="container hv-80 pt-5 d-flex flex-column justify-between align-items-center">
         <img src="{{asset('images/logok.svg')}}" alt="" class="mt-5">
         <hr class="w-90 bg-white">
-        <div class="row w-90 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-lx-6">
+        <div class="row w-90  row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-lx-6">
             <div class="col">
                 <h1 class="text-white">البنك</h1>
                 <p class="mt-0 mb-0">عن البنك</p>
@@ -715,7 +715,7 @@
                 <img src="{{asset('images/kurimi-buttom-2.PNG')}}" alt="">
             </div>
         </div>
-        <h1 class="fs-5 text-white text-right">&copy;kurimi 2022</h1>
+        <h1 class="fs-6 text-white text-right">&copy;kurimi 2022</h1>
         </div>
         
         <div class="absolute layout-image d-flex justify-betwen">

@@ -4,9 +4,11 @@
 @import "SCSS/variables/colors";
 @import "SCSS/layout/navbar";
 
-
+html{
+    overflow-x: hidden;
+}
 body{
-    
+    overflow-x: clip;
     font-weight: normal;
 }
 
@@ -208,6 +210,11 @@ ul {
     flex-shrink: 0;
   width: 100%;
   max-width: 100%;
+}
+
+.row-cols-1 > * {
+    flex: 0 0 auto;
+    width: 100%;
 }
 
 .card {
@@ -467,7 +474,7 @@ $value in $allPadding {
         top: 45%;
         width: 100%;
     }
-    @include trendsBotton(63%);
+    @include trendsBotton(63%, 2%, 37%);
     .dot.active{
         color: #423064;
         font-weight: bold;
@@ -490,7 +497,7 @@ $value in $allPadding {
         overflow-x: clip;
         .item-app{
             animation: appLeft 1.2s ease-in-out forwards;
-            border-radius: 10px;
+            border-radius: 40px;
         }
         .item-app.active{
             animation: appRight 1.2s ease-in-out forwards;
@@ -511,7 +518,7 @@ $value in $allPadding {
     }
     100%{
         left: 20%;
-        height: 45vh;
+        height: 50vh;
     }
 }
 @keyframes appLeft{
@@ -608,15 +615,19 @@ $value in $allPadding {
         overflow-x: auto;
         .card{
             flex: 0 0 auto;
-            width: 43%;
+            width: 92%;
             margin-right: 37px;
-            box-shadow: 0px 16px 6px 1px white;;
+            box-shadow: 0px 16px 6px 1px white;
         }
         &::-webkit-scrollbar{
             display: none;
         }
     }
-    @include trendsBotton(45%);
+    @include trendsBotton(45%, 3%, 22%);
+
+    p{
+        font-size: 14px;
+    }
 }
 
 .mySlides p{
@@ -686,6 +697,23 @@ $value in $allPadding {
     flex: 1 0 0%;
 }
 
+@media (min-width: 300px) {
+    .row{
+        flex-wrap: wrap;
+    }
+    .row-cols-1 > *{
+        width: 100%;
+        flex: 0 0 auto;
+    }
+    .mySlides .images{
+        display: none;
+    }
+    .app .cicle {
+        top: 95%;
+    }
+
+}
+
 $col_sm: 100%;
 @media (min-width: 576px) {
     @for $i from 1 to 7 {
@@ -706,6 +734,9 @@ $col_sm: 100%;
     .app .cicle{
         top: 92%;
     }
+    .services  .dot{
+        font-size: 13px;
+    }
 
 }
 @media (min-width: 768px) {
@@ -722,6 +753,9 @@ $col_sm: 100%;
     .mySlides .mySlides-info{
         width: 70%;
     }
+    .news .card-slider .card{
+        width: 45%;
+    }
 }
 @media (min-width: 992px) {
     @for $i from 1 to 7 {
@@ -732,6 +766,9 @@ $col_sm: 100%;
     }
     .news .card-slider .card {
         width: 30%;
+    }
+    .services  .dot{
+        font-size: 20px;
     }
 }
 @media (min-width: 1200px) {
@@ -755,7 +792,7 @@ $col_sm: 100%;
     }
 
     .app .cicle{
-        top: 105%;
+        top: 115%;
     }
 }
 
@@ -772,4 +809,7 @@ $col_sm: 100%;
 //         max-width: 100%;
 //     }
 // }
+
+
+
 

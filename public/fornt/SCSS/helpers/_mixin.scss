@@ -5,14 +5,14 @@
 }
 
 
-@mixin trendsBotton($trendsTop) {
+@mixin trendsBotton($trendsTop, $width, $height) {
     .trends{
         top: $trendsTop;
         z-index: 1;
         .per-btn, .next-btn{
             &::after{
                 content: "";
-                @include position(absolute, 2%, 37%);
+                @include position(absolute, $width, $height);
                 border-top: 3px solid $secondColor;
                 border-left: 3px solid $secondColor;
                 top: 20%;

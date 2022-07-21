@@ -17,7 +17,7 @@
 
         <!-- Fonts -->
         {{-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"> --}}
-        {{-- <link rel="stylesheet" href="{{asset('fornt/fontawesome/css/all.css')}}"> --}}
+        <link rel="stylesheet" href="{{asset('fornt/fontawesome/css/all.css')}}">
         <link rel="stylesheet" href="{{asset('fornt/fontawesome/css/fontawesome.css')}}">
         {{-- <link rel="stylesheet" href="{{asset('fornt/fontawesome/css/v4-font-face.css')}}"> --}}
         <link rel="stylesheet" href="{{asset('font/stylesheet.css')}}">
@@ -45,6 +45,13 @@
                 width:100%;
                 background-repeat: repeat-x;
                 background-image: url({{asset('images/header-bg.png')}});
+            }
+            .service{
+                width: 100%;
+                min-height: 100vh;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-image: url({{asset('pic/Al-_Kurimi_3_f4.png')}});
             }
         </style>
     </head>
@@ -81,7 +88,7 @@
                                     <p class="text-white ms-2"><i class="fa-solid fa-phone"></i> {{__('main.homePage.ContactUs')}}</p>
                                 </li>
                                 <li><img class="text-white logo" src="{{asset('images/logok.svg')}}" alt=""></li>
-                                <li class="d-flex">
+                                <li class="d-flex logo">
                                     <p class="text-white me-2"><i class="fa-solid fa-location-dot"></i> {{__('main.homePage.ServicesPoint')}}</p>
                                     <p class="text-white me-2"><i class="fa-solid fa-search"></i></p>
                                     <p class="text-white">
@@ -111,7 +118,7 @@
                                     <li class="text-white py-2 pointer">
                                         {{$category->name}}
                                         <div class="row category-parent p-4">
-                                            <img src="{{asset('pic/Al-_Kurimi_3 f4.png')}}" alt="" >
+                                            <img src="{{asset('pic/Al-_Kurimi_3_f4.png')}}" alt="" >
                                                 <div class="col-md-3"><h1 class="font-family main-color fs-4 pointer">{{$category->name}}</h1></div>
                                                     
                                         @foreach ($categoriesChild as $child)
