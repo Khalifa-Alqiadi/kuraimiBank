@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\front\HomeController;
 use App\Http\Controllers\front\ServiceController;
+use App\Http\Controllers\front\AboutBankController;
+use App\Http\Controllers\front\BankAboutUsController;
 use App\Http\Controllers\admin\CategoriesAdminController;
 use App\Http\Controllers\admin\UsersAdminController;
 use App\Http\Controllers\LocaleController;
@@ -38,6 +40,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('change-language/{locale}', [LocaleController::class, 'switch'])->name('change-language');
 Route::get('/frontIndex', [HomeController::class, 'frontIndex'])->name('frontIndex');
 Route::get('/service', [ServiceController::class, 'show'])->name('service');
+Route::get('/about-bank', [AboutBankController::class, 'show'])->name('about-bank');
+Route::get('/bank-about-us', [BankAboutUsController::class, 'show'])->name('bank-about-us');
 Route::get('/', function () {
     return view('front.index');
 });

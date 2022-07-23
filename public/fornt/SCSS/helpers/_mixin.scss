@@ -38,3 +38,28 @@
         padding: 15px 50px;
     }
 }
+
+@mixin animationSlider() {
+    animation: myslides 1s ease-in-out;
+    @keyframes myslides{
+        0%{
+            opacity: 0;
+        }100%{
+            opacity: 1;
+        }
+    }
+}
+
+@mixin imagesLine($left, $top, $width) {
+    left: $left;
+    top: $top;
+    width: $width;
+}
+
+@mixin backgroundSection() {
+    content: "";
+    @include position(absolute, 100%, 100%);
+    background-image: linear-gradient(60deg, #351f5cb0 0%, #261a3ccb 100%);
+    z-index: 0;
+    top: 0;
+}

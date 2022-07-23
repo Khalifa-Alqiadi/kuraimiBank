@@ -1,6 +1,7 @@
 
 .navbar {
     z-index: 1;
+    top: 0;
     .nav-items {
         @include position(absolute, 100%, 100vh);
         left: 100%;

@@ -46,13 +46,13 @@
                 background-repeat: repeat-x;
                 background-image: url({{asset('images/header-bg.png')}});
             }
-            .service{
+            /* .service{
                 width: 100%;
-                min-height: 100vh;
+                min-height: 95vh;
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-image: url({{asset('pic/Al-_Kurimi_3_f4.png')}});
-            }
+            } */
         </style>
     </head>
     <body>
@@ -187,6 +187,77 @@
         </div>
         @yield('content')
 
+        <section class="footer bg-second-color relative">
+            <div class="container hv-80 pt-5 d-flex flex-column justify-between align-items-center">
+                <img src="{{asset('images/logok.svg')}}" alt="" class="mt-5">
+                <hr class="w-90 bg-white">
+                <div class="row w-90  row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-lx-6">
+                    <div class="col">
+                        <h1 class="text-white">البنك</h1>
+                        <p class="mt-0 mb-0">عن البنك</p>
+                        <p class="mt-0 mb-0">الرؤية</p>
+                        <p class="mt-0 mb-0">الرسالة</p>
+                        <p class="mt-0 mb-0">الأهداف</p>
+                        <p class="mt-0 mb-0">القيم والمبادئ</p>
+                        <p class="mt-0 mb-0">بيان سياسة</p>
+                        <p class="mt-0 mb-0">مكافحة غسل</p>
+                        <p class="mt-0 mb-0">شركائنا</p>
+                    </div>
+                    <div class="col">
+                        <h1 class="text-white">شركائنا</h1>
+                        <p class="mt-0 mb-0">موني جرام</p>
+                        <p class="mt-0 mb-0">ماستر كارد</p>
+                        <p class="mt-0 mb-0">البنوك المراسلة</p>
+                        <p class="mt-0 mb-0">منظمة التمويل الدولية</p>
+                        <p class="mt-0 mb-0">تيمينوس</p>
+                    </div>
+                    <div class="col">
+                        <h1 class="text-white">الخدمات</h1>
+                        <p class="mt-0 mb-0">خدمات الأفراد</p>
+                        <p class="mt-0 mb-0">خدمات الشركات</p>
+                        <p class="mt-0 mb-0">كريمي اكسبرس</p>
+                        <p class="mt-0 mb-0">ام فلوس</p>
+                        <p class="mt-0 mb-0">التمويل</p>
+                    </div>
+                    <div class="col">
+                        <h1 class="text-white">التقارير</h1>
+                        <p class="mt-0 mb-0">التقارير المالية</p>
+                        <p class="mt-0 mb-0">القوائم المالية</p>
+                    </div>
+                    <div class="col">
+                        <h1 class="text-white">نقاط الخدمة</h1>
+                        <p class="mt-0 mb-0">الفروع وماكينات الصرافة</p>
+                    </div>
+                    <div class="col">
+                        <h1 class="text-white">تواصل معنا</h1>
+                        <p class="mt-0 mb-0">967 1 503888 : تلفون</p>
+                        <p class="mt-0 mb-0">967 1 435400 : فاكس</p>
+                        <p class="mt-0 mb-0">967 1 435400 : فاكس</p>
+                        <p class="mt-0 mb-0">الرقم المجاني : 8008800</p>
+                        <p class="mt-0 mb-0">صندوق بريد : 19357</p>
+                    </div>
+                </div>
+                <div class="row w-90 justify-between">
+                    <div class="col-md-2 d-flex justify-between">
+                        <i class="fa-brands text-white fs-5 fa-facebook-f"></i>
+                        <i class="fa-brands text-white fs-5 fa-twitter"></i>
+                        <i class="fa-brands text-white fs-5 fa-instagram"></i>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center justify-center">
+                        <img src="{{asset('images/kurimi-buttom.PNG')}}" alt="" class="me-3">
+                        <img src="{{asset('images/kurimi-buttom-2.PNG')}}" alt="">
+                    </div>
+                </div>
+                <h1 class="fs-6 text-white text-right">&copy;kurimi 2022</h1>
+                </div>
+                
+                <div class="absolute layout-image d-flex justify-betwen">
+                    <img src="{{asset('pic/Layer 116.png')}}" alt="" class="img-one">
+                    <img src="{{asset('pic/Layer 116.png')}}" alt="" class="img-tow">
+                </div>
+        </section>
+        @stack('scripts_after')
         <script src="{{asset('fornt/js/main.js')}}"></script>
+
     </body>
 </html>
