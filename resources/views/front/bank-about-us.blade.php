@@ -18,12 +18,12 @@
         </div>
     </div>
 </section>
-<section class="info-bank-about bg-second-color">
-    <div class="container">
-        <div class="row py-5 ">
-            <div class="col-md-3 p-4">
+<section class="info-bank-about bg-second-color relative">
+    <div class="container d-flex justify-center align-items-center ">
+        <div class="row py-5 w-90 justify-between ">
+            <div class="p-4 ul-list">
                 <h1 class="text-white ">عن البنك</h1>
-                <ul class="h-100 d-flex flex-column justify-evenly">
+                <ul class="h-100 d-flex justify-evenly">
                     <li class="text-light-color dot pointer" onclick="currentSlide(1)">من نحن</li>
                     <li class="text-light-color dot pointer" onclick="currentSlide(2)">الرؤية</li>
                     <li class="text-light-color dot pointer" onclick="currentSlide(3)">الرسالة</li>
@@ -31,7 +31,7 @@
                     <li class="text-light-color dot pointer" onclick="currentSlide(5)">الغايات</li>
                 </ul>
             </div>
-            <div class="col-md-8 bank-info relative">
+            <div class=" bank-info relative d-flex justify-center align-items-center flex-column">
                 <div class="slider-info p-5 flex-column">
                     <h1 class="text-white fs-5 font-family-arabic">من نحن</h1>
                     <p class="text-light-color ">
@@ -40,26 +40,38 @@
                         هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا
                         النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم
                     </p>
-                    <p class="text-light-color">
+                    <p class="text-light-color ">
                         هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا
                         النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص
                         هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا
                         النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم
                     </p>
-                    <p class="text-light-color">
+                    <p class="text-light-color ">
                         هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا
                         النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص
                         هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا
                         النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم
                     </p>
-                    <p class="text-light-color">
+                    <p class="text-light-color ">
+                        هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا
+                        النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص
+                        هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا
+                        النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم
+                    </p>
+                    <p class="text-light-color ">
+                        هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا
+                        النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص
+                        هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا
+                        النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم
+                    </p>
+                    <p class="text-light-color ">
                         هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا
                         النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص
                         هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا
                         النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم
                     </p>
                 </div>
-                <div class="slider-info p-5 flex-column">
+                <div class="slider-info p-5 flex-column w-80">
                     <h1 class="text-white fs-5 font-family-arabic">الرؤية</h1>
                     <p class="text-light-color">
                         هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا
@@ -86,7 +98,7 @@
                         النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم
                     </p>
                 </div>
-                <div class="slider-info p-5 flex-column">
+                <div class="slider-info p-5 flex-column w-80">
                     <h1 class="text-white fs-5 font-family-arabic">الرسالة</h1>
                     <p class="text-light-color">
                         هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا
@@ -113,7 +125,7 @@
                         النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم
                     </p>
                 </div>
-                <div class="slider-info p-5 flex-column">
+                <div class="slider-info p-5 flex-column w-80">
                     <h1 class="text-white fs-5 font-family-arabic">الوضوح و الشفافية</h1>
                     <p class="text-light-color">
                         هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا
@@ -140,7 +152,7 @@
                         النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم
                     </p>
                 </div>
-                <div class="slider-info p-5 flex-column">
+                <div class="slider-info p-5 flex-column w-80">
                     <h1 class="text-white fs-5 font-family-arabic">الغايات</h1>
                     <p class="text-light-color">
                         هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا
@@ -171,12 +183,132 @@
                     <div class="next text-light-color me-2 border-bottom pointer" onclick="plusSlides(-1)">السابق</div>
                     <div class="prev text-light-color border-bottom pointer" onclick="plusSlides(1)">التالي</div>
                 </div>
+                
             </div>
             
         </div>
     </div>
+    <div class="image">
+        <img src="{{asset('images/6.png')}}" alt="" class="">
+    </div>
+    <img src="{{asset('images/Group -13.png')}}" alt="" class="absolute line-image-1">
+    <img src="{{asset('images/aa.png')}}" alt="" class="absolute line-image-2">
+</section>
+
+<section class="values-principles bg-white relative">
+    <div class="w-100">
+        <h1 class="font-family-arabic fs-4 text-center">القيم والمبادئ</h1>
+        <div class="values-principles-info  hv-100 d-flex flex-column justify-center align-items-center">
+            <div class="d-flex item w-100 relative">
+                <div class="item-info">
+                    <h1 class="text-second-color font-family-arabic fs-5">الالتزام</h1>
+                    <div class="info bg-second-color w-80 d-flex align-items-center">
+                        <p class="text-white">
+                            هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد
+                            النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا
+                            النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم
+                            توليد هذا النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس
+                            المساحة، لقد تم النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس
+                        </p>
+                    </div>
+                </div>
+                <div class="image relative">
+                    <img src="{{asset('images/bank-1.PNG')}}" alt="">
+                </div>
+            </div>
+            <div class="d-flex item w-100 relative">
+                <div class="item-info">
+                    <h1 class="text-second-color font-family-arabic fs-5">نحترم</h1>
+                    <div class="info bg-second-color hv-50 w-80 d-flex align-items-center">
+                        <p class="text-white">
+                            هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد
+                            النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا
+                            النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم
+                            توليد هذا النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس
+                            المساحة، لقد تم النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس
+                        </p>
+                    </div>
+                </div>
+                <div class="image relative">
+                    <img src="{{asset('images/bank-1.PNG')}}" alt="">
+                </div>
+            </div>
+            <div class="d-flex item w-100 relative">
+                <div class="item-info">
+                    <h1 class="text-second-color font-family-arabic fs-5">الوضوح و الشفافية</h1>
+                    <div class="info bg-second-color hv-50 w-80 d-flex align-items-center">
+                        <p class="text-white">
+                            هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد
+                            النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا
+                            النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم
+                            توليد هذا النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس
+                            المساحة، لقد تم النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس
+                        </p>
+                    </div>
+                </div>
+                <div class="image relative w-50">
+                    <img src="{{asset('images/Group 579.PNG')}}" alt="">
+                </div>
+            </div>
+            <div class="d-flex item w-100 relative">
+                <div class="item-info">
+                    <h1 class="text-second-color font-family-arabic fs-5">حب الخير</h1>
+                    <div class="info bg-second-color hv-50 w-80 d-flex align-items-center">
+                        <p class="text-white">
+                            هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد
+                            النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا
+                            النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم
+                            توليد هذا النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس
+                            المساحة، لقد تم النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس
+                        </p>
+                    </div>
+                </div>
+                <div class="image relative w-50">
+                    <img src="{{asset('images/Group 512.PNG')}}" alt="">
+                </div>
+            </div>
+            <div class="d-flex item w-100 relative">
+                <div class="item-info">
+                    <h1 class="text-second-color font-family-arabic fs-5">المسئولية الاجتماعية</h1>
+                    <div class="info bg-second-color hv-50 w-80 d-flex align-items-center">
+                        <p class="text-white">
+                            هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد
+                            النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا
+                            النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم
+                            توليد هذا النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس
+                            المساحة، لقد تم النص من مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس
+                        </p>
+                    </div>
+                </div>
+                <div class="image relative w-50">
+                    <img src="{{asset('images/Group 252.PNG')}}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="{{asset('images/Group -13.png')}}" alt="" class="absolute line-image-1">
+    <img src="{{asset('images/Group -13.png')}}" alt="" class="absolute line-image-2">
+</section>
+<section class="share share-icons bg-white">
+    <div class="container d-flex flex-column align-items-center">
+        <h1 class="text-second-color">مشاركة الصفحة في</h1>
+        <div class="d-flex icons">
+            <i class="fa-solid fa-share-nodes"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+            <i class="fa-brands fa-telegram"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-facebook-f"></i>
+        </div>
+    </div>
 </section>
 @endsection
+
+
+
+
+
+
+
 
 @push('scripts_after')
 <script>

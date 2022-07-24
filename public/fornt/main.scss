@@ -894,18 +894,20 @@ $value in $allPadding {
             color: #c4c2c2;
         }
     }
+
 }
 
 .info-bank-about{
+    z-index: -2;
     .dot{
         position: relative;
         &.active{
             &::after{
                 @include animationSlider();
                 content: "";
-                @include position(absolute, 32%, 8%);
-                top: 49%;
-                right: -36%;
+                @include position(absolute, 100%, 2%);
+                top: 26%;
+                right: -7%;
                 background-color: $colorWhite;
             }
         }
@@ -915,10 +917,88 @@ $value in $allPadding {
         .slider-info.active{
             @include animationSlider();
         }
+        .slider-info{
+            width: 90%;
+        }
+        p{
+            letter-spacing: 2px;
+            line-height: 2;
+            font-size: 15px;
+            font-weight: normal;
+            color: #cecece;
+        }
     }
     .trend{
         bottom: 8px;
         right: 15px;
+    }
+    .image{
+        @include position(absolute, auto, auto);
+        left: -55px;
+        bottom: -30px;
+        z-index: 0;
+    }
+    .line-image-1{
+        top: -5%;
+        left: 88%;
+        width: 12%;
+    }
+    .line-image-2{
+        top: 0%;
+        left: 0%;
+        width: 4%;
+    }
+    
+}
+
+
+.values-principles{
+    .line-image-1{
+        top: -3%;
+        left: 94%;
+        width: 12%;
+    }
+    .line-image-2{
+        top: -9%;
+        left: -9%;
+        width: 12%;
+    }
+}
+
+.share-icons{
+    margin-top: 10%;
+}
+
+.about-hero{
+    .row{
+        margin-top: -16%;
+    }
+}
+
+.about-info{
+    .items-info{
+        margin-top: -20%;
+        .row{
+            p{
+                font-size: 13px;
+            }
+            i{
+                font-size: 25px;
+            }
+        }
+        .item{
+            h2{
+                color: #3a3a3a;
+            }
+            form{
+                margin: 10% 0;
+                .form-control{
+                    padding: 3px;
+                    border-bottom: 1px solid #5f5f5f;
+                    margin-bottom: 30px;
+                }
+            }
+        }
     }
 }
 
@@ -985,6 +1065,85 @@ $value in $allPadding {
             transition: all 1s ease-in-out;
             width: 100%;
             padding: 3rem;
+        }
+    }
+    // .info-bank-about{
+    //     .row{
+    //         flex-wrap: wrap;
+    //     }
+    // }
+    .values-principles{
+        margin-top: 21%;
+        .values-principles-info{
+            margin-top: 10%;
+            .info{
+                padding-right: 10%;
+                p{
+                    font-size: 17px;
+                    width: 90%;
+                }
+            }
+            .image{
+                z-index: 1;
+                width: 45%;
+                img{
+                    width: 100%;
+                }
+            }
+            
+        }
+        .values-principles-info .item{
+            flex-direction: column;
+            justify-content: space-between;
+            height: 80vh;
+            align-items: flex-end;
+            // margin: 10% 0;
+            h1{
+                @include position(absolute, 20%, 20%);
+                top: -27%;
+                right: 10%;
+            }
+            p{
+                margin-right: -37px;
+            }
+            &::after{
+                content: "";
+                @include position(absolute, 5px, 26%);
+                background-color: $thredColor;
+                top: -24%;
+                right: 7%;
+            }
+            .info{
+                @include position(absolute, 76%, 70%);
+                top: -10%;
+                z-index: 0;
+                align-items: center;
+                right: 0;
+            }
+        }
+        .values-principles-info .item:nth-child(even){
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            margin-bottom: 45%;
+            h1{
+                top: 24%;
+                left: 23%;
+                right: auto;
+            }
+            &::after{
+                top: 27%;
+                left: 45%;
+                right: auto;
+            }
+            .info{
+                // @include position(absolute, 76%, 70%);
+                // top: -10%;
+                // z-index: 0;
+                left: 0;
+                top: 40%;
+                right: auto;
+                justify-content: flex-end;
+            }
         }
     }
 }
@@ -1074,6 +1233,77 @@ $col_sm: 100%;
             }
         }
     }
+    .values-principles{
+        margin-top: 10%;
+        .values-principles-info{
+            margin-top: 10%;
+            .info{
+                padding-right: 10%;
+                p{
+                    font-size: 20px;
+                    width: 70%;
+                }
+            }
+            .image{
+                z-index: 1;
+                width: 45%;
+                img{
+                    width: 100%;
+                }
+            }
+            
+        }
+        .values-principles-info .item{
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            height: auto;
+            // margin: 10% 0;
+            h1{
+                @include position(absolute, 20%, 20%);
+                top: -27%;
+                right: 10%;
+            }
+            p{
+                margin-right: -37px;
+            }
+            &::after{
+                content: "";
+                @include position(absolute, 5px, 26%);
+                background-color: $thredColor;
+                top: -24%;
+                right: 7%;
+            }
+            .info{
+                @include position(absolute, 76%, 70%);
+                top: -10%;
+                z-index: 0;
+                align-items: center;
+            }
+        }
+        .values-principles-info .item:nth-child(even){
+            flex-direction: row-reverse;
+            margin-bottom: 25%;
+            h1{
+                top: 24%;
+                left: 23%;
+                right: auto;
+            }
+            &::after{
+                top: 27%;
+                left: 45%;
+                right: auto;
+            }
+            .info{
+                // @include position(absolute, 76%, 70%);
+                // top: -10%;
+                // z-index: 0;
+                left: 0;
+                top: 40%;
+                justify-content: flex-end;
+            }
+        }
+    }
 }
 @media (min-width: 1200px) {
     @for $i from 1 to 7 {
@@ -1102,6 +1332,37 @@ $col_sm: 100%;
         left: -6%;
         top: 0;
         display: block;
+    }
+    
+    .info-bank-about{
+        .dot{
+            &.active{
+                &::after{
+                    width: 32%;
+                    height: 8%;
+                    top: 49%;
+                    right: -36%;
+                }
+            }
+        }
+        .row{
+            flex-wrap: nowrap;
+            .ul-list{
+                width: 30%;
+                ul{
+                    flex-direction: column;
+                }
+            }
+            .bank-info{
+                width: 70%;
+                .slider-info{
+                    width: 85%;
+                }
+                p{
+                    font-size: 18px;
+                }
+            }
+        }
     }
 }
 

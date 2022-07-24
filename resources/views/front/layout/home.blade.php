@@ -19,7 +19,14 @@
         {{-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"> --}}
         <link rel="stylesheet" href="{{asset('fornt/fontawesome/css/all.css')}}">
         <link rel="stylesheet" href="{{asset('fornt/fontawesome/css/fontawesome.css')}}">
-        {{-- <link rel="stylesheet" href="{{asset('fornt/fontawesome/css/v4-font-face.css')}}"> --}}
+        <link rel="stylesheet" href="{{asset('fornt/fontawesome/css/v4-font-face.css')}}">
+        
+        <link rel="stylesheet" href="{{asset('fornt/fontawesome/css/light.css')}}">
+        <link rel="stylesheet" href="{{asset('fornt/fontawesome/css/light.min.css')}}">
+        <link rel="stylesheet" href="{{asset('fornt/fontawesome/css/brands.min.css')}}">
+        <link rel="stylesheet" href="{{asset('fornt/fontawesome/css/brands.css')}}">
+        <link rel="stylesheet" href="{{asset('fornt/fontawesome/css/regular.min.css')}}">
+        <link rel="stylesheet" href="{{asset('fornt/fontawesome/css/regular.css')}}">
         <link rel="stylesheet" href="{{asset('font/stylesheet.css')}}">
         <link rel="stylesheet" href="{{asset('fornt/main.css')}}">
 
@@ -85,7 +92,7 @@
                             <ul class="mt-4 mb-3 d-flex align-items-center justify-between hv-10 w-100">
                                 <li class="d-flex justify-between m-0 p-0">
                                     <p class="text-white me-0"><i class="fa-solid fa-user"></i> {{__('main.homePage.Jobs')}}</p>
-                                    <p class="text-white ms-2"><i class="fa-solid fa-phone"></i> {{__('main.homePage.ContactUs')}}</p>
+                                    <p class="text-white ms-2"><i class="fa-solid fa-phone"></i> <a href="{{route('about-us')}}">{{__('main.homePage.ContactUs')}}</a></p>
                                 </li>
                                 <li><img class="text-white logo" src="{{asset('images/logok.svg')}}" alt=""></li>
                                 <li class="d-flex logo">
