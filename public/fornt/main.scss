@@ -1002,6 +1002,72 @@ $value in $allPadding {
     }
 }
 
+.uccess-stories-hero{
+    img{
+        object-fit: cover;
+    }
+}
+
+.success-stories-info{
+    .items-info{
+        overflow-y: clip;
+    }
+    .item{
+        p{
+            font-size: 14px !important;
+            line-height: 2;
+        }
+        .images-lx{
+            display: none;
+        }
+    }
+    .image-line-1{
+        bottom: -33%;
+        left: -4%;
+        width: 11%;
+    }
+    .image-line-2{
+        top: -27%;
+        left: -4%;
+        width: 15%;
+    }
+    .image-line-3{
+        top: 20%;
+        right: -5%;
+        width: 12%;
+    }
+}
+
+.onther-services-success{
+    .text-title{
+        margin: 5%;
+    }
+}
+
+.our-partners-info{
+    .items-info{
+        .row{
+            margin-top: 8%;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            .partners-images{
+                img{
+                    width: 67%;
+                    border-radius: 22%;
+                    box-shadow: -2px 3px 15px 2px $colorLight;
+                    margin-top: 9%;
+                }
+            }
+            .number{
+                margin-top: -14%;
+                right: 90%;
+                font-size: 7rem;
+                top: 0;
+            }
+        }
+    }
+}
+
 .footer{
     overflow: hidden;
     hr{
@@ -1301,6 +1367,45 @@ $col_sm: 100%;
                 left: 0;
                 top: 40%;
                 justify-content: flex-end;
+            }
+        }
+    }
+
+    .success-stories-info{
+        .item{
+            .row{
+                flex-wrap: nowrap;
+                .info{
+                    width: 60%;
+                }
+            }
+            p{
+                font-size: 18px !important;
+            }
+            .images-lx{
+                display: flex;
+                width: 45%;
+            }
+            .images-ms{
+                display: none;
+            }
+            // .slider-image{
+            //     z-index: 0;
+            // }
+            // .slider-image.active{
+            //     z-index: 1;
+            // }
+        }
+    }
+    .our-partners-info{
+        .items-info{
+            .row{
+                flex-wrap: wrap;
+                flex-direction: row;
+                .number{
+                    margin-top: -5%;
+                    right: 95%;
+                }
             }
         }
     }

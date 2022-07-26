@@ -1937,6 +1937,71 @@ ul {
   margin-bottom: 30px;
 }
 
+.uccess-stories-hero img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.success-stories-info .items-info {
+  overflow-y: clip;
+}
+
+.success-stories-info .item p {
+  font-size: 14px !important;
+  line-height: 2;
+}
+
+.success-stories-info .item .images-lx {
+  display: none;
+}
+
+.success-stories-info .image-line-1 {
+  bottom: -33%;
+  left: -4%;
+  width: 11%;
+}
+
+.success-stories-info .image-line-2 {
+  top: -27%;
+  left: -4%;
+  width: 15%;
+}
+
+.success-stories-info .image-line-3 {
+  top: 20%;
+  right: -5%;
+  width: 12%;
+}
+
+.onther-services-success .text-title {
+  margin: 5%;
+}
+
+.our-partners-info .items-info .row {
+  margin-top: 8%;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.our-partners-info .items-info .row .partners-images img {
+  width: 67%;
+  border-radius: 22%;
+  -webkit-box-shadow: -2px 3px 15px 2px #F2F5FA;
+          box-shadow: -2px 3px 15px 2px #F2F5FA;
+  margin-top: 9%;
+}
+
+.our-partners-info .items-info .row .number {
+  margin-top: -14%;
+  right: 90%;
+  font-size: 7rem;
+  top: 0;
+}
+
 .footer {
   overflow: hidden;
 }
@@ -2376,6 +2441,37 @@ ul {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+  }
+  .success-stories-info .item .row {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .success-stories-info .item .row .info {
+    width: 60%;
+  }
+  .success-stories-info .item p {
+    font-size: 18px !important;
+  }
+  .success-stories-info .item .images-lx {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 45%;
+  }
+  .success-stories-info .item .images-ms {
+    display: none;
+  }
+  .our-partners-info .items-info .row {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .our-partners-info .items-info .row .number {
+    margin-top: -5%;
+    right: 95%;
   }
 }
 

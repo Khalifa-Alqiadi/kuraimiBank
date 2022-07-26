@@ -240,6 +240,7 @@
                 <p class="mb-0 text-light-color">
                     هذا النص هو مثال لنص يمكن أن يستبدل هذا النص هو مثال لنص يمكن أن يستبدل
                 </p>
+                <button class="text-white border-bottom bg-transparent py-2 px-4 fw-bold"><a href="{{route('success-stories')}}">قراءة المزيد</a></button>
             </div>
         </div>
         <div class="success-info hv-80 relative" >

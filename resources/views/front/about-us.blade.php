@@ -21,10 +21,10 @@
                 <p class="w-50">
                     تواصل معنا بالطريقة التي تناسبك، نحن هنا لخدمتك
                 </p>
-                <div class="row w-100 row-cols-1 row-cols-md-2 row-cols-lg-3">
+                <div class="row w-100 row-cols-1 row-cols-md-1 row-cols-lg-2 row-cols-lx-3">
                     <div class="col p-3 d-flex">
                         <div class="icons d-flex relative me-1">
-                            <img src="{{asset('images/Rectangle 991.png')}}" alt="" class="w-100 h-60">
+                            <img src="{{asset('images/Rectangle 991.png')}}" alt="" class=" h-60">
                             <img src="{{asset('pic/Layer 58.png')}}" alt="" class="absolute w-100 h-60">
                             <div class="num absolute w-100 h-60 d-flex align-items-center justify-center">
                                 <i class="fa fa-phone text-white"></i>
@@ -40,7 +40,7 @@
                     </div>
                     <div class="col p-3 d-flex">
                         <div class="icons d-flex relative me-1">
-                            <img src="{{asset('images/Rectangle 991.png')}}" alt="" class="w-100 h-60">
+                            <img src="{{asset('images/Rectangle 991.png')}}" alt="" class=" h-60">
                             <img src="{{asset('pic/Layer 58.png')}}" alt="" class="absolute w-100 h-60">
                             <div class="num absolute w-100 h-60 d-flex align-items-center justify-center">
                                 <i class="fa-regular fa-envelope text-white"></i>
@@ -53,7 +53,7 @@
                     </div>
                     <div class="col p-3 d-flex">
                         <div class="icons d-flex relative me-1">
-                            <img src="{{asset('images/Rectangle 991.png')}}" alt="" class="w-100 h-60">
+                            <img src="{{asset('images/Rectangle 991.png')}}" alt="" class="h-60">
                             <img src="{{asset('pic/Layer 58.png')}}" alt="" class="absolute w-100 h-60">
                             <div class="num absolute w-100 h-60 d-flex align-items-center justify-center">
                                 <i class="fa fa-location-dot text-white"></i>

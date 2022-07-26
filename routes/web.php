@@ -5,6 +5,8 @@ use App\Http\Controllers\front\ServiceController;
 use App\Http\Controllers\front\AboutBankController;
 use App\Http\Controllers\front\BankAboutUsController;
 use App\Http\Controllers\front\AboutUsController;
+use App\Http\Controllers\front\SuccessStoriesController;
+use App\Http\Controllers\front\OurPartnersController;
 use App\Http\Controllers\admin\CategoriesAdminController;
 use App\Http\Controllers\admin\UsersAdminController;
 use App\Http\Controllers\LocaleController;
@@ -44,6 +46,8 @@ Route::get('/service', [ServiceController::class, 'show'])->name('service');
 Route::get('/about-bank', [AboutBankController::class, 'show'])->name('about-bank');
 Route::get('/bank-about-us', [BankAboutUsController::class, 'show'])->name('bank-about-us');
 Route::get('/about-us', [AboutUsController::class, 'show'])->name('about-us');
+Route::get('/success-stories', [SuccessStoriesController::class, 'show'])->name('success-stories');
+Route::get('/our-parteners', [OurPartnersController::class, 'show'])->name('our-parteners');
 Route::get('/', function () {
     return view('front.index');
 });
