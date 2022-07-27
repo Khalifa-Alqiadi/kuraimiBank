@@ -96,7 +96,7 @@
                                 </li>
                                 <li><img class="text-white logo" src="{{asset('images/logok.svg')}}" alt=""></li>
                                 <li class="d-flex logo">
-                                    <p class="text-white me-2"><i class="fa-solid fa-location-dot"></i> {{__('main.homePage.ServicesPoint')}}</p>
+                                    <p class="text-white me-2"><a href="{{route('service-points-maps')}}"><i class="fa-solid fa-location-dot"></i> {{__('main.homePage.ServicesPoint')}}</a></p>
                                     <p class="text-white me-2"><i class="fa-solid fa-search"></i></p>
                                     <p class="text-white">
                                         @foreach (config('locales.languages') as $key => $val)

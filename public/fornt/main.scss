@@ -109,7 +109,7 @@ body{
     background-color: $infoColor;
 }
 .bg-linear-gradient-main{
-    background-image: linear-gradient(60deg, #423064 0%, $secondColor 100%);
+    background-image: linear-gradient(60deg, $secondColor  0%, #423064 100%);
 }
 
 .text-light-color{
@@ -693,29 +693,37 @@ $value in $allPadding {
             margin-right: 100px;
         }
     }
+
+    .info{
+        justify-content: flex-end;
+        height: 43vh;
+        p{
+            font-size: 15px;
+        }
+    }
+
+    .images{
+        justify-content: center;
+    }
     
     .service-img{
-        @include position(relative, 95%, auto);
-        left: 0%;
+        width: 52%;
         z-index: 11;
-        margin-left: 10%;
+        margin-top: 0%;
     }
     .service-img-2{
-        @include position(absolute, 63%, auto);
-        left: 15%;
-        top: 13%;
+        @include position(absolute, 45%, auto);
+        left: 27%;
+        top: 22%;
         z-index: 11;
-        
     }
-    p{
-        font-size: 20px;
-    }
+    
 }
 
 .features{
     .features-info{
         @include position(relative, 95%, 50%);
-        margin-top: -10%;
+        margin-top: 0%;
         z-index: 1;
         .icons{
             width: 20%;
@@ -793,7 +801,7 @@ $value in $allPadding {
         overflow-x: auto;
         .card{
             flex: 0 0 auto;
-            width: 23%;
+            width: 44%;
             margin: 0 20px;
             box-shadow: 0px 16px 6px 1px white;
             
@@ -824,11 +832,67 @@ $value in $allPadding {
 .bank-images{
     top: 0;
     z-index: -1;
+    &::after{
+        content: "";
+        @include position(absolute, 100%, 100%);
+        top: 0;
+        background-color: #423064a8;
+    }
+    .marquee {
+        /*   overflow: hidden; */
+        width: 150%;
+        // transform: translateX(4vw);
+        display: flex;
+        animation: scrolling-2 10s linear infinite;
+        }
+        
+        .marquee-content {
+          display: flex;
+          flex-direction: column;
+          animation: scrolling 25s linear infinite;
+        }
+
+        .marquee-content-2{
+            animation: scrolling-3 20s linear infinite;
+        }
+
+        
+        
+        .marquee-item {
+          flex: 0 0 16vw;
+          margin: 0 1vw;
+        /*   flex: 0 0 20vw; */
+        /*   margin: 0 2vw; */
+        }
+        
+        .marquee-item img {
+          display: block;
+          width: 100%;
+        /*   padding: 0 20px; */
+        }
+
+        .marquee-content-2 img{
+            width: 100%;
+        }
+        
+        @keyframes scrolling {
+          0% { transform: translateY(0); }
+          100% { transform: translatey(-300vh); }
+        }
+        @keyframes scrolling-2 {
+          0% { transform: translateX(0); }
+          100% { transform: translatex(664px); }
+        }
+        @keyframes scrolling-3 {
+          0% { transform: translateY(-216vh); }
+          100% { transform: translatey(0vh); }
+        }
 }
 .bank-hero{
     p{
         // margin: 20% 0;
     }
+    
 }
 
 .about-bank{
@@ -856,6 +920,21 @@ $value in $allPadding {
                 }
             }
         }
+    }
+    .image-line-1{
+        bottom: -33%;
+        left: -4%;
+        width: 11%;
+    }
+    .image-line-2{
+        top: -27%;
+        left: -4%;
+        width: 15%;
+    }
+    .image-line-3{
+        top: 20%;
+        right: -5%;
+        width: 12%;
     }
 }
 
@@ -1021,21 +1100,7 @@ $value in $allPadding {
             display: none;
         }
     }
-    .image-line-1{
-        bottom: -33%;
-        left: -4%;
-        width: 11%;
-    }
-    .image-line-2{
-        top: -27%;
-        left: -4%;
-        width: 15%;
-    }
-    .image-line-3{
-        top: 20%;
-        right: -5%;
-        width: 12%;
-    }
+    
 }
 
 .onther-services-success{
@@ -1052,11 +1117,14 @@ $value in $allPadding {
             flex-direction: column;
             .partners-images{
                 img{
-                    width: 67%;
+                    width: 100%;
                     border-radius: 22%;
                     box-shadow: -2px 3px 15px 2px $colorLight;
                     margin-top: 9%;
                 }
+            }
+            .item{
+                margin: 10% 0;
             }
             .number{
                 margin-top: -14%;
@@ -1064,6 +1132,200 @@ $value in $allPadding {
                 font-size: 7rem;
                 top: 0;
             }
+            .bank-message img{
+                width: 100%;
+                border-radius: 22%;
+                box-shadow: -2px 3px 15px 2px $colorLight;
+            }
+        }
+    }
+}
+
+.partners-icons{
+    margin-top: 2%;
+}
+
+.financial-reports-info{
+    .items-info{
+        overflow: clip;
+        h2 span{
+            font-weight: 600;
+        }
+    }
+    .text-transform{
+        left: 31%;
+        transform: rotate(90deg);
+        width: 100%;
+        top: 40%;
+    }
+    .text-hidden{
+        @include animationSlider();
+    }
+    .text-block{
+        display: none;
+        -webkit-text-fill-color: white;
+        -webkit-text-stroke-width: 1px;
+        @include animationSlider();
+        i{
+            font-size: 31px;
+            margin: 0px 5px 0px 4px;
+        }
+    }
+    .reports-info{
+        width: 76%;
+        .info{
+            animation: reports-info 1s ease-in-out forwards;
+            top: 0;
+            .year{
+                text-align: left;
+                color: white;
+                font-weight: 500;
+                letter-spacing: 3px;
+                transition: color 1s ease-in-out;
+            }
+            .text-hover{
+                display: none;
+                transition: all 1s ease-in-out;
+                font-size: 25px;
+                @include animationSlider();
+            }
+            .line{
+                @include position(absolute, 3%, 30%);
+                bottom: 0;
+                background-color: white;
+                right: 16%;
+            }
+        }
+    }
+    .col{
+        &:hover{
+            .text-hidden{
+                display: none;
+                @include animationSlider();
+            }
+            .text-block{
+                display: block;
+                @include animationSlider();
+            }
+            .reports-info{
+                .info{
+                    animation: reports-info-hover 1s ease-in-out forwards;
+                    .year{
+                        color: $secondColor;
+                        transition: color 1s ease-in-out;
+                    }
+                    .text-hover{
+                        display: block;
+                        @include animationSlider();
+                    }
+                    .line{
+                        background-color: $secondColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes reports-info-hover{
+    0%{
+        background-color: #423064b9;
+    }100%{
+        background-color: transparent;
+    }
+}
+@keyframes reports-info{
+    0%{
+        background-color: transparent;
+    }100%{
+        background-color: #423064b9;
+    }
+}
+
+
+.service-points{
+    .row{
+        .col{
+            h1{
+                font-size: 33px;
+            }
+            p{
+                font-size: 25px;
+            }
+            
+            .box{
+                height: 44vh;
+                margin-top: 10%;
+                hr{
+                    @include position(absolute, 136%, 1px);
+                    background-color: #878787;
+                }
+                .hr-1{
+                    transform: rotate(43deg);
+                    top: 47%;
+                    left: -18%;
+                }
+                .hr-2{
+                    transform: rotate(137deg);
+                    top: 48%;
+                    left: -18%;
+                }
+            }
+        }
+        .div-box{
+            align-items: center;
+        }
+    }
+}
+
+.service-points-map{
+    .background-image{
+        object-fit: cover;
+    }
+    .items-info{
+        
+        margin-top: -8%;
+        .form-group{
+            label{
+                margin: 20px 0;
+                font-size: 25px;
+                color: #b3acac;
+            }
+            select{
+                border: 1px solid #b3acac;
+                color: #797878;
+                font-size: 25px;
+                &:focus{
+                    border: none;
+                }
+            }
+        }
+        .buttom{
+            margin-top: 25%;
+            button{
+                padding: 17px 0px;
+                font-size: 25px;
+            }
+        }
+        .item{
+            h1{
+                color: $secondColor;
+                &::after{
+                    background-color: $secondColor;
+                    width: 8%;
+                }
+            }
+            p{
+                text-align: right;
+                width: 98%;
+            }
+        }
+    }
+    .info-map{
+        .row{
+            background-image: linear-gradient(60deg, #ffffff62 0%, #fffffffd 100%);
+            width: 95%;
+            box-shadow: -29px 10px 23px 6px #ffffffb0;
         }
     }
 }
@@ -1116,9 +1378,6 @@ $value in $allPadding {
         top: 95%;
     }
 
-    .service .images{
-        display: none;
-    }
     .features-slider{
         .sliders-info{
             position: absolute;
@@ -1319,6 +1578,7 @@ $col_sm: 100%;
             }
             
         }
+        
         .values-principles-info .item{
             flex-direction: row;
             justify-content: space-between;
@@ -1402,13 +1662,35 @@ $col_sm: 100%;
             .row{
                 flex-wrap: wrap;
                 flex-direction: row;
+                .partners-images{
+                    width: 67%;
+                }
                 .number{
                     margin-top: -5%;
                     right: 95%;
                 }
+                .bank-message img{
+                    width: 95%;
+                }
             }
         }
     }
+    .onther-services{
+        .onther-services-slider{
+            .card{
+                width: 23%;
+            }
+        }
+    }
+
+    .service-points{
+        .row{
+            .div-box{
+                align-items: flex-end;
+            }
+        }
+    }
+    
 }
 @media (min-width: 1200px) {
     @for $i from 1 to 7 {
@@ -1433,10 +1715,27 @@ $col_sm: 100%;
     .app .cicle{
         top: 115%;
     }
-    .service .images{
-        left: -6%;
-        top: 0;
-        display: block;
+    .service{
+        .info{
+            justify-content: center;
+            min-height: 81vh;
+        }
+        .service-img{
+            width: 100%;
+            z-index: 11;
+            margin-top: 17%;
+        }
+        .service-img-2{
+            width: 69%;
+            left: 10%;
+            top: 29%;
+        }
+    } 
+
+    .features{
+        .features-info{
+            margin-top: -10%;
+        }
     }
     
     .info-bank-about{
@@ -1466,6 +1765,14 @@ $col_sm: 100%;
                 p{
                     font-size: 18px;
                 }
+            }
+        }
+    }
+
+    .service-points-map{
+        .info-map{
+            .row{
+                width: 50%;
             }
         }
     }

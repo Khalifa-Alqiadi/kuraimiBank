@@ -3,10 +3,11 @@
     {{__('main.homePage.Home')}}
 @endsection
 @section('content')
-<section class="service  ">
-    <div class="container hv-100 d-flex align-items-center relative">
-        <img src="{{asset('pic/Al-_Kurimi_3_f4.png')}}" alt="" class="w-100 h-100 absolute background-image">
-        <div class="row h-100 row-cols-1 row-cols-lx-2 align-items-center relative">
+<section class="service hv-100 relative">
+    <img src="{{asset('pic/Al-_Kurimi_3_f4.png')}}" alt="" class="w-100 h-100 absolute background-image">
+    <div class="container d-flex align-items-center relative">
+        
+        <div class="row hv-100 row-cols-1 row-cols-lx-2 align-items-end relative">
             <div class="col mt-5 info d-flex flex-column align-items-center">
                 <p class="mt-3 mb-1 fs-6 text-white w-80">التمويل/مشروعي</p>
                 <h1 class="fs-4 mt-1 mb-1 text-white w-80">مشروعي</h1>
@@ -19,9 +20,11 @@
                     <button class="text-white bg-thred-color py-2 px-4 fw-bold">تحويل العملات</button>
                 </div>
             </div>
-            <div class="col absolute images">
-                <img class="w-100 service-img" src="{{asset('images/Al-_Kurimi_3 f2.png')}}" alt="">
-                <img class="w-100 service-img-2" src="{{asset('images/Al-_Kurimi_3 5 f.png')}}" alt="">
+            <div class="col">
+                <div class="images d-flex justify-end relative">
+                    <img class="w-100 service-img" src="{{asset('images/Al-_Kurimi_3 f2.png')}}" alt="">
+                    <img class="w-100 service-img-2" src="{{asset('images/Al-_Kurimi_3 5 f.png')}}" alt="">
+                </div>
             </div>
         </div>
     </div>

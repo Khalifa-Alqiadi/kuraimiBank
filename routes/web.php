@@ -7,6 +7,8 @@ use App\Http\Controllers\front\BankAboutUsController;
 use App\Http\Controllers\front\AboutUsController;
 use App\Http\Controllers\front\SuccessStoriesController;
 use App\Http\Controllers\front\OurPartnersController;
+use App\Http\Controllers\front\FinancialReportsController;
+use App\Http\Controllers\front\ServicePointsMapsController;
 use App\Http\Controllers\admin\CategoriesAdminController;
 use App\Http\Controllers\admin\UsersAdminController;
 use App\Http\Controllers\LocaleController;
@@ -48,6 +50,8 @@ Route::get('/bank-about-us', [BankAboutUsController::class, 'show'])->name('bank
 Route::get('/about-us', [AboutUsController::class, 'show'])->name('about-us');
 Route::get('/success-stories', [SuccessStoriesController::class, 'show'])->name('success-stories');
 Route::get('/our-parteners', [OurPartnersController::class, 'show'])->name('our-parteners');
+Route::get('/financial-reports-front', [FinancialReportsController::class, 'show'])->name('financial-reports-front');
+Route::get('/service-points-maps', [ServicePointsMapsController::class, 'show'])->name('service-points-maps');
 Route::get('/', function () {
     return view('front.index');
 });

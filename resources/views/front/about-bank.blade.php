@@ -4,7 +4,191 @@
 @endsection
 @section('content')
 <section class=" bank-images hv-100 fixed w-100">
-    <img src="{{asset('images/2022062714253.jpg')}}" alt="" class="absolute w-100 h-100">
+    <div class="marquee absolute w-100 hv-100">
+        <div class="marquee-content ">
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6.png')}}" alt="" class="mb-3">
+            </div>
+        </div>
+        <div class="marquee-content marquee-content-2 ">
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7-2.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6-2.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7-2.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6-2.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7-2.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6-2.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7-2.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6-2.png')}}" alt="" class="mb-3">
+            </div>
+        </div>
+        <div class="marquee-content ">
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6.png')}}" alt="" class="mb-3">
+            </div>
+        </div>
+        <div class="marquee-content marquee-content-2 ">
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7-2.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6-2.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7-2.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6-2.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7-2.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6-2.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7-2.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6-2.png')}}" alt="" class="mb-3">
+            </div>
+        </div>
+        <div class="marquee-content ">
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6.png')}}" alt="" class="mb-3">
+            </div>
+        </div>
+        <div class="marquee-content marquee-content-2 ">
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7-2.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6-2.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7-2.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6-2.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7-2.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6-2.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7-2.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6-2.png')}}" alt="" class="mb-3">
+            </div>
+        </div>
+        <div class="marquee-content">
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7.png')}}" alt="" class="mb-3">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6.png')}}" alt="" class="">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-7.png')}}" alt="" class="">
+            </div>
+            <div class="marquee-item">
+                <img src="{{asset('images/bank-image-6.png')}}" alt="" class="">
+            </div>
+        </div>
+    </div>
+    
 </section>
 <section class="bank-hero ">
     <div class="container hv-100 d-flex align-items-center justify-center">

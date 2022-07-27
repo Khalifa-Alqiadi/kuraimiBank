@@ -397,7 +397,7 @@ body {
 }
 
 .bg-linear-gradient-main {
-  background-image: linear-gradient(60deg, #423064 0%, #73659A 100%);
+  background-image: linear-gradient(60deg, #73659A 0%, #423064 100%);
 }
 
 .text-light-color {
@@ -1536,33 +1536,43 @@ ul {
   margin-right: 100px;
 }
 
+.service .info {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 43vh;
+}
+
+.service .info p {
+  font-size: 15px;
+}
+
+.service .images {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .service .service-img {
-  position: relative;
-  width: 95%;
-  height: auto;
-  left: 0%;
+  width: 52%;
   z-index: 11;
-  margin-left: 10%;
+  margin-top: 0%;
 }
 
 .service .service-img-2 {
   position: absolute;
-  width: 63%;
+  width: 45%;
   height: auto;
-  left: 15%;
-  top: 13%;
+  left: 27%;
+  top: 22%;
   z-index: 11;
-}
-
-.service p {
-  font-size: 20px;
 }
 
 .features .features-info {
   position: relative;
   width: 95%;
   height: 50%;
-  margin-top: -10%;
+  margin-top: 0%;
   z-index: 1;
 }
 
@@ -1693,7 +1703,7 @@ ul {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
-  width: 23%;
+  width: 44%;
   margin: 0 20px;
   -webkit-box-shadow: 0px 16px 6px 1px white;
           box-shadow: 0px 16px 6px 1px white;
@@ -1730,6 +1740,127 @@ ul {
   z-index: -1;
 }
 
+.bank-images::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: #423064a8;
+}
+
+.bank-images .marquee {
+  /*   overflow: hidden; */
+  width: 150%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: scrolling-2 10s linear infinite;
+          animation: scrolling-2 10s linear infinite;
+}
+
+.bank-images .marquee-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-animation: scrolling 25s linear infinite;
+          animation: scrolling 25s linear infinite;
+}
+
+.bank-images .marquee-content-2 {
+  -webkit-animation: scrolling-3 20s linear infinite;
+          animation: scrolling-3 20s linear infinite;
+}
+
+.bank-images .marquee-item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 16vw;
+          flex: 0 0 16vw;
+  margin: 0 1vw;
+  /*   flex: 0 0 20vw; */
+  /*   margin: 0 2vw; */
+}
+
+.bank-images .marquee-item img {
+  display: block;
+  width: 100%;
+  /*   padding: 0 20px; */
+}
+
+.bank-images .marquee-content-2 img {
+  width: 100%;
+}
+
+@-webkit-keyframes scrolling {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translatey(-300vh);
+            transform: translatey(-300vh);
+  }
+}
+
+@keyframes scrolling {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translatey(-300vh);
+            transform: translatey(-300vh);
+  }
+}
+
+@-webkit-keyframes scrolling-2 {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translatex(664px);
+            transform: translatex(664px);
+  }
+}
+
+@keyframes scrolling-2 {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translatex(664px);
+            transform: translatex(664px);
+  }
+}
+
+@-webkit-keyframes scrolling-3 {
+  0% {
+    -webkit-transform: translateY(-216vh);
+            transform: translateY(-216vh);
+  }
+  100% {
+    -webkit-transform: translatey(0vh);
+            transform: translatey(0vh);
+  }
+}
+
+@keyframes scrolling-3 {
+  0% {
+    -webkit-transform: translateY(-216vh);
+            transform: translateY(-216vh);
+  }
+  100% {
+    -webkit-transform: translatey(0vh);
+            transform: translatey(0vh);
+  }
+}
+
 .about-bank .items-info {
   margin-top: -15%;
 }
@@ -1759,6 +1890,24 @@ ul {
 
 .about-bank .items-info .item .row h1 {
   font-size: 22px;
+}
+
+.about-bank .image-line-1 {
+  bottom: -33%;
+  left: -4%;
+  width: 11%;
+}
+
+.about-bank .image-line-2 {
+  top: -27%;
+  left: -4%;
+  width: 15%;
+}
+
+.about-bank .image-line-3 {
+  top: 20%;
+  right: -5%;
+  width: 12%;
 }
 
 .share h1 {
@@ -1955,24 +2104,6 @@ ul {
   display: none;
 }
 
-.success-stories-info .image-line-1 {
-  bottom: -33%;
-  left: -4%;
-  width: 11%;
-}
-
-.success-stories-info .image-line-2 {
-  top: -27%;
-  left: -4%;
-  width: 15%;
-}
-
-.success-stories-info .image-line-3 {
-  top: 20%;
-  right: -5%;
-  width: 12%;
-}
-
 .onther-services-success .text-title {
   margin: 5%;
 }
@@ -1988,11 +2119,15 @@ ul {
 }
 
 .our-partners-info .items-info .row .partners-images img {
-  width: 67%;
+  width: 100%;
   border-radius: 22%;
   -webkit-box-shadow: -2px 3px 15px 2px #F2F5FA;
           box-shadow: -2px 3px 15px 2px #F2F5FA;
   margin-top: 9%;
+}
+
+.our-partners-info .items-info .row .item {
+  margin: 10% 0;
 }
 
 .our-partners-info .items-info .row .number {
@@ -2000,6 +2135,306 @@ ul {
   right: 90%;
   font-size: 7rem;
   top: 0;
+}
+
+.our-partners-info .items-info .row .bank-message img {
+  width: 100%;
+  border-radius: 22%;
+  -webkit-box-shadow: -2px 3px 15px 2px #F2F5FA;
+          box-shadow: -2px 3px 15px 2px #F2F5FA;
+}
+
+.partners-icons {
+  margin-top: 2%;
+}
+
+.financial-reports-info .items-info {
+  overflow: clip;
+}
+
+.financial-reports-info .items-info h2 span {
+  font-weight: 600;
+}
+
+.financial-reports-info .text-transform {
+  left: 31%;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  width: 100%;
+  top: 40%;
+}
+
+.financial-reports-info .text-hidden {
+  -webkit-animation: myslides 1s ease-in-out;
+          animation: myslides 1s ease-in-out;
+}
+
+@keyframes myslides {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.financial-reports-info .text-block {
+  display: none;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-animation: myslides 1s ease-in-out;
+          animation: myslides 1s ease-in-out;
+}
+
+@keyframes myslides {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.financial-reports-info .text-block i {
+  font-size: 31px;
+  margin: 0px 5px 0px 4px;
+}
+
+.financial-reports-info .reports-info {
+  width: 76%;
+}
+
+.financial-reports-info .reports-info .info {
+  -webkit-animation: reports-info 1s ease-in-out forwards;
+          animation: reports-info 1s ease-in-out forwards;
+  top: 0;
+}
+
+.financial-reports-info .reports-info .info .year {
+  text-align: left;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 3px;
+  -webkit-transition: color 1s ease-in-out;
+  transition: color 1s ease-in-out;
+}
+
+.financial-reports-info .reports-info .info .text-hover {
+  display: none;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  font-size: 25px;
+  -webkit-animation: myslides 1s ease-in-out;
+          animation: myslides 1s ease-in-out;
+}
+
+@keyframes myslides {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.financial-reports-info .reports-info .info .line {
+  position: absolute;
+  width: 3%;
+  height: 30%;
+  bottom: 0;
+  background-color: white;
+  right: 16%;
+}
+
+.financial-reports-info .col:hover .text-hidden {
+  display: none;
+  -webkit-animation: myslides 1s ease-in-out;
+          animation: myslides 1s ease-in-out;
+}
+
+@keyframes myslides {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.financial-reports-info .col:hover .text-block {
+  display: block;
+  -webkit-animation: myslides 1s ease-in-out;
+          animation: myslides 1s ease-in-out;
+}
+
+@keyframes myslides {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.financial-reports-info .col:hover .reports-info .info {
+  -webkit-animation: reports-info-hover 1s ease-in-out forwards;
+          animation: reports-info-hover 1s ease-in-out forwards;
+}
+
+.financial-reports-info .col:hover .reports-info .info .year {
+  color: #73659A;
+  -webkit-transition: color 1s ease-in-out;
+  transition: color 1s ease-in-out;
+}
+
+.financial-reports-info .col:hover .reports-info .info .text-hover {
+  display: block;
+  -webkit-animation: myslides 1s ease-in-out;
+          animation: myslides 1s ease-in-out;
+}
+
+@keyframes myslides {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.financial-reports-info .col:hover .reports-info .info .line {
+  background-color: #73659A;
+}
+
+@-webkit-keyframes reports-info-hover {
+  0% {
+    background-color: #423064b9;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes reports-info-hover {
+  0% {
+    background-color: #423064b9;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@-webkit-keyframes reports-info {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #423064b9;
+  }
+}
+
+@keyframes reports-info {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #423064b9;
+  }
+}
+
+.service-points .row .col h1 {
+  font-size: 33px;
+}
+
+.service-points .row .col p {
+  font-size: 25px;
+}
+
+.service-points .row .col .box {
+  height: 44vh;
+  margin-top: 10%;
+}
+
+.service-points .row .col .box hr {
+  position: absolute;
+  width: 136%;
+  height: 1px;
+  background-color: #878787;
+}
+
+.service-points .row .col .box .hr-1 {
+  -webkit-transform: rotate(43deg);
+          transform: rotate(43deg);
+  top: 47%;
+  left: -18%;
+}
+
+.service-points .row .col .box .hr-2 {
+  -webkit-transform: rotate(137deg);
+          transform: rotate(137deg);
+  top: 48%;
+  left: -18%;
+}
+
+.service-points .row .div-box {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.service-points-map .background-image {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.service-points-map .items-info {
+  margin-top: -8%;
+}
+
+.service-points-map .items-info .form-group label {
+  margin: 20px 0;
+  font-size: 25px;
+  color: #b3acac;
+}
+
+.service-points-map .items-info .form-group select {
+  border: 1px solid #b3acac;
+  color: #797878;
+  font-size: 25px;
+}
+
+.service-points-map .items-info .form-group select:focus {
+  border: none;
+}
+
+.service-points-map .items-info .buttom {
+  margin-top: 25%;
+}
+
+.service-points-map .items-info .buttom button {
+  padding: 17px 0px;
+  font-size: 25px;
+}
+
+.service-points-map .items-info .item h1 {
+  color: #73659A;
+}
+
+.service-points-map .items-info .item h1::after {
+  background-color: #73659A;
+  width: 8%;
+}
+
+.service-points-map .items-info .item p {
+  text-align: right;
+  width: 98%;
+}
+
+.service-points-map .info-map .row {
+  background-image: linear-gradient(60deg, #ffffff62 0%, #fffffffd 100%);
+  width: 95%;
+  -webkit-box-shadow: -29px 10px 23px 6px #ffffffb0;
+          box-shadow: -29px 10px 23px 6px #ffffffb0;
 }
 
 .footer {
@@ -2062,9 +2497,6 @@ ul {
   }
   .app .cicle {
     top: 95%;
-  }
-  .service .images {
-    display: none;
   }
   .features-slider .sliders-info {
     position: absolute;
@@ -2469,9 +2901,23 @@ ul {
         -ms-flex-direction: row;
             flex-direction: row;
   }
+  .our-partners-info .items-info .row .partners-images {
+    width: 67%;
+  }
   .our-partners-info .items-info .row .number {
     margin-top: -5%;
     right: 95%;
+  }
+  .our-partners-info .items-info .row .bank-message img {
+    width: 95%;
+  }
+  .onther-services .onther-services-slider .card {
+    width: 23%;
+  }
+  .service-points .row .div-box {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
 }
 
@@ -2536,10 +2982,24 @@ ul {
   .app .cicle {
     top: 115%;
   }
-  .service .images {
-    left: -6%;
-    top: 0;
-    display: block;
+  .service .info {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    min-height: 81vh;
+  }
+  .service .service-img {
+    width: 100%;
+    z-index: 11;
+    margin-top: 17%;
+  }
+  .service .service-img-2 {
+    width: 69%;
+    left: 10%;
+    top: 29%;
+  }
+  .features .features-info {
+    margin-top: -10%;
   }
   .info-bank-about .dot.active::after {
     width: 32%;
@@ -2568,6 +3028,9 @@ ul {
   }
   .info-bank-about .row .bank-info p {
     font-size: 18px;
+  }
+  .service-points-map .info-map .row {
+    width: 50%;
   }
 }
 /*# sourceMappingURL=main.css.map */
