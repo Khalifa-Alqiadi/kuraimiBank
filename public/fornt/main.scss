@@ -734,8 +734,11 @@ $value in $allPadding {
             }
         }
         p{
-            font-size: 14px;
+            font-size: 12px;
         }
+    }
+    p{
+        font-size: 12px;
     }
     .sliders.active{
         @include animationSlider();
@@ -765,7 +768,7 @@ $value in $allPadding {
 
 .service-project{
     h1{
-        font-size: 40px;
+        font-size: 20px;
     }
 }
 
@@ -777,6 +780,7 @@ $value in $allPadding {
         }
         img{
             top: 0;
+            object-fit: cover;
         }
         &::after{
             content: "";
@@ -843,17 +847,17 @@ $value in $allPadding {
         width: 150%;
         // transform: translateX(4vw);
         display: flex;
-        animation: scrolling-2 10s linear infinite;
+        animation: scrolling-2 20s linear infinite;
         }
         
         .marquee-content {
           display: flex;
           flex-direction: column;
-          animation: scrolling 25s linear infinite;
+          animation: scrolling 35s linear infinite;
         }
 
         .marquee-content-2{
-            animation: scrolling-3 20s linear infinite;
+            animation: scrolling-3 30s linear infinite;
         }
 
         
@@ -861,8 +865,6 @@ $value in $allPadding {
         .marquee-item {
           flex: 0 0 16vw;
           margin: 0 1vw;
-        /*   flex: 0 0 20vw; */
-        /*   margin: 0 2vw; */
         }
         
         .marquee-item img {
@@ -911,7 +913,8 @@ $value in $allPadding {
                 }
             } 
             p{
-                font-size: 20px;
+                font-size: 16px;
+                width: 90%;
                 color: #696969;
             }
             .row{
@@ -1112,7 +1115,7 @@ $value in $allPadding {
 .our-partners-info{
     .items-info{
         .row{
-            margin-top: 8%;
+            margin-top: 2%;
             flex-wrap: nowrap;
             flex-direction: column;
             .partners-images{
@@ -1551,6 +1554,9 @@ $col_sm: 100%;
             h1{
                 color: $secondColor;
             }
+            p{
+                font-size: 22px;
+            }
         }
         .sliders{
             .col{
@@ -1621,9 +1627,6 @@ $col_sm: 100%;
                 right: auto;
             }
             .info{
-                // @include position(absolute, 76%, 70%);
-                // top: -10%;
-                // z-index: 0;
                 left: 0;
                 top: 40%;
                 justify-content: flex-end;
@@ -1641,6 +1644,8 @@ $col_sm: 100%;
             }
             p{
                 font-size: 18px !important;
+                width: 100% !important;
+                
             }
             .images-lx{
                 display: flex;
@@ -1655,6 +1660,16 @@ $col_sm: 100%;
             // .slider-image.active{
             //     z-index: 1;
             // }
+        }
+    }
+    .about-bank{
+        .items-info{
+            .item{
+                p{
+                    font-size: 20px;
+                    width: 50%;
+                }
+            }
         }
     }
     .our-partners-info{
@@ -1675,10 +1690,15 @@ $col_sm: 100%;
             }
         }
     }
+    .service-project{
+        h1{
+            font-size: 40px;
+        }
+    }
     .onther-services{
         .onther-services-slider{
             .card{
-                width: 23%;
+                width: 19%;
             }
         }
     }

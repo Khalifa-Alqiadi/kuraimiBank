@@ -336,10 +336,7 @@
             <span class=" py-1 px-2 me-2 pointer next-btn bg-light-color"><i class="text-second-color fs-5 fa-solid fa-angle-right"></i></span>
             <span class=" py-1 px-2 pointer per-btn bg-light-color"><i class="text-second-color fs-5 fa-solid fa-angle-left"></i></span>
         </div>
-        <div class="trand absolute d-flex justify-between w-100 h-80">
-            <div class="right color"></div>
-            <div class="left color"></div>
-        </div>
+        {{--  --}}
     </div>
 </section>
 @endsection

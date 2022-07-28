@@ -5,7 +5,7 @@
 @section('content')
 <section class=" bank-about-au hv-100">
     <div class="container hv-100 d-flex align-items-center justify-center">
-        <img src="{{asset('images/2022062714253.jpg')}}" alt="" class="absolute w-100 h-100">
+        <img src="{{asset('images/Group 450.png')}}" alt="" class="absolute w-100 h-100">
         <div class="info relative w-80">
             <p class="text-light-color ">رئيسية/عن البنك</p>
             <h1 class="text-white fs-4 mb-0 font-family-arabic">حساب في كل بيت يمني</h1>

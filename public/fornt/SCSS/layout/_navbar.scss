@@ -1,6 +1,6 @@
 
 .navbar {
-    z-index: 1;
+    z-index: 2;
     top: 0;
     .nav-items {
         @include position(absolute, 100%, 100vh);
@@ -105,12 +105,16 @@
                 @include position(absolute, 100%, 50vh);
                 top: 0;
                 object-fit: cover;
+                z-index: 0;
             }
     }
     li:hover .category-parent{
         display: flex;
         animation: parent 1s ease-in-out;
         
+    }
+    .col-md-3{
+        z-index: 2;
     }
     
     // li:hover .category-parent{

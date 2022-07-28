@@ -8,7 +8,7 @@
         <img src="{{asset('images/md-duran-rE-2.png')}}" alt="" class="w-100 h-100 absolute background-image">
         <div class="row h-100  align-items-center relative">
             <div class="col mt-5 info d-flex flex-column align-items-center">
-                <p class="mt-3 mb-1 fs-5 text-white w-100">خدمات الأفراد/ماكينات الصراف الآلي/قصص النجاح</p>
+                <p class="mt-3 mb-1 text-white w-100">خدمات الأفراد/ماكينات الصراف الآلي/قصص النجاح</p>
             </div>
         </div>
     </div>

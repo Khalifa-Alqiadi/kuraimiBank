@@ -117,42 +117,133 @@
                         <nav class="col-md-12 d-flex justify-between relative flex-column">
                             <hr class="bg-white col-md-12 m-0">
                             <ul class="d-flex list-items col-md-12 justify-between px-2 list-none">
-                                <li class="text-white py-2 active relative pointer">{{__('main.homePage.Home')}}</li>
-                                @php
-                                    $i=0;
-                                @endphp
-                                @foreach ($categories as $category)
-                                    <li class="text-white py-2 pointer">
-                                        {{$category->name}}
-                                        <div class="row category-parent p-4">
-                                            <img src="{{asset('pic/Al-_Kurimi_3_f4.png')}}" alt="" >
-                                                <div class="col-md-3"><h1 class="font-family main-color fs-4 pointer">{{$category->name}}</h1></div>
+                                <li class="text-white py-2 active  pointer">{{__('main.homePage.Home')}}
+                                    <div class="row category-parent p-4 w-100">
+                                        <img src="{{asset('pic/Al-_Kurimi_3_f4.png')}}" alt="" >
+                                        <div class="col-md-3"><h1 class="font-family main-color fs-4 pointer">عن البنك</h1></div>
+                                        <div class="col-md-3 relative">
+                                            <ul>
+                                                <li class="pointer">
+                                                    <a href="{{route('our-parteners')}}">شركائنا</a>
                                                     
-                                        @foreach ($categoriesChild as $child)
-                                        
-                                        
-                                            @if ($child->parent_category == $category->id)
-                                                
-                                            {{-- @if (isset($child->services->category_id == )) --}}
-                                                    <div class="col-md-3">
-                                                        <p class="text-second-color">{{$child->name}}</p>
-                                                        <ul>
-                                                            @foreach ($child->services as $services)
-                                                            <li class="pointer">
-                                                                {{$services->name}}
-                                                            </li>
-                                                            @endforeach
-                                                        </ul>
-                                                    </div>
-                                                
-                                                
-                                        
-                                                {{-- @endif --}}
-                                                @endif
-                                        @endforeach
+                                                </li>
+                                                <li class="pointer">
+                                                    <a href="{{route('financial-reports-front')}}">التقارير المالية</a>
+                                                    
+                                                </li>
+                                            </ul>
                                         </div>
-                                    </li>
-                                @endforeach
+                                    </div>
+                                </li>
+                                <li class="text-white py-2 pointer">
+                                        عن البنك
+                                    <div class="row category-parent p-4">
+                                        <img src="{{asset('pic/Al-_Kurimi_3_f4.png')}}" alt="" >
+                                        <div class="col-md-3"><h1 class="font-family main-color fs-4 pointer">عن البنك</h1></div>
+                                        <div class="col-md-3 relative">
+                                            <p class="text-second-color">من نحن</p>
+                                            <ul>
+                                                <li class="pointer">
+                                                    من نحن
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3">
+                                            {{-- <p class="text-second-color">من نحن</p> --}}
+                                            <ul>
+                                                <li class="pointer">
+                                                    <a href="{{route('about-bank')}}">مجلس الادارة</a>
+                                                </li>
+                                                <li class="pointer">
+                                                    <a href="{{route('bank-about-us')}}">عن البنك</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="text-white py-2 pointer">
+                                    خدمات الأفراد
+                                    <div class="row category-parent p-4">
+                                        <img src="{{asset('pic/Al-_Kurimi_3_f4.png')}}" alt="" >
+                                            <div class="col-md-3"><h1 class="font-family main-color fs-4 pointer">خدمات الأفراد</h1></div>
+                                                <div class="col-md-3">
+                                                    <p class="text-second-color">ماكينات الصراف الآلي</p>
+                                                    <ul>
+                                                        <li class="pointer">
+                                                            <a href="{{route('success-stories')}}">قصص النجاح</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                    </div>
+                                </li>
+                                <li class="text-white py-2 pointer">
+                                    خدمات الشركات
+                                    <div class="row category-parent p-4">
+                                        <img src="{{asset('pic/Al-_Kurimi_3_f4.png')}}" alt="" >
+                                            <div class="col-md-3"><h1 class="font-family main-color fs-4 pointer"> خدمات الشركات</h1></div>
+                                                {{-- <div class="col-md-3">
+                                                    <p class="text-second-color">من نحن</p>
+                                                    <ul>
+                                                        <li class="pointer">
+                                                            من نحن
+                                                        </li>
+                                                    </ul>
+                                                </div> --}}
+                                    </div>
+                                </li>
+                                <li class="text-white py-2 pointer">
+                                    كريمي اكسبرس
+                                    <div class="row category-parent p-4">
+                                        <img src="{{asset('pic/Al-_Kurimi_3_f4.png')}}" alt="" >
+                                            <div class="col-md-3"><h1 class="font-family main-color fs-4 pointer"> كريمي اكسبرس</h1></div>
+                                                {{-- <div class="col-md-3">
+                                                    <p class="text-second-color">من نحن</p>
+                                                    <ul>
+                                                        <li class="pointer">
+                                                            من نحن
+                                                        </li>
+                                                    </ul>
+                                                </div> --}}
+                                    </div>
+                                </li>
+                                <li class="text-white py-2 pointer">
+                                    ام فلوس
+                                    <div class="row category-parent p-4">
+                                        <img src="{{asset('pic/Al-_Kurimi_3_f4.png')}}" alt="" >
+                                            <div class="col-md-3"><h1 class="font-family main-color fs-4 pointer"> ام فلوس</h1></div>
+                                                {{-- <div class="col-md-3">
+                                                    <p class="text-second-color">من نحن</p>
+                                                    <ul>
+                                                        <li class="pointer">
+                                                            من نحن
+                                                        </li>
+                                                    </ul>
+                                                </div> --}}
+                                    </div>
+                                </li>
+                                <li class="text-white py-2 pointer">
+                                    التمويل
+                                    <div class="row category-parent p-4">
+                                        <img src="{{asset('pic/Al-_Kurimi_3_f4.png')}}" alt="" >
+                                            <div class="col-md-3"><h1 class="font-family main-color fs-4 pointer"> التمويل</h1></div>
+                                                <div class="col-md-3">
+                                                    {{-- <p class="text-second-color">من نحن</p> --}}
+                                                    <ul>
+                                                        <li class="pointer">
+                                                            <a href="{{route('service')}}">مشروعي</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                    </div>
+                                </li>
+                                <li class="text-white py-2 pointer">
+                                    تطبيقات البنك
+                                    <div class="row category-parent p-4">
+                                        <img src="{{asset('pic/Al-_Kurimi_3_f4.png')}}" alt="" >
+                                            <div class="col-md-3"><h1 class="font-family main-color fs-4 pointer"> تطبيقات البنك</h1></div>
+                                    </div>
+                                </li>
+                                {{-- @endforeach --}}
                                 {{-- <li class="text-white py-2">
                                     {{__('main.homePage.AboutBank')}}
                                     <div class="row category-parent p-4">

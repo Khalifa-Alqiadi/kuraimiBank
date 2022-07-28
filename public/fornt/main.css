@@ -1,5 +1,5 @@
 .navbar {
-  z-index: 1;
+  z-index: 2;
   top: 0;
 }
 
@@ -145,6 +145,7 @@
   top: 0;
   -o-object-fit: cover;
      object-fit: cover;
+  z-index: 0;
 }
 
 .navbar li:hover .category-parent {
@@ -153,6 +154,10 @@
   display: flex;
   -webkit-animation: parent 1s ease-in-out;
           animation: parent 1s ease-in-out;
+}
+
+.navbar .col-md-3 {
+  z-index: 2;
 }
 
 .navbar .logo-bank {
@@ -1587,7 +1592,11 @@ ul {
 }
 
 .features .features-info p {
-  font-size: 14px;
+  font-size: 12px;
+}
+
+.features p {
+  font-size: 12px;
 }
 
 .features .sliders.active {
@@ -1647,7 +1656,7 @@ ul {
 }
 
 .service-project h1 {
-  font-size: 40px;
+  font-size: 20px;
 }
 
 .success-stories .success-info {
@@ -1670,6 +1679,8 @@ ul {
 
 .success-stories .success-info img {
   top: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .success-stories .success-info::after {
@@ -1755,8 +1766,8 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-animation: scrolling-2 10s linear infinite;
-          animation: scrolling-2 10s linear infinite;
+  -webkit-animation: scrolling-2 20s linear infinite;
+          animation: scrolling-2 20s linear infinite;
 }
 
 .bank-images .marquee-content {
@@ -1767,13 +1778,13 @@ ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-animation: scrolling 25s linear infinite;
-          animation: scrolling 25s linear infinite;
+  -webkit-animation: scrolling 35s linear infinite;
+          animation: scrolling 35s linear infinite;
 }
 
 .bank-images .marquee-content-2 {
-  -webkit-animation: scrolling-3 20s linear infinite;
-          animation: scrolling-3 20s linear infinite;
+  -webkit-animation: scrolling-3 30s linear infinite;
+          animation: scrolling-3 30s linear infinite;
 }
 
 .bank-images .marquee-item {
@@ -1781,8 +1792,6 @@ ul {
       -ms-flex: 0 0 16vw;
           flex: 0 0 16vw;
   margin: 0 1vw;
-  /*   flex: 0 0 20vw; */
-  /*   margin: 0 2vw; */
 }
 
 .bank-images .marquee-item img {
@@ -1884,7 +1893,8 @@ ul {
 }
 
 .about-bank .items-info .item p {
-  font-size: 20px;
+  font-size: 16px;
+  width: 90%;
   color: #696969;
 }
 
@@ -2109,7 +2119,7 @@ ul {
 }
 
 .our-partners-info .items-info .row {
-  margin-top: 8%;
+  margin-top: 2%;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   -webkit-box-orient: vertical;
@@ -2785,6 +2795,9 @@ ul {
   .features-slider .sliders-info h1 {
     color: #73659A;
   }
+  .features-slider .sliders-info p {
+    font-size: 22px;
+  }
   .features-slider .sliders .col {
     padding: 2rem;
   }
@@ -2883,6 +2896,7 @@ ul {
   }
   .success-stories-info .item p {
     font-size: 18px !important;
+    width: 100% !important;
   }
   .success-stories-info .item .images-lx {
     display: -webkit-box;
@@ -2892,6 +2906,10 @@ ul {
   }
   .success-stories-info .item .images-ms {
     display: none;
+  }
+  .about-bank .items-info .item p {
+    font-size: 20px;
+    width: 50%;
   }
   .our-partners-info .items-info .row {
     -ms-flex-wrap: wrap;
@@ -2911,8 +2929,11 @@ ul {
   .our-partners-info .items-info .row .bank-message img {
     width: 95%;
   }
+  .service-project h1 {
+    font-size: 40px;
+  }
   .onther-services .onther-services-slider .card {
-    width: 23%;
+    width: 19%;
   }
   .service-points .row .div-box {
     -webkit-box-align: end;
