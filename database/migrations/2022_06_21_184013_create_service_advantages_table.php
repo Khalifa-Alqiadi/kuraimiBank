@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('service_advantages', function (Blueprint $table) {
             $table->id();
             $table->json('name');
-            $table->string('image');
+            $table->json('description');
             $table->integer('service_id');
             $table->boolean('is_active')->default(1);
             $table->timestamps();

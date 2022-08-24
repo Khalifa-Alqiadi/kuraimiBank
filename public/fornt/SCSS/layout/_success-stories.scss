@@ -1,0 +1,67 @@
+// Start Success Stories Hero Section
+.uccess-stories-hero{
+    img{
+        object-fit: cover;
+    }
+}
+// End Success Stories Hero Section
+// Start Success Stories Info Section
+.success-stories-info{
+    .items-info{
+        overflow-y: clip;
+    }
+    .item{
+        p{
+            font-size: 14px !important;
+            line-height: 2;
+            margin: 0px 0;
+            letter-spacing: 1.5px;
+        }
+        .row{
+            min-height: 87vh;
+        }
+        .images-lx{
+            display: none;
+        }
+    }
+    
+}
+// End Success Stories Info Section
+// Start Success Stories News Section
+.onther-services-success{
+    .text-title{
+        margin: 5%;
+    }
+    .col{
+        img{
+            height: 50vh;
+        }
+    }
+}
+// End Success Stories News Section
+@include breakPoints(medium){
+    // Start Success Stories Info Section
+    .success-stories-info{
+        .item{
+            .row{
+                flex-wrap: nowrap;
+                .info{
+                    width: 60%;
+                }
+            }
+            p{
+                font-size: 18px !important;
+                width: 100% !important;
+                
+            }
+            .images-lx{
+                display: flex;
+                width: 45%;
+            }
+            .images-ms{
+                display: none;
+            }
+        }
+    }
+    // End Success Stories Hero
+}

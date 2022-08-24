@@ -15,8 +15,8 @@
         console.log(respond.data)
         name_ar.value = respond.data.service.name.ar
         name_en.value = respond.data.service.name.en
-        service_info_ar.value = respond.data.service.service_info.ar
-        service_info_en.value = respond.data.service.service_info.en
+        service_info_ar.value = respond.data.service.description.ar
+        service_info_en.value = respond.data.service.description.en
       })
     // })
 </script>

@@ -39,6 +39,7 @@ class ValidateEnum extends Controller
     const REQUIRED_SERVICES = [
         'name_ar'           => 'required',
         'name_en'           => 'required',
+        'background'        => 'required',
         'service_info_ar'   => 'required',
         'service_info_en'   => 'required',
     ];
@@ -52,7 +53,15 @@ class ValidateEnum extends Controller
     const REQUIRED_ADVANTAGES   = [
         'name_ar'           => 'required',
         'name_en'           => 'required',
-        'image'             => 'required',
+        'description_ar'    => 'required',
+        'description_en'    => 'required',
+    ];
+    const REQUIRED_SLIDER_SERVICE   = [
+        'slider_name_ar'           => 'required',
+        'slider_name_en'           => 'required',
+        'image'                    => 'required',
+        'slider_description_ar'    => 'required',
+        'slider_description_en'    => 'required',
     ];
 
     const REQUIRED_SERVICE_POINTS       = [
@@ -95,6 +104,30 @@ class ValidateEnum extends Controller
         'phone'                  => 'required',
         'address'                => 'required',
         'image'                  => 'required',
+    ];
+    const REQUIRED_APPLICATIONS  = [
+        'name_ar'               => 'required',
+        'name_en'               => 'required',
+        'play_link'             => 'required',
+        'store_link'            => 'required',
+        'application_info_ar'   => 'required',
+        'application_info_en'   => 'required',
+    ];
+    const REQUIRED_NUMBERS  = [
+        'number'               => 'required',
+        'description_ar'       => 'required',
+        'description_en'       => 'required',
+    ];
+
+    const REQUIRED_SUCCESS_STORIES = [
+        'title_ar'                  => 'required',
+        'title_en'                  => 'required',
+        'main_image'                => 'required',
+        'onther_images'             => 'required',
+        'description_ar'            => 'required',
+        'description_en'            => 'required',
+        'onther_description_ar'      => 'required',
+        'onther_description_en'      => 'required',
     ];
 
     public function required()

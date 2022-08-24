@@ -107,24 +107,24 @@
     <x-row>
         <x-slot name="title">{{__('main.services.Add_services')}}</x-slot>
         <x-slot name="form">
-            <form action="add_service" method="post">
+            <form action="add_service" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="mb-3 col-md-6">
                         <label class="form-label">{{__('main.Name')}} (Arabic)</label>
-                        <input type="text" id="service_name_ar" name="name_ar" class="form-control" id="basic-default-fullname" placeholder="John Doe" />
+                        <input type="text" id="service_name_ar" name="name_ar" value="{{old('name_ar')}}" class="form-control" id="basic-default-fullname" placeholder="John Doe" />
                         @error('name_ar')
                             <div class="text-danger">{{$message}}</div>
                         @enderror
                     </div>
                     <div class="mb-3 col-md-6">
                         <label class="form-label">{{__('main.Name')}} (English)</label>
-                        <input type="text" id="service_name_en" name="name_en" class="form-control" placeholder="" />
+                        <input type="text" id="service_name_en" name="name_en" value="{{old('name_en')}}" class="form-control" placeholder="" />
                         @error('name_en')
                             <div class="text-danger">{{$message}}</div>
                         @enderror
                     </div>
-                    <div class="mb-3 col-md-12">
+                    <div class="mb-3 col-md-6">
                         <label class="form-label">{{__('main.categories.Category_name')}}</label>
                         {{-- <input type="text" id="service_name_en" name="service_name_en" class="form-select" placeholder="" /> --}}
                         <select name="category_service" id="category_service" class="form-select">
@@ -138,18 +138,25 @@
                             @endforeach
                         </select>
                     </div>
+                    <div class="mb-3 col-md-6">
+                        <label class="form-label">{{__('main.Image')}}</label>
+                        <input type="file" id="service_name_en" name="background" class="form-control" placeholder="" />
+                        @error('background')
+                            <div class="text-danger">{{$message}}</div>
+                        @enderror
+                    </div>
                 </div>
                 <div class="row">
                     <div class="mb-3 col-md-12">
                         <label class="form-label" for="basic-default-fullname">{{__('main.services.Service_Info')}} (Arabic)</label>
-                        <textarea id="service_info_ar" name="service_info_ar" class="ckeditor form-control"></textarea>
+                        <textarea id="service_info_ar" name="service_info_ar" class="ckeditor form-control" value="{{old('service_info_ar')}}"></textarea>
                         @error('service_info_ar')
                             <div class="text-danger">{{$message}}</div>
                         @enderror
                     </div>
                     <div class="mb-3 col-md-12">
                         <label class="form-label" for="basic-default-fullname">{{__('main.services.Service_Info')}} (English)</label>
-                        <textarea id="service_info_en" name="service_info_en" class="ckeditor form-control"></textarea>
+                        <textarea id="service_info_en" name="service_info_en" class="ckeditor form-control" value="{{old('service_info_en')}}"></textarea>
                         @error('service_info_en')
                             <div class="text-danger">{{$message}}</div>
                         @enderror

@@ -20,6 +20,7 @@ return [
     'Exists'                        => 'هذا الحساب غير موجود',
     'Email'                         => 'هذا البريد الالكترني غير صحصح',
     'Unavailable'                   => 'غير متاح',
+    'More'                          => 'المزيد',
     'service_point'                 => [
         'name'                          => 'نقاط الخدمة',
         'manage'                        => 'ادارة نقاط الخدمة',
@@ -80,6 +81,10 @@ return [
         'Manage'                        => 'إدارة مميزات الخدمة',
         'Add_Advantage'                 => 'إضافة ميزة',
         'Edit_advantage'                => 'تعديل الميزة',
+    ],
+    'slider_service'                => [
+        'Name'                          => 'شريط الخدمة',
+        'Manage'                        => 'إدارة شريط الخدمة',
     ],
     'jobs'                          => [
         'Name'                          => 'الوظائف',
@@ -160,6 +165,24 @@ return [
         'Add_Role'                      => 'إضافة رول',
         'placeholder'                   => 'اسم الرول',
     ],
+    'applications'                  => [
+        'Name'                          => 'تطبيقات البنك',
+        'Info'                          => 'وصف التطبيق',
+        'Play_link'                     => 'رابط متجر جوجل',
+        'Store_link'                    => 'رابط متجر التطبيقات',
+    ],
+    'services_numbers'              => [
+        'Name'                          => 'خدماتنا في ارقام',
+        'Number'                        => 'الرقم',
+    ],
+    'successStories'                => [
+        'Name'                          => 'قصص النجاح',
+        'Manage'                        => 'ادارة قصص النجاح',
+        'OntherDescription'             => 'وصف اخر',
+        'MainImage'                     => 'الصورة الرئيسية',
+        'OntherImages'                  => 'صور اخرى',
+        'ServiceName'                   => 'اسم الخدمة'
+    ],
 
     // Front Pages
 
@@ -170,5 +193,9 @@ return [
         'ServicesPoint'                 => 'نقاط الخدمة',
         'Home'                          => 'الرئيسية',
         'AboutBank'                     => 'عن البنك',
+        'Sale'                          => 'شراء',
+        'Buy'                           => 'بيع',
+        'CoinsExchange'                 => 'تحويل العملات',
+        'ServicesCare'                  => 'خدمات تهتم بك',
     ]
 ];

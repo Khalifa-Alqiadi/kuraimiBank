@@ -40,11 +40,12 @@
                 font-family: "GE SS Two" !important;
             }
             .home{
-                transform: rotateY(181deg) scaleY(1);
+                transform: rotateY(181deg) scaleY(1); */
                 width: 100%;
                 min-height: 100vh;
+
                 background-repeat: no-repeat;
-                background-size: 100% 178%;
+                background-size: cover;
                 background-image: url({{asset('pic/2.jpg')}});
                 
             }
@@ -53,13 +54,6 @@
                 background-repeat: repeat-x;
                 background-image: url({{asset('images/header-bg.png')}});
             }
-            /* .service{
-                width: 100%;
-                min-height: 95vh;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-image: url({{asset('pic/Al-_Kurimi_3_f4.png')}});
-            } */
         </style>
     </head>
     <body>
@@ -170,7 +164,7 @@
                                                     <p class="text-second-color">ماكينات الصراف الآلي</p>
                                                     <ul>
                                                         <li class="pointer">
-                                                            <a href="{{route('success-stories')}}">قصص النجاح</a>
+                                                            {{-- <a href="{{route('success-stories.show')}}">قصص النجاح</a> --}}
                                                         </li>
                                                     </ul>
                                                 </div>

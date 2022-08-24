@@ -29,6 +29,7 @@ use App\Http\Controllers\API\ApiUsers;
 use App\Http\Controllers\API\ApiPermissions;
 
 use App\Http\Controllers\API\ApiServiceAdvantages;
+use App\Http\Controllers\API\ApiSuccessStories;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,28 +44,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('change-language/{locale}', [LocaleController::class, 'switch'])->name('change-language');
-Route::get('/frontIndex', [HomeController::class, 'frontIndex'])->name('frontIndex');
-Route::get('/service', [ServiceController::class, 'show'])->name('service');
-Route::get('/about-bank', [AboutBankController::class, 'show'])->name('about-bank');
-Route::get('/bank-about-us', [BankAboutUsController::class, 'show'])->name('bank-about-us');
-Route::get('/about-us', [AboutUsController::class, 'show'])->name('about-us');
-Route::get('/success-stories', [SuccessStoriesController::class, 'show'])->name('success-stories');
-Route::get('/our-parteners', [OurPartnersController::class, 'show'])->name('our-parteners');
-Route::get('/financial-reports-front', [FinancialReportsController::class, 'show'])->name('financial-reports-front');
-Route::get('/service-points-maps', [ServicePointsMapsController::class, 'show'])->name('service-points-maps');
-Route::get('/', function () {
-    return view('front.index');
-});
-Route::middleware(['web'])->group(function () {
-    Route::group(['middleware' => 'auth'], function () {
-        Route::group(['middleware' => ['role:admin|admin_reports|admin_services']], function () {
 
-
-            // Route::get('/categories_admin', [CategoriesAdminController::class, 'ShowCategoryAdmin'])->name('categories_admin');
-            // Route::get('/categories_admin', ['middleware' => ['permission:manage_website'], 'uses' => 'App\Http\Controllers\API\ApiCategory@ShowCategoryAdmin'])->name('categories_admin');
-
-        });
-    });
+// Route::get('/', function () {
+//     return view('front.index');
+// });
+Route::middleware(['localized'])->prefix(app()->getLocale())->group(function () {
+    Route::get('/', [HomeController::class, 'frontIndex'])->name('frontIndex');
+    Route::get('/service', [ServiceController::class, 'show'])->name('service');
+    Route::get('/services/{name}', [ServiceController::class, 'showName'])->name('services.showName');
+    Route::get('/store', [ServiceController::class, 'store'])->name('store');
+    Route::get('/about-bank', [AboutBankController::class, 'show'])->name('about-bank');
+    Route::get('/bank-about-us', [BankAboutUsController::class, 'show'])->name('bank-about-us');
+    Route::get('/about-us', [AboutUsController::class, 'show'])->name('about-us');
+    Route::get('/success-story', [SuccessStoriesController::class, 'show']);
+    Route::get('/success-stories/{title}', [SuccessStoriesController::class, 'showTitle'])->name('success-stories.showTitle');
+    Route::get('/our-parteners', [OurPartnersController::class, 'show'])->name('our-parteners');
+    Route::get('/financial-reports-front', [FinancialReportsController::class, 'show'])->name('financial-reports-front');
+    Route::get('/service-points-maps', [ServicePointsMapsController::class, 'show'])->name('service-points-maps');
 });
 Route::get('/errors-admin', [CategoriesAdminController::class, 'errors'])->name('errors-admin');
 

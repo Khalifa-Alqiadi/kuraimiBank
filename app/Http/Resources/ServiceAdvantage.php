@@ -16,12 +16,12 @@ class ServiceAdvantage extends JsonResource
     {
         // return parent::toArray($request);
         return [
-            'id'        => $this->id,
-            'name'      => $this->name,
-            'image'     => $this->image,
-            'is_active' => $this->is_active,
-            'created_at'    => $this->created_at,
-            'updated_at'    => $this->updated_at,
+            'id'                => $this->id,
+            'name'              => $this->name,
+            'description'       => $this->description,
+            'is_active'         => $this->is_active,
+            'created_at'        => $this->created_at,
+            'updated_at'        => $this->updated_at,
         ];
     }
 }

@@ -19,7 +19,8 @@ return [
     'Description'               => 'Description',
     'Exists'                    => 'This Acount Is Nit Exists',
     'Email'                     => 'This Email Not Correct',
-    'Unavailable'                   => 'Unavailable',
+    'Unavailable'               => 'Unavailable',
+    'More'                      => 'More',
     'Errors'                    => [
         'required'                  => 'This is field required',
     ],
@@ -80,9 +81,13 @@ return [
         'Name'                          => 'Advantages',
         'Service_Advantages'            => 'Service Advantage',
         'Image'                         => 'Image',
-        'Manage'                        => 'Management Service Advantage',
+        'Manage'                        => 'Management Service Advantages',
         'Add_Advantage'                 => 'Add Advantage',
         'Edit_advantage'                => 'Edit Advantage',
+    ],
+    'slider_service'                => [
+        'Name'                          => 'Slider Service',
+        'Manage'                        => 'Management Slider Service',
     ],
     'jobs'                          => [
         'Name'                          => 'Jobs',
@@ -164,6 +169,26 @@ return [
         'Add_Role'                      => 'Add Role',
         'placeholder'                   => 'Name Role',
     ],
+    'applications'                  => [
+        'Name'                          => 'Bank Applications',
+        'Info'                          => 'Application Description',
+        'Play_link'                     => 'Google Play Link',
+        'Store_link'                    => 'App Store Link',
+    ],
+    'services_numbers'              => [
+        'Name'                          => 'Our services are in numbers',
+        'Number'                        => 'Number',
+    ],
+    'successStories'                => [
+        'Name'                          => 'Success Stories',
+        'Manage'                        => 'Management Success Stories',
+        'OntherDescription'             => 'Onther Description',
+        'MainImage'                     => 'Main Image',
+        'OntherImages'                  => 'Onther Images',
+        'ServiceName'                   => 'Name Service'
+    ],
+
+    // Front Pages
 
     'homePage'                      => [
         'Name'                          => 'Home Page',
@@ -172,6 +197,10 @@ return [
         'ServicesPoint'                 => 'Services Point',
         'Home'                          => 'Home',
         'AboutBank'                     => 'About Bank',
+        'Sale'                          => 'Sale',
+        'Buy'                           => 'Buy',
+        'CoinsExchange'                 => 'Coins Exchange',
+        'ServicesCare'                  => 'Services that take care of you',
     ]
 
 ];

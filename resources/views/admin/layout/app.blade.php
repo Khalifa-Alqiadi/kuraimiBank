@@ -358,177 +358,42 @@
       <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
           <i class="menu-icon tf-icons bx bx-chart"></i>
-          <div data-i18n="login">login</div>
+          <div data-i18n="{{__('main.applications.Name')}}">{{__('main.applications.Name')}}</div>
         </a>
         <ul class="menu-sub">
           <li class="menu-item">
-            <a href="{{route('login')}}" class="menu-link text-white">
-              <div data-i18n="login">login</div>
+            <a href="{{route('admin-applications')}}" class="menu-link text-white">
+              <div data-i18n="{{__('main.applications.Name')}}">{{__('main.applications.Name')}}</div>
             </a>
           </li>
         </ul>
       </li>
-    {{-- @elseif(Auth::user()->hasPermission('manage_services'))
       <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
           <i class="menu-icon tf-icons bx bx-chart"></i>
-          <div data-i18n="{{__('users.Users')}}">{{__('users.Users')}}</div>
-        </a>
-        <ul class="menu-sub">
-          <li class="menu-item ">
-            <a href="{{route('usersAdminManage')}}" class="menu-link text-white">
-              <div data-i18n="{{__('users.User_Title')}}">{{__('users.User_Title')}}</div>
-            </a>
-          </li>
-        </ul>
-      </li>
-      <!-- Charts & Maps -->
-      <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
-          <i class="menu-icon tf-icons bx bx-chart"></i>
-          <div data-i18n="{{__('main.service_point.name')}}">{{__('main.service_point.name')}}</div>
+          <div data-i18n="{{__('main.services_numbers.Name')}}">{{__('main.services_numbers.Name')}}</div>
         </a>
         <ul class="menu-sub">
           <li class="menu-item">
-            <a href="{{route('service-points')}}" class="menu-link text-white">
-              <div data-i18n="{{__('main.service_point.name')}}">{{__('main.service_point.name')}}</div>
+            <a href="{{route('services-numbers')}}" class="menu-link text-white">
+              <div data-i18n="{{__('main.services_numbers.Name')}}">{{__('main.services_numbers.Name')}}</div>
             </a>
           </li>
         </ul>
       </li>
-      
-      <!-- Charts & Maps -->
       <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
           <i class="menu-icon tf-icons bx bx-chart"></i>
-          <div data-i18n="{{__('main.services.Name')}}">{{__('main.services.Name')}}</div>
+          <div data-i18n="{{__('main.successStories.Name')}}">{{__('main.successStories.Name')}}</div>
         </a>
         <ul class="menu-sub">
           <li class="menu-item">
-            <a href="Show-Services" class="menu-link text-white">
-              <div data-i18n="{{__('main.services.Name')}}">{{__('main.services.Name')}}</div>
+            <a href="{{route('success-stories-admin')}}" class="menu-link text-white">
+              <div data-i18n="{{__('main.successStories.Name')}}">{{__('main.successStories.Name')}}</div>
             </a>
           </li>
         </ul>
       </li>
-      <!-- Charts & Maps -->
-      <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
-          <i class="menu-icon tf-icons bx bx-chart"></i>
-          <div data-i18n="{{__('main.exchange_rate.Name')}}">{{__('main.exchange_rate.Name')}}</div>
-        </a>
-        <ul class="menu-sub">
-          <li class="menu-item text-white">
-            <a href="Show-exchange-rate" class="menu-link">
-              <div data-i18n="{{__('main.exchange_rate.Name')}}">{{__('main.exchange_rate.Name')}}</div>
-            </a>
-          </li>
-        </ul>
-      </li>
-      <!-- Charts & Maps -->
-      <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
-          <i class="menu-icon tf-icons bx bx-chart"></i>
-          <div data-i18n="{{__('main.jobs.Name')}}">{{__('main.jobs.Name')}}</div>
-        </a>
-        <ul class="menu-sub">
-          <li class="menu-item">
-            <a href="{{route('show-jobs')}}" class="menu-link text-white">
-              <div data-i18n="{{__('main.jobs.Name')}}">{{__('main.jobs.Name')}}</div>
-            </a>
-          </li>
-        </ul>
-      </li>
-    @elseif (Auth::user()->hasPermission('manage_reports'))
-      <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
-          <i class="menu-icon tf-icons bx bx-chart"></i>
-          <div data-i18n="{{__('users.Users')}}">{{__('users.Users')}}</div>
-        </a>
-        <ul class="menu-sub">
-          <li class="menu-item ">
-            <a href="{{route('usersAdminManage')}}" class="menu-link text-white">
-              <div data-i18n="{{__('users.User_Title')}}">{{__('users.User_Title')}}</div>
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
-          <i class="menu-icon tf-icons bx bx-chart"></i>
-          <div data-i18n="{{__('main.news.Name')}}">{{__('main.news.Name')}}</div>
-        </a>
-        <ul class="menu-sub">
-          <li class="menu-item">
-            <a href="{{route('show-news')}}" class="menu-link text-white">
-              <div data-i18n="{{__('main.news.Name')}}">{{__('main.news.Name')}}</div>
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
-          <i class="menu-icon tf-icons bx bx-chart "></i>
-          <div data-i18n="{{__('main.website.Name')}}">{{__('main.website.Name')}}</div>
-        </a>
-        <ul class="menu-sub">
-          <li class="menu-item">
-            <a href="{{route('show-control-info')}}" class="menu-link text-white">
-              <div data-i18n="{{__('main.website.Control')}}">{{__('main.website.Control')}}</div>
-            </a>
-          </li>
-          @foreach ($listInfo as $list)
-            <li class="menu-item">
-              <a href="show-info/{{$list->id}}" class="menu-link text-white">
-                <div data-i18n="{{$list->key}}">{{$list->key}}</div>
-              </a>
-            </li>
-          @endforeach
-        </ul>
-      </li>
-      <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
-          <i class="menu-icon tf-icons bx bx-chart"></i>
-          <div data-i18n="{{__('main.social_media.Name')}}">{{__('main.social_media.Name')}}</div>
-        </a>
-        <ul class="menu-sub">
-          <li class="menu-item">
-            <a href="{{route('show-social_media')}}" class="menu-link text-white">
-              <div data-i18n="{{__('main.social_media.Name')}}">{{__('main.social_media.Name')}}</div>
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
-          <i class="menu-icon tf-icons bx bx-chart"></i>
-          <div data-i18n="{{__('main.partners.Name')}}">{{__('main.partners.Name')}}</div>
-        </a>
-        <ul class="menu-sub">
-          <li class="menu-item">
-            <a href="{{route('our_partners')}}" class="menu-link text-white">
-              <div data-i18n="{{__('main.partners.Name')}}">{{__('main.partners.Name')}}</div>
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle text-white">
-          <i class="menu-icon tf-icons bx bx-chart"></i>
-          <div data-i18n="{{__('main.reports.Name')}}">{{__('main.reports.Name')}}</div>
-        </a>
-        <ul class="menu-sub">
-          <li class="menu-item">
-            <a href="{{route('financial-reports')}}" class="menu-link text-white">
-              <div data-i18n="{{__('main.reports.Name')}}">{{__('main.reports.Name')}}</div>
-            </a>
-          </li>
-        </ul>
-      </li>
-    @else
-        <h1></h1>
-    @endif
-    --}}
   </ul>
   
   

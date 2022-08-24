@@ -1,0 +1,394 @@
+// Stert Home Hero Section
+.home {
+    .hero{
+        transform: inherit;
+        overflow: hidden;
+        .hero-info{
+            opacity: 0;
+            left: 200%;
+            transition: all 3s; 
+            margin-top: 8%;
+        }
+        
+        .hero-info.active{
+            opacity: 1;
+            position: relative;
+            left: 0;
+        }
+    }
+    .bottom{
+        @include position(absolute, 10px, 22px);
+        right: 10%;
+        top: 50%;
+        z-index: 1000;
+        ul li{
+            width: 4px;
+            height: 29px;
+            background-color: white;
+            margin: 6px;
+            position: relative;
+        }
+
+        ul li.active::after{
+            content: "";
+            @include position(absolute, 4px, 16px);
+            top: 0;
+            background-color: $mainColor;
+        }
+    }
+}
+
+// End Home Hero Section
+
+// Start Coins Exchange Section
+.rate-list{
+    box-shadow: 0px 4px 6px 5px $colorLight;
+    .item{
+        width: 100%;
+        .border-2{
+            border: 2px solid #cccccc;
+        }
+        h1{
+            font-size: 18px;
+            color: #9e9e9e;
+        }
+        p{
+            font-weight: 700;
+        }
+    }
+    .item-button{
+        margin-top: 20px;
+        .card{
+            width: 30%;
+        }
+    }
+}
+// End Coins Exchange Section
+
+// Start Services Slider Section
+
+.mySlides.active{
+    @include animationSlider();
+}
+
+.mySlides .images{
+    display: none;
+}
+
+.services{
+    width: 98vw;
+    .text-title{
+        margin: 5% 0;
+    }
+    .images{
+        .images-transform{
+            top: 20%;
+            left: 0%;
+        }
+        .img-database{
+        }
+    }
+    &::after{
+        content: '';
+        @include position(absolute, 100%, 50%);
+        background-color: white;
+        opacity: .9;
+        top: 45%;
+        left: 0;
+    }
+    
+    .images-kuraimi{
+        top: 45%;
+        width: 100%;
+    }
+    .dot{
+        font-size: 13px;
+        color: $colorLight-2;
+    }
+    .dot.active{
+        color: #423064;
+        font-weight: bold;
+        position: relative;
+        @include animationSlider();
+        &::after{
+            content: "";
+            @include position(absolute, 2px, 16px);
+            top: 71%;
+            left: 50%;
+            background-color: $secondColor;
+        }
+    }
+    .mySlides-info{
+        padding: 4rem 3rem;
+        h1{
+            font-size: 2.5rem;
+        }
+        p{
+            color: #9e9e9e;
+            letter-spacing: 1px;
+            font-size: 18px;
+        }  
+    }
+    .link{
+        text-align: center;
+        margin: 5% 0;
+    }
+    .trends{
+        top: 67%;
+        left: 5;
+        z-index: 1;
+    }
+}
+
+// End Services Slider Section
+// Start App Slider Section
+
+.app{
+    background-color: #eff1f1;
+    margin-top: 10%;
+    .text-info{
+        color: #929292;
+        font-size: 18px;
+    }
+    .slides-app{
+        overflow-x: clip;
+        height: 55vh;
+        .item-app{
+            animation: appLeft 1.2s ease-in-out forwards;
+            border-radius: 40px;
+            h1{
+                color: #3a3a3a;
+            }
+            p{
+                color: #929292;
+            }
+        }
+        .item-app.active{
+            animation: appRight 1.2s ease-in-out forwards;
+        }
+    }
+    
+    .cicle{
+        z-index: 10;
+        height: 9px; 
+        top: 95%;
+    }
+    
+}
+
+@keyframes appRight{
+    0%{
+        left: -66%;
+        height: auto;
+    }
+    100%{
+        left: 20%;
+        height: 45vh;
+    }
+}
+@keyframes appLeft{
+    0%{
+        opacity: 1;
+    }50%{
+        opacity: 0;
+    }
+    70%{
+        left: -166%;
+        opacity: .5;
+    }100%{
+        left: -66%;
+        opacity: 1;
+    }
+}
+.items.active{
+    background-color: $secondColor;
+    width: 20%;
+}
+.items{
+    background-color: #9e9d9d;
+    width: 5%;
+    margin-right: 10px;
+    border-radius: 23px;
+    height: 100%;
+}
+// End App Slider Section
+
+
+// Start News Slider Section
+.news{
+    margin-top: 6rem;
+    .text-titlr{
+        margin-bottom: 5rem;
+    }
+    &::before{
+        content: '';
+        @include position(absolute, 100%, 0%);
+        bottom: 0px;
+        border: 581px solid transparent;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        border-bottom-color: #f2f5f5;
+        left: 50%;
+    }
+    
+    .news-info{
+        z-index: 0;
+        // top: -100%;
+        transition: all 1s ease-in-out;
+        background-color: #423064d3;
+        clip-path: circle(0px at top);
+        &::after{
+            content: '';
+            @include position(absolute, 1px, 10%);
+            background-color: $colorLight;
+            top: 0;
+            left: 50%;
+        }
+    }
+    .content{
+        overflow: hidden;
+        &:hover{
+            .news-info{
+                top: 0;
+                transition: all 1s ease-in-out;
+                clip-path: circle(1000px at top);
+            }
+        }
+        .news-button button{
+            margin: 5% 29%;
+        }
+    }
+    .card-slider{
+        scroll-behavior: smooth;
+        overflow-x: auto;
+        .card{
+            flex: 0 0 auto;
+            width: 92%;
+            margin-right: 37px;
+            box-shadow: 0px 16px 6px 1px white;
+        }
+        &::-webkit-scrollbar{
+            display: none;
+        }
+        .image{
+            height: 57vh;
+            width: 100%;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    p{
+        font-size: 14px;
+    }
+}
+// End News Slider Section
+
+// Start Numbers Section
+.numbers{
+    background-color: #261a3cfd;
+    a{
+        font-family: "Helvetica Neue LT Pro";
+    }
+    .numbers-info{
+        width: 97%;
+    }
+    .number h1 a::before{
+        font-size: 30rem;
+        z-index: -1;
+        content: attr(data-after);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        letter-spacing: 50px;
+        transition: 1s ease letter-spacing;
+        color: black;
+    }
+    .number h1:hover a::before{
+        transform: translate(-50%, -50%) scale(1);
+        letter-spacing: initial;
+    }
+    .number p{
+        font-size: 15px;
+    }
+    hr{
+        width: 100%;
+        height: 3px;
+        background-color: white;
+    }
+}
+// End Numbers Section
+
+
+@include breakPoints(small){
+    .app .cicle{
+        top: 92%;
+    }
+    
+}
+@include breakPoints(mobile){
+    // Start Coins Exchange Section
+    .rate-list{
+        .item{
+            width: 50%;
+        }
+        .item-button{
+            margin-top: 0;
+            .card{
+                width: 50%;
+            }
+        }
+    }
+    // End Coins Exchange Section
+
+    // Start Services Slider Section
+    .mySlides {
+        .images{
+            width: 30%;
+            display: flex;
+        }
+        .mySlides-info{
+            width: 70%;
+        }
+    }
+    // End Services Slider Section
+    // Start News Slider Section
+    .news .card-slider .card{
+        width: 45%;
+    }
+    // End News Slider Section
+}
+@include breakPoints(medium){
+    // Start Services Slider Section
+    .services  .dot{
+        font-size: 20px;
+    }
+    // End Services Slider Section
+    // Start News Slider Section
+    .news .card-slider .card {
+        width: 30%;
+    }
+    // End News Slider Section
+}
+@include breakPoints(large){
+    // Start Coins Exchange Section
+    .rate-list{
+        .item{
+            width: 29%;
+        }
+        .item-button{
+            width: 13%;
+            .card{
+                width: 80%;
+            }
+        }
+
+    }
+    // End Coins Exchange Section
+    .app .cicle{
+        top: 100%;
+    }
+}

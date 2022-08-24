@@ -118,6 +118,9 @@ body{
 .bg-light-color{
     background-color: $colorLight;
 }
+.text-light-color-2{
+    color: $colorLight-2;
+}
 
 .fs-1 {
     font-size: calc(1.375rem + 1.5vw) !important;
@@ -226,10 +229,10 @@ ul {
   max-width: 100%;
 }
 
-.row-cols-1 > * {
-    flex: 0 0 auto;
-    width: 100%;
-}
+// .row-cols-1 > * {
+//     flex: 0 0 auto;
+//     width: 100%;
+// }
 
 .card {
     display: flex;
@@ -396,6 +399,7 @@ $value in $allPadding {
     }
 }
 
+
 @if '.ar' {
     .ar {
         direction: rtl;
@@ -410,262 +414,14 @@ $value in $allPadding {
     }
 }
 
-.home {
-    .hero{
-        transform: inherit;
-        overflow: hidden;
-        .hero-info{
-            opacity: 0;
-            left: 200%;
-            transition: all 3s; 
-        }
-        
-        .hero-info.active{
-            opacity: 1;
-            position: relative;
-            left: 0;
-        }
-    }
-    .bottom{
-        @include position(absolute, 10px, 22px);
-        right: 10%;
-        top: 50%;
-        z-index: 1000;
-        ul li{
-            width: 4px;
-            height: 29px;
-            background-color: white;
-            margin: 6px;
-            position: relative;
-        }
+@import "SCSS/layout/index";
+@import "SCSS/layout/services";
 
-        ul li.active::after{
-            content: "";
-            @include position(absolute, 4px, 16px);
-            top: 0;
-            background-color: $mainColor;
-        }
-    }
-}
-
-.rate-list{
-    box-shadow: 0px 4px 6px 5px $colorLight;
-}
-
-.mySlides.active{
-    @include animationSlider();
-}
-.services{
-    width: 98vw;
-    
-    .images{
-        .images-transform{
-            transform: scaleX(2.5);
-            top: 8%;
-            left: 51%;
-        }
-        .img-tow{
-            top: 5%;
-        }
-    }
-    &::after{
-        content: '';
-        @include position(absolute, 100%, 50%);
-        background-color: white;
-        opacity: .9;
-        top: 45%;
-        left: 0;
-    }
-    
-    .images-kuraimi{
-        top: 45%;
-        width: 100%;
-    }
-    @include trendsBotton(63%, 2%, 37%);
-    .dot.active{
-        color: #423064;
-        font-weight: bold;
-        position: relative;
-        @include animationSlider();
-        &::after{
-            content: "";
-            @include position(absolute, 2px, 16px);
-            top: 71%;
-            left: 50%;
-            background-color: $secondColor;
-        }
-    }
-}
-
-.app{
-    background-color: #eff1f1;
-    margin-top: 10%;
-    .slides-app{
-        overflow-x: clip;
-        .item-app{
-            animation: appLeft 1.2s ease-in-out forwards;
-            border-radius: 40px;
-        }
-        .item-app.active{
-            animation: appRight 1.2s ease-in-out forwards;
-        }
-    }
-    
-    .cicle{
-        z-index: 10;
-        height: 9px; 
-    }
-    
-}
-
-@keyframes appRight{
-    0%{
-        left: -66%;
-        height: auto;
-    }
-    100%{
-        left: 20%;
-        height: 50vh;
-    }
-}
-@keyframes appLeft{
-    0%{
-        opacity: 1;
-    }50%{
-        opacity: 0;
-    }
-    70%{
-        left: -166%;
-        opacity: .5;
-    }100%{
-        left: -66%;
-        opacity: 1;
-    }
-}
-.items.active{
-    background-color: $secondColor;
-    width: 20%;
-}
-.items{
-    background-color: #9e9d9d;
-    width: 5%;
-    margin-right: 10px;
-    border-radius: 23px;
-    height: 100%;
-}
-
-// .app-list{
-//     width: 100%;
-//     top: 125%;
-//     z-index: 10;
-//     right: 0%;
-//     span{
-//         width: 10%;
-//         background-color: white;
-//         border-radius: 10%;
-//         height: 10px;
-//         border: 1px solid #CCC;
-//     }
-//     span.active{
-//         background-color: $secondColor;
-//         width: 30%;
-//     }
-// }
-
-.news{
-    
-    margin-top: 6rem;
-    .text-titlr{
-        margin-bottom: 5rem;
-    }
-    &::before{
-        
-        content: '';
-        @include position(absolute, 100%, 0%);
-        bottom: 0px;
-        border: 581px solid transparent;
-        -webkit-transform: translateX(-50%);
-        transform: translateX(-50%);
-        border-bottom-color: #f2f5f5;
-        left: 50%;
-    }
-    
-    .news-info{
-        z-index: 0;
-        // top: -100%;
-        transition: all 1s ease-in-out;
-        background-color: #423064d3;
-        clip-path: circle(0px at top);
-        &::after{
-            content: '';
-            @include position(absolute, 1px, 10%);
-            background-color: $colorLight;
-            top: 0;
-            left: 50%;
-        }
-    }
-    .content{
-        overflow: hidden;
-        &:hover{
-            .news-info{
-                top: 0;
-                transition: all 1s ease-in-out;
-                clip-path: circle(1000px at top);
-            }
-        }
-        .news-button button{
-            margin: 5% 29%;
-        }
-    }
-    .card-slider{
-        scroll-behavior: smooth;
-        overflow-x: auto;
-        .card{
-            flex: 0 0 auto;
-            width: 92%;
-            margin-right: 37px;
-            box-shadow: 0px 16px 6px 1px white;
-        }
-        &::-webkit-scrollbar{
-            display: none;
-        }
-    }
-    @include trendsBotton(45%, 3%, 22%);
-
-    p{
-        font-size: 14px;
-    }
-}
+$cols : 100%;
 
 .mySlides p{
     font-size: 20px;
     margin: 0;
-}
-
-.numbers{
-    a{
-        font-family: "Helvetica Neue LT Pro";
-    }
-    background-image: linear-gradient(60deg, #423064f5 0%, #261a3cfd 100%);
-    .number h1 a::before{
-        font-size: 30rem;
-        z-index: -1;
-        content: attr(data-after);
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%) scale(0);
-        letter-spacing: 50px;
-        transition: 1s ease letter-spacing;
-        color: black;
-    }
-    .number h1:hover a::before{
-        transform: translate(-50%, -50%) scale(1);
-        letter-spacing: initial;
-    }
-    .number p{
-        font-size: 17px;
-    }
 }
 
 .maps{
@@ -681,90 +437,6 @@ $value in $allPadding {
 .transform-rotate-45{
     transform: rotate(45deg);
 }
-.service{
-    &::after{
-        @include backgroundSection();
-    }
-    
-    .row{
-        z-index: 1;
-        top: 7%;
-        .info > *{
-            margin-right: 100px;
-        }
-    }
-
-    .info{
-        justify-content: flex-end;
-        height: 43vh;
-        p{
-            font-size: 15px;
-        }
-    }
-
-    .images{
-        justify-content: center;
-    }
-    
-    .service-img{
-        width: 52%;
-        z-index: 11;
-        margin-top: 0%;
-    }
-    .service-img-2{
-        @include position(absolute, 45%, auto);
-        left: 27%;
-        top: 22%;
-        z-index: 11;
-    }
-    
-}
-
-.features{
-    .features-info{
-        @include position(relative, 95%, 50%);
-        margin-top: 0%;
-        z-index: 1;
-        .icons{
-            width: 20%;
-            h1{
-                top: -57%;
-                left: 34%;
-                font-size: 2.5em;
-            }
-        }
-        p{
-            font-size: 12px;
-        }
-    }
-    p{
-        font-size: 12px;
-    }
-    .sliders.active{
-        @include animationSlider();
-    }
-    .dot-feature{
-        color: #dfdddd;
-    }
-
-    .dot-feature.active{
-        color: $secondColor;
-        font-weight: bold;
-        border-bottom: 3px solid $secondColor;
-        @include animationSlider();
-    }
-    .line-1{
-        @include imagesLine(11%, 26%, 3%);
-    }
-    .line-2{
-        @include imagesLine(0%, 40%, 3%);
-        height: 30%;
-        transform: rotate(162deg);
-    }
-    .line-3{
-        @include imagesLine(0%, 36%, 3%);
-    }
-}
 
 .service-project{
     h1{
@@ -772,67 +444,6 @@ $value in $allPadding {
     }
 }
 
-.success-stories{
-    .success-info{
-        overflow: hidden;
-        &.active{
-            @include animationSlider();
-        }
-        img{
-            top: 0;
-            object-fit: cover;
-        }
-        &::after{
-            content: "";
-            @include position(absolute, 100%, 100%);
-            background-image: linear-gradient(60deg, #351f5c00 0%, #261a3cde 100%);
-            top: 0;
-            z-index: 0;
-        }
-        .info{
-            z-index: 1;
-            padding: 4rem;
-        }
-    }
-}
-
-.onther-services{
-    margin-top: 15%;
-    margin-bottom: 5%;
-    .onther-services-slider{
-        scroll-behavior: smooth;
-        transition: all 1s ease-in-out;
-        overflow-x: auto;
-        .card{
-            flex: 0 0 auto;
-            width: 44%;
-            margin: 0 20px;
-            box-shadow: 0px 16px 6px 1px white;
-            
-            .card-img{
-                height: 58vh;
-                background-image: linear-gradient(60deg, #351f5cb0 0%, #261a3ccb 100%);
-                img{
-                    object-fit: cover;
-                }
-            }
-        }
-        &::-webkit-scrollbar{
-            display: none;
-        }
-        
-    }
-    .trand{
-        left: 0;
-        top: 0;
-        z-index: 0;
-        .right, .left{
-            width: 20%;
-            height: 100%;
-            background-image: linear-gradient(60deg, #fbfbfc00 0%, rgba(255, 255, 255, 0.658) 100%);
-        }
-    }
-}
 .bank-images{
     top: 0;
     z-index: -1;
@@ -1084,33 +695,7 @@ $value in $allPadding {
     }
 }
 
-.uccess-stories-hero{
-    img{
-        object-fit: cover;
-    }
-}
-
-.success-stories-info{
-    .items-info{
-        overflow-y: clip;
-    }
-    .item{
-        p{
-            font-size: 14px !important;
-            line-height: 2;
-        }
-        .images-lx{
-            display: none;
-        }
-    }
-    
-}
-
-.onther-services-success{
-    .text-title{
-        margin: 5%;
-    }
-}
+@import "SCSS/layout/success-stories";
 
 .our-partners-info{
     .items-info{
@@ -1365,41 +950,20 @@ $value in $allPadding {
 .col {
     flex: 1 0 0%;
 }
+.row{
+    flex-wrap: wrap;
+}
 
+@for $i from 1 to 7 {
+    .row-cols-#{$i} > *{
+        flex: 0 0 auto;
+        width: $cols / $i;
+    }
+}
 @media (min-width: 300px) {
     .row{
         flex-wrap: wrap;
     }
-    .row-cols-1 > *{
-        width: 100%;
-        flex: 0 0 auto;
-    }
-    .mySlides .images{
-        display: none;
-    }
-    .app .cicle {
-        top: 95%;
-    }
-
-    .features-slider{
-        .sliders-info{
-            position: absolute;
-            height: 100%;
-            animation: sliders-info 5s ease-in-out;
-            top: 0;
-            text-align: center;
-            color: white;
-            background-color: #423064af;
-            transition: all 1s ease-in-out;
-            width: 100%;
-            padding: 3rem;
-        }
-    }
-    // .info-bank-about{
-    //     .row{
-    //         flex-wrap: wrap;
-    //     }
-    // }
     .values-principles{
         margin-top: 21%;
         .values-principles-info{
@@ -1497,18 +1061,6 @@ $col_sm: 100%;
     .row{
         flex-wrap: wrap;
     }
-
-    .mySlides .images{
-        display: none;
-    }
-
-    .app .cicle{
-        top: 92%;
-    }
-    .services  .dot{
-        font-size: 13px;
-    }
-
 }
 @media (min-width: 768px) {
     @for $i from 1 to 7 {
@@ -1517,16 +1069,7 @@ $col_sm: 100%;
             width: $col_sm / $i;
         }
     }
-    .mySlides .images{
-        width: 30%;
-        display: block;
-    }
-    .mySlides .mySlides-info{
-        width: 70%;
-    }
-    .news .card-slider .card{
-        width: 45%;
-    }
+    
 }
 @media (min-width: 992px) {
     @for $i from 1 to 7 {
@@ -1535,35 +1078,7 @@ $col_sm: 100%;
             width: $col_sm / $i;
         }
     }
-    .news .card-slider .card {
-        width: 30%;
-    }
-    .services  .dot{
-        font-size: 20px;
-    }
-    .features-slider{
-        .sliders-info{
-            position: relative;
-            height: auto;
-            text-align: inherit;
-            color: #4b4a4a;
-            background-color: transparent;
-            left: 0;
-            width: 50%;
-            transition: none;
-            h1{
-                color: $secondColor;
-            }
-            p{
-                font-size: 22px;
-            }
-        }
-        .sliders{
-            .col{
-                padding: 2rem;
-            }
-        }
-    }
+    
     .values-principles{
         margin-top: 10%;
         .values-principles-info{
@@ -1634,34 +1149,6 @@ $col_sm: 100%;
         }
     }
 
-    .success-stories-info{
-        .item{
-            .row{
-                flex-wrap: nowrap;
-                .info{
-                    width: 60%;
-                }
-            }
-            p{
-                font-size: 18px !important;
-                width: 100% !important;
-                
-            }
-            .images-lx{
-                display: flex;
-                width: 45%;
-            }
-            .images-ms{
-                display: none;
-            }
-            // .slider-image{
-            //     z-index: 0;
-            // }
-            // .slider-image.active{
-            //     z-index: 1;
-            // }
-        }
-    }
     .about-bank{
         .items-info{
             .item{
@@ -1695,14 +1182,6 @@ $col_sm: 100%;
             font-size: 40px;
         }
     }
-    .onther-services{
-        .onther-services-slider{
-            .card{
-                width: 19%;
-            }
-        }
-    }
-
     .service-points{
         .row{
             .div-box{
@@ -1725,36 +1204,6 @@ $col_sm: 100%;
     @for $fs from 1 to 7 {
         .fs-#{$fs} {
             font-size: $font-size -$fs !important;
-        }
-    }
-
-    .number p{
-        font-size: 20px !important;
-    }
-
-    .app .cicle{
-        top: 115%;
-    }
-    .service{
-        .info{
-            justify-content: center;
-            min-height: 81vh;
-        }
-        .service-img{
-            width: 100%;
-            z-index: 11;
-            margin-top: 17%;
-        }
-        .service-img-2{
-            width: 69%;
-            left: 10%;
-            top: 29%;
-        }
-    } 
-
-    .features{
-        .features-info{
-            margin-top: -10%;
         }
     }
     

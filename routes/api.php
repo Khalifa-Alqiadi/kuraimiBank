@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\admin\CategoriesAdminController;
+use App\Http\Controllers\API\ApiApplications;
 use App\Http\Controllers\API\ApiCategory;
 use App\Http\Controllers\API\ApiCities;
 use App\Http\Controllers\API\ApiCountries;
@@ -18,6 +19,9 @@ use App\Http\Controllers\API\ApiSocialMedia;
 use App\Http\Controllers\API\ApiAuthenticate;
 use App\Http\Controllers\API\ApiOurPartners;
 use App\Http\Controllers\API\ApiPermissions;
+use App\Http\Controllers\API\ApiServicesNumbers;
+use App\Http\Controllers\API\ApiServicesSlider;
+use App\Http\Controllers\API\ApiSuccessStories;
 use App\Http\Controllers\LocaleController;
 use Illuminate\Support\Facades\Route;
 
@@ -103,11 +107,16 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/serviceActive', [ApiServices::class, 'active']);
         Route::post('/serviceDelete', [ApiServices::class, 'delete']);
 
-        Route::get('/service-advantage/{id}', [ApiServiceAdvantages::class, 'show']);
+        Route::get('/service-advantage/{id}', [ApiServiceAdvantages::class, 'show'])->name('service-advantage.show');
         Route::post('/add_service_advantage', [ApiServiceAdvantages::class, 'store'])->name('add_service_advantage');
         Route::post('/update_service_advantage', [ApiServiceAdvantages::class, 'update'])->name('update_service_advantage');
         Route::post('/serviceAdvantageActive', [ApiServiceAdvantages::class, 'active'])->name('serviceAdvantageActive');
         Route::post('/serviceAdvantageDelete', [ApiServiceAdvantages::class, 'delete'])->name('serviceAdvantageDelete');
+
+        Route::post('/add_service_slider', [ApiServicesSlider::class, 'store'])->name('add_service_slider');
+        Route::post('/update_service_slider', [ApiServicesSlider::class, 'update'])->name('update_service_slider');
+        Route::post('/service_Slider_Active', [ApiServicesSlider::class, 'active'])->name('service_Slider_Active');
+        Route::post('/service_slider_delete', [ApiServicesSlider::class, 'delete'])->name('service_slider_delete');
 
 
         Route::post('/add_our_partaner', [ApiOurPartners::class, 'store'])->name('add_our_partaner');
@@ -209,10 +218,31 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::post('/add_partner', [ApiOurPartners::class, 'store'])->name('add_partner');
 
-        
-
-
         Route::post('/add-role', [ApiPermissions::class, 'store'])->name('add-role');
+
+        Route::get('/admin-applications', [ApiApplications::class, 'showApplications'])->name('admin-applications');
+        Route::post('/add_application', [ApiApplications::class, 'store'])->name('add_application');
+        Route::get('/Edit_Application/{id}', [ApiApplications::class, 'edit'])->name('Edit_Application');
+        Route::post('/update_application', [ApiApplications::class, 'update'])->name('update_application');
+        Route::post('/applicationActive', [ApiApplications::class, 'active'])->name('applicationActive');
+        Route::post('/applicationDelete', [ApiApplications::class, 'delete'])->name('applicationDelete');
+
+
+        Route::get('/services-numbers', [ApiServicesNumbers::class, 'showData'])->name('services-numbers');
+        Route::get('/showServicesNumbers', [ApiServicesNumbers::class, 'show'])->name('showServicesNumbers');
+        Route::post('/add_service_number', [ApiServicesNumbers::class, 'store'])->name('add_service_number');
+        Route::get('/edit_service_number/{id}', [ApiServicesNumbers::class, 'edit'])->name('edit_service_number');
+        Route::post('/update_service_number', [ApiServicesNumbers::class, 'update'])->name('update_service_number');
+        Route::post('/active_service_number', [ApiServicesNumbers::class, 'active'])->name('active_service_number');
+        Route::post('/delete_service_number', [ApiServicesNumbers::class, 'delete'])->name('delete_service_number');
+
+
+        Route::get('/success-stories-admin', [ApiSuccessStories::class, 'show'])->name('success-stories-admin');
+        Route::get('/Edit_Success_stories/{id}', [ApiSuccessStories::class, 'edit'])->name('Edit_Success_stories');
+        Route::post('/add_success_stories', [ApiSuccessStories::class, 'store'])->name('add_success_stories');
+        Route::post('/update_success_stories', [ApiSuccessStories::class, 'update'])->name('update_success_stories');
+        Route::post('/successStoriesActive', [ApiSuccessStories::class, 'active'])->name('successStoriesActive');
+        Route::post('/successStoriesDelete', [ApiSuccessStories::class, 'delete'])->name('successStoriesDelete');
     });
 });
 Route::get('/login', [ApiAuthenticate::class, 'show'])->name('login');

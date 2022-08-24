@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->json('name');
-            $table->json('service_info');
+            $table->json('description');
+            $table->string('background');
             $table->integer('category_id');
             $table->boolean('is_active')->default(1);
             $table->timestamps();

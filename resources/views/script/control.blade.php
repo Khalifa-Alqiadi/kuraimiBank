@@ -58,4 +58,34 @@
         var permission_id = document.getElementById('permission_id');
         permission_id.value = id;
     }
+
+
+    function ApplicationsActive(id){
+        var application_active_id = document.getElementById('application_active_id');
+        application_active_id.value = id;
+    }
+    function delete_application(id){
+        var application_delete_id = document.getElementById('application_delete_id');
+        application_delete_id.value = id;
+    }
+
+
+    function sliderServiceActive(id){
+        var slider_active_id = document.getElementById('slider_active_id');
+        slider_active_id.value = id;
+    }
+    function sliderServiceDeleted(id){
+        var slider_delete_id = document.getElementById('slider_delete_id');
+        slider_delete_id.value = id;
+    }
+
+
+    function SuccessStoriesActive(id){
+        var stories_active_id = document.getElementById('stories_active_id');
+        stories_active_id.value = id;
+    }
+    function success_stories_service(id){
+        var stories_delete_id = document.getElementById('stories_delete_id');
+        stories_delete_id.value = id;
+    }
 </script>

@@ -137,11 +137,19 @@ function appSlides(n) {
     let i;
     let slides = document.getElementsByClassName("item-app");
     let dots = document.getElementsByClassName("items");
+    let zIndex = 1;
     if (n > slides.length) {
         slideApp = 1
     }
     if (n < 1) {
         slideApp = slides.length
+    }
+    for (i = 0; i < slides.length; i++) {
+        zIndex += i
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.zIndex = zIndex - 1;
+        zIndex -= 1;
     }
 
     for (i = 0; i < dots.length; i++) {

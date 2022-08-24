@@ -63,3 +63,23 @@
     z-index: 0;
     top: 0;
 }
+
+@mixin breakPoints($point) {
+    @if $point == small {
+        @media (min-width: 576px) {
+            @content;
+        }
+    } @else if $point == mobile{
+        @media (min-width: 768px) {
+            @content;
+        }
+    } @else if $point == medium{
+        @media (min-width: 992px) {
+            @content;
+        }
+    } @else if $point == large{
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+}
